@@ -1,27 +1,19 @@
 /*
- * utils.hpp
- *
- *  Created on: Apr 20, 2012
- *      Author: tom
+ * An  abstracted way to include the Turn Left Lib.
+ * Each of the following may also be included separately if desired. All 
+ * includes are wrapped in ifndef/endifs, so there's no harm, no foul.
  */
 
-#ifndef TL_UTILS_HPP_
-#define TL_UTILS_HPP_
+#ifndef TL_UTILS_
+#define TL_UTILS_
 
 #include "utils/CommonWords"
 #include "utils/HungryVector"
 #include "utils/Log"
-
-#include "utils/randomcharset.h"
-
-#ifndef STRINGS_H_
-#include "utils/strings.cpp"
-#endif //STRINGS_H_
-
-#include "utils/ptrarray.h"
+#include "utils/PtrArray"
+#include "utils/RandomCharSet"
+#include "utils/WordAggregator"
+#include "utils/Explosion"
 
 
-#include "utils/wordaggregator.h"
-
-
-#endif /* UTILS_HPP_ */
+#endif // TL_UTILS_

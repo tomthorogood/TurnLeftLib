@@ -1,9 +1,10 @@
 
-#include "../test.h"
-#include "../../utils/commonwords.h"
-#include "../../utils/strings.h"
+#include "../utils/src/test.h"
+#include "../utils/CommonWords"
+#include "../utils/Explosion"
 #include <vector>
 #include <string>
+
 int main()
 {
 	unittest::Test<int> inttest;
@@ -13,7 +14,7 @@ int main()
     
     std::string strvector[10];
     std::cout << "Vector instantiated." << std::endl;
-    explosion.explode(' ').getArray(strvector);
+    explosion.explode(' ', strvector);
 	inttest.name("Find 'this'").expect(1).test(
         library.find(strvector[0])
 	);

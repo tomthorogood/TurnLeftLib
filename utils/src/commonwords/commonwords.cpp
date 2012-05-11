@@ -12,13 +12,15 @@ namespace Utils{
 
 CommonWords::CommonWords()
 {
-    txtfile = TL_UTILS_COMMONWORDS_LIB;
+    txtfile = new std::ifstream();
+    txtfile->open(TL_UTILS_COMMONWORDS_LIB);
     init();
 }
 
 CommonWords::CommonWords(const char* filename)
 {
-    txtfile = filename;
+    txtfile = new std::ifstream();
+    txtfile->open(filename);
     init();
 }
 
@@ -36,15 +38,13 @@ CommonWords::init()
     numInput = 0;
 
         std::string word;
-        txtfile=NULL;
-        std::ifstream f = *fopen();
-        while (f)
+        while (txtfile)
         {
             //Redundancy to prevent a segfault.
-            if (f.eof()) break;
+            if (txtfile->eof()) break;
 
 
-            std::getline(f, word);
+            std::getline(*txtfile, word);
             for (int i = 0; i < word.length(); i++)
             {
 
@@ -89,4 +89,3 @@ CommonWords::find(std::string searchValue)
 
 }}
 
-#endif /* COMMONWORDS_H_ */

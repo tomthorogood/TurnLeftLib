@@ -78,7 +78,7 @@ public:
 	 * name of the file to be used as is the case in the overloaded constructor
 	 * method.
 	 */
-	CommonWords(){};
+	CommonWords();
 
 	/*! Overloaded constructor takes the filename of the common words library as
 	 * its default.
@@ -97,5 +97,5 @@ public:
 	 */
 	bool find(std::string);
 };
-
-
+}}
+#endif

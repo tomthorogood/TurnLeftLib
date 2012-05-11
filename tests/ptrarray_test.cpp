@@ -7,7 +7,7 @@
 
 
 #include "../test.h"
-#include "../../utils/ptrarray.h"
+#include "../../utils/PtrArray"
 
 class Foo
 {

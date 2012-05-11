@@ -17,8 +17,8 @@
  * Upon instantiaton, a PtrArray declares all of its pointers to be NULL.
  */
 
-#ifndef PTRARRAY_H_
-#define PTRARRAY_H_
+#ifndef TL_UTILS_PTRARRAY_H_
+#define TL_UTILS_PTRARRAY_H_
 #include <bitset>
 namespace TurnLeft{
 namespace Utils{
@@ -62,6 +62,7 @@ public:
 			flags.set(top(), false);
 		}
 	}
+
 	/*! returns a pointer to the next item in the stack after
 	 * calling the new operator to initialize it. If the max
 	 * stack size has already been reached, it deletes the top
@@ -71,7 +72,7 @@ public:
 	 * additional arguments in its constructor, this needs to be
 	 * overwritten in order to include them.
 	 *
-	 * @return a pointer to a PointerType object.
+	 * \return a pointer to a PointerType object.
 	 */
 	virtual PointerType* alloc()
 	{
@@ -83,9 +84,9 @@ public:
 
 	/*! Allocates a specific slot in the array
 	 *
-	 * @precondition loc must be less than max.
-	 * @param a location within the array
-	 * @return a pointer to the newly (re)allocated location in memory storing a PointerType object.
+	 * \precondition loc must be less than max.
+	 * \param a location within the array
+	 * \return a pointer to the newly (re)allocated location in memory storing a PointerType object.
 	 */
 	virtual PointerType* allocAt(int loc)
 	{
@@ -102,7 +103,7 @@ public:
 	 * Example usage:
 	 * Foo* ptr = arr.top();
 	 * ptr->doSomething();
-	 * @return a pointer to an object of PointerType.
+	 * \return a pointer to an object of PointerType.
 	 *
 	 */
 	int top()
@@ -123,7 +124,7 @@ public:
 	 * 	int next = arr.gap();
 	 * 	Foo* ptr = arr.alloc(next);
 	 * 	ptr->doSomething();
-	 * 	@return an int between 0 and Max-1
+	 * 	\return an int between 0 and Max-1
 	 */
 	int gap()
 	{
@@ -138,7 +139,7 @@ public:
 	}
 
 	/*! Retrieves the current stack size.
-	 * @return an integer between 0 and Max-1
+	 * \return an integer between 0 and Max-1
 	 */
 	int size()
 	{
@@ -147,34 +148,47 @@ public:
 
 	/*! Retrieves a specific pointer from the array. If that pointer
 	 * has not yet been initialized, returns the most recently initialized pointer.
-	 * @return a pointer to a PointerType object.
+	 * \return a pointer to a PointerType object.
 	 */
 	PointerType* dig(int location)
 	{
 		return allocator[location];
 	}
-	/*! Removes a pointer from the stack by deleting it and decrementing
-	 * the stack count. If the stack is already at 0, it does nothing.
-	 * @return reference to this object for method chaining. (nodens.rem().alloc();)
-	 */
-	PtrArray& rem()
+	
+    /*! Remvoes the most 'topmost' pointer in the array, clearing its bit.
+     * Works well when using the alloc() method.
+     * \sa alloc()
+     */
+    PtrArray& rem()
 	{
 		delete allocator[top()];
 		flags.set(top(), false);
 		return *this;
 	}
 
+    /*! Removes a pointer from the array by deleting it and clearing
+     * its bit. Works well when using the allocAt() method.
+     * \sa allocAt()
+     * \param The location in the array you wish to free.
+     */
+    void remAt(int loc)
+    {
+        if (!flags.test(loc)) return;
+        flags.set(loc,false);
+        delete allocator[loc];
+    }
+
 	/*! When ownsership of a pointer is transferred to another entity, we must
 	 * clear the bit so it is not deleted if the array goes out of scope. However,
-	 * while the array is still in scope, the pointer can still be accessed with dig().
+	 * while the array is still in scope, the pointer can still be accessed with dig(), 
+     * unless the alloc() method assigns a new pointer to that location in the array..
 	 */
 	PtrArray& transfer(int loc)
 	{
 		flags.set(loc,false);
 		return *this;
 	}
-
 };
 
 }}
-#endif /* PTRARRAY_H_ */
+#endif /* TL_UTILS_PTRARRAY_H_ */

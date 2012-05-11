@@ -2,7 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include "../../utils/wordaggregator.h"
+#include "../../utils/WordAggregator"
 #include "../test.h"
 
 std::string readFile (const char* fname)
@@ -39,16 +39,17 @@ int main()
     std::vector <std::string> wordvector(2,"");
     wordvector[0] = str1;
     wordvector[1] = str2;
-    std::vector <TurnLeft::Utils::WordFrequency> *frequencies;
+    TurnLeft::Utils::FrequencyMap *frequencies;
+    std::vector <std::string> *wordList;
     std::cout << "Instantiating aggregator" << std::endl;
     TurnLeft::Utils::WordAggregator aggregator (wordvector);
     std::cout << "...done." << std::endl;
-    frequencies = aggregator.getVector();
+    frequencies = aggregator.getMap();
+    wordList = aggregator.getWordList();
 
-    for (int i = 0; i < frequencies->size(); i++)
+    for (int i = 0; i < wordList->size(); i++)
     {
-        if (frequencies->at(i).word != "")
-        std::cout << frequencies->at(i).word << ": " << frequencies->at(i).frequency << std::endl;
+        std::cout << frequencies[wordList[i]] << std::endl;
     }
 
     return 0;
