@@ -78,10 +78,8 @@ private:
      * allocated on the heap. The object has responsibility of
      * this pointer, and will delete it upon destruction.
      */
-    std::ofstream* output;
+    std::ofstream output;
 public:
-    /*! Default parameter doesn't do anything at all. Don't use this. */
-    Log(){};
     /*! The constructor can take up to three parameters, all of
      * which are optional. However, if DEBUG_TYPE is set to FILE, the
      * filename parameter must be passed.
@@ -146,3 +144,5 @@ public:
      */
     void setType (DEBUG_TYPE, const char* filename);
 };
+}}
+#endif

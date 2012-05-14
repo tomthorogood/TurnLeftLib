@@ -6,8 +6,8 @@
  */
 
 
-#include "../test.h"
-#include "../../utils/PtrArray"
+#include "../utils/src/test.h"
+#include "../utils/PtrArray"
 
 class Foo
 {
@@ -38,10 +38,10 @@ public:
 
 int main()
 {
-	unittest::Test<int> inttest;
+    unittest::Test<int> inttest;
 	TestArray arraytest;
 
-	Foo *ptr, *dig = 0;
+	Foo *ptr = 0;
 	ptr = arraytest.alloc(10);
 	std::cout << ptr << std::endl;
 	inttest.expect(10).test(ptr->get());

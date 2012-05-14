@@ -12,62 +12,54 @@ namespace Utils{
 
 CommonWords::CommonWords()
 {
-    txtfile = new std::ifstream();
-    txtfile->open(TL_UTILS_COMMONWORDS_LIB);
+    txtfile.open(TL_UTILS_COMMONWORDS_LIB);
     init();
 }
 
 CommonWords::CommonWords(const char* filename)
+:   txtfile()
 {
-    txtfile = new std::ifstream();
-    txtfile->open(filename);
+    txtfile.open(filename);
     init();
 }
 
 CommonWords::~CommonWords()
-{
-    if (txtfile!=NULL)
-    {
-        delete txtfile;
-    }
-}
+{ }
 
 void
 CommonWords::init()
 {
     numInput = 0;
+    
+    std::string word;
+    while (txtfile)
+    {
+        //Redundancy to prevent a segfault.
+        if (txtfile.eof()) break;
 
-        std::string word;
-        while (txtfile)
+
+        std::getline(txtfile, word);
+        for (unsigned int i = 0; i < word.length(); i++)
         {
-            //Redundancy to prevent a segfault.
-            if (txtfile->eof()) break;
 
-
-            std::getline(*txtfile, word);
-            for (int i = 0; i < word.length(); i++)
+            if (isalpha(word[i]) && isupper(word[i]))
             {
-
-                if (isalpha(word[i]) && isupper(word[i]))
-                {
-                    tolower(word[i]);
-                }
+                tolower(word[i]);
             }
-            library[numInput] = word;
-            numInput++;
         }
+        library[numInput] = word;
+        numInput++;
+    }
 }
 
-std::ifstream*
+void
 CommonWords::fopen()
 {
-    txtfile = new std::ifstream();
-    txtfile->open(filename);
-    if (!txtfile->is_open())
+    txtfile.open(filename);
+    if (!txtfile.is_open())
     {
         throw (Exceptions::FileNotFoundException(filename));
     }
-    return txtfile;
 }
 
 /*
@@ -79,7 +71,6 @@ bool
 CommonWords::find(std::string searchValue)
 {
 
-    bool found = false;
     for (int i = 0; i < MAX_LIBRARY_SIZE; i++)
     {
         if (searchValue == library[i]) return true;

@@ -10,29 +10,22 @@ namespace TurnLeft{
 namespace Utils{
 
 Log::Log(DEBUG_LEVEL _level=CRITICAL, DEBUG_TYPE _type=COUT, const char* filename=0)
+    :   output()
 {
     level = _level;
     type = _type;
     if (_type==FILE && filename != 0)
     {
-        output = new std::ofstream;
-        output->open(filename);
+        output.open(filename);
     }
     else if (_type==FILE)
     {
         throw Exceptions::MissingParameterException("Log::Log()", "filename");
     }
-    else output = NULL;
 }
 
 Log::~Log()
-{
-    if (output != NULL)
-    {
-        delete output;
-    }
-}
-
+{ } 
 void
 Log::log(const char* message, DEBUG_LEVEL _level=ANNOYING)
 {
@@ -88,15 +81,9 @@ Log::setType(DEBUG_TYPE _type, const char* filename=0)
     }
     else if (type == FILE)
     {
-        if (output != NULL)
-        {
-            delete output;
-        }
-        output = new std::ofstream();
-        output->open(filename);
+        output.open(filename);
     }
 }
 
 
 }}
-#endif /* DEBUG_LEVEL_H_ */

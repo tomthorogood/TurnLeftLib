@@ -48,7 +48,7 @@ public:
 	 * to NULL and all flags to 0 (off).
 	 */
 	PtrArray(){
-		for (int i = 0; i < max; i++)
+		for (unsigned int i = 0; i < max; i++)
 		{
 			allocator[i] = NULL;
 		}
@@ -128,7 +128,7 @@ public:
 	 */
 	int gap()
 	{
-		for (int i = 0; i < max; i++)
+		for (unsigned int i = 0; i < max; i++)
 		{
 			if (!flags.test(i))
 			{

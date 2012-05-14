@@ -36,7 +36,7 @@ class HungryVector : public std::vector<T>
 private:
     /*! The total number of objects stored in the vector.
      */
-	int usage;
+	unsigned int usage;
 public:
 	/*! Default constructor works just fine, and creates a
 	 * vector of size 0. This isn't recommended, as you then

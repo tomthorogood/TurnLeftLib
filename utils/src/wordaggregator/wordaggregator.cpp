@@ -4,23 +4,25 @@
 namespace TurnLeft{
 namespace Utils{
 
-WordAggregator::WordAggregator (std::string& words, const char* libFilename=0)
+WordAggregator::WordAggregator (std::string& words, FrequencyMap& _map, 
+        const char* libFilename=0)
 :   library(libFilename)
 {
-    parse(words);
+    parse(words, _map);
 }
 
-WordAggregator::WordAggregator (std::vector <std::string> &words, const char* libFilename=0)
+WordAggregator::WordAggregator (std::vector <std::string> &words, FrequencyMap& _map, 
+        const char* libFilename=0)
 :   library(libFilename)
 {
-    for (int i = 0; i < words.size(); i++)
+    for (unsigned int i = 0; i < words.size(); i++)
     {
-        parse(words[i]);
+        parse(words[i],_map);
     }
 }
 
 void
-WordAggregator::parse (std::string& words)
+WordAggregator::parse (std::string& words, FrequencyMap& _map)
 {
     std::string wordset[WORDSET_ARRAY_SIZE];
     Explosion explosion(words);
@@ -30,21 +32,14 @@ WordAggregator::parse (std::string& words)
     for (int w=0; w < WORDSET_ARRAY_SIZE; w++)
     {
         if (wordset[w] == "") break;
-        bool found = !(frequencies.find(wordset[w]) == frequencies.end());
+        bool found = !(_map.find(wordset[w]) == _map.end());
         bool add = (!found && !library.find(wordset[w]));
         if (found || add)
         {
-            frequencies[wordset[w]]++;
+            _map[wordset[w]]++;
             if (add) wordList.push_back(wordset[w]);
         }
-
     }
-}
-
-FrequencyMap*
-WordAggregator::getMap()
-{
-	return &frequencies;
 }
 
 std::vector <std::string>*

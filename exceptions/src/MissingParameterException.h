@@ -9,6 +9,8 @@
 #define MISSINGPARAMETEREXCEPTION_H_
 
 #include <exception>
+#include <string>
+#include <sstream>
 
 namespace TurnLeft{
 namespace  Exceptions{

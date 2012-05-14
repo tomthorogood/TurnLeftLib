@@ -6,5 +6,5 @@
  */
 
 #ifndef TL_UTILS_LOG_H_
-#include "log/log.cpp"
+#include "src/log/log.cpp"
 #endif

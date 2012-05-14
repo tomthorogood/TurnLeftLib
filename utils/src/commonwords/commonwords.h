@@ -62,12 +62,12 @@ private:
 	 * \return a pointer to an input stream buffer.
 	 * \sa filename
 	 */
-	std::ifstream* fopen();
+    void fopen();
 
 	/*! A pointer to an input stream buffer. This belongs to to the object,
 	 * and will be deleted once the object goes out of scope.
 	 */
-	std::ifstream* txtfile;
+	std::ifstream txtfile;
 
 	/*! Factored construction code */
 	inline void init();

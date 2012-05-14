@@ -20,7 +20,9 @@
 
 #include <vector>
 #include <map>
-#include <TurnLeftLib/Utils>
+#include <TurnLeftLib/utils/Explosion>
+#include <TurnLeftLib/utils/HungryVector>
+#include <TurnLeftLib/utils/CommonWords>
 
 namespace TurnLeft {
 namespace Utils {
@@ -39,22 +41,13 @@ private:
      * \sa TurnLeft::Utils::CommonWords */
 	CommonWords library;
 
-    /*! The frequency map does exactly that: maps the frequencies of words. 
-     * This is efficient than my previous solution because it will default
-     * all integers to 0, meaning adding and incrementing entries can be 
-     * the same line of code. The only logic we need then is to determine
-     * whether a word being added needs to instead be ignored, which is 
-     * a single branching statement. Hooray.
-     */
-    std::map <std::string, int> frequencies;
-
     /*! A list of all of the words. This is needed in order to generate dynamic
      * output from the map. It's actually probably not needed, but I don't have
      * Internet at the moment so I can't look up a better way using the map API.
      * @TODO Find a way to get rid of this
      */
     std::vector <std::string> wordList;
-    void parse(std::string&);
+    void parse(std::string&, FrequencyMap& _map);
 
 public:
     /*! Default constructor also calls default constructor of library. Not
@@ -65,16 +58,16 @@ public:
      * contain a filename to be passed into the CommonWords library constructor.
      * This constructor is useful when aggregating multiple blocks of text.
      */
-	WordAggregator(std::vector<std::string>& words, const char* libFilename);
+	WordAggregator(std::vector<std::string>& words, FrequencyMap& _map, 
+            const char* libFilename);
 
     /*! This overloaded constrcutor takes in a single string, and may optioanlly
      * contain a filename to be passed into the CommonWords library constructor.
      * This constructor is useful when only parsing one block of text.
      */
-    WordAggregator(std::string& words, const char* libFilename);
+    WordAggregator(std::string& words, FrequencyMap& _map, 
+            const char* libFilename);
 
-    /*!Returns the map. */
-    FrequencyMap* getMap();
     /*! Returns the list of individual words contained in the map. */
     std::vector <std::string>* getWordList();
 
