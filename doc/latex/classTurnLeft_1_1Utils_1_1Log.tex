@@ -1,0 +1,154 @@
+\hypertarget{classTurnLeft_1_1Utils_1_1Log}{
+\section{TurnLeft::Utils::Log Class Reference}
+\label{classTurnLeft_1_1Utils_1_1Log}\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+}
+
+
+{\ttfamily \#include $<$log.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTurnLeft_1_1Utils_1_1Log_aad9a535b7774066baec2ae69f95dc810}{Log} (\hyperlink{namespaceTurnLeft_1_1Utils_a55225b27548ba5d55b26a6a5f1ba294e}{DEBUG\_\-LEVEL}, \hyperlink{namespaceTurnLeft_1_1Utils_a9d1cba01e5417c6262d11cc154c9a252}{DEBUG\_\-TYPE}, const char $\ast$)
+\item 
+virtual \hyperlink{classTurnLeft_1_1Utils_1_1Log_ac04ffbc97a2d6689843fd11492fe8911}{$\sim$Log} ()
+\item 
+virtual void \hyperlink{classTurnLeft_1_1Utils_1_1Log_ac14c5605af087f81b2c99b1c267af13d}{log} (const char $\ast$, \hyperlink{namespaceTurnLeft_1_1Utils_a55225b27548ba5d55b26a6a5f1ba294e}{DEBUG\_\-LEVEL})
+\item 
+\hyperlink{namespaceTurnLeft_1_1Utils_a55225b27548ba5d55b26a6a5f1ba294e}{DEBUG\_\-LEVEL} \hyperlink{classTurnLeft_1_1Utils_1_1Log_a388ce24cc5be57d7b625d760b6ef708e}{getLevel} ()
+\item 
+\hyperlink{namespaceTurnLeft_1_1Utils_a9d1cba01e5417c6262d11cc154c9a252}{DEBUG\_\-TYPE} \hyperlink{classTurnLeft_1_1Utils_1_1Log_a94ca126124af5c0f1058f60e1130d94b}{getType} ()
+\item 
+void \hyperlink{classTurnLeft_1_1Utils_1_1Log_a88c51f5e9b80a18eb9c79340d2551557}{setLevel} (\hyperlink{namespaceTurnLeft_1_1Utils_a55225b27548ba5d55b26a6a5f1ba294e}{DEBUG\_\-LEVEL})
+\item 
+void \hyperlink{classTurnLeft_1_1Utils_1_1Log_ad27d1e632681c4cf80f352682e63df06}{setType} (\hyperlink{namespaceTurnLeft_1_1Utils_a9d1cba01e5417c6262d11cc154c9a252}{DEBUG\_\-TYPE}, const char $\ast$filename)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classTurnLeft_1_1Utils_1_1Log}{Log} class allows for a dynamic logging system which can be manipulated at will to provide different output for different sections of your program by instantiating only a single log object. Creating a log with no construction parameters will default to CRITICAL messages sent to the CLI. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTurnLeft_1_1Utils_1_1Log_aad9a535b7774066baec2ae69f95dc810}{
+\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}!Log@{Log}}
+\index{Log@{Log}!TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+\subsubsection[{Log}]{\setlength{\rightskip}{0pt plus 5cm}TurnLeft::Utils::Log::Log (
+\begin{DoxyParamCaption}
+\item[{{\bf DEBUG\_\-LEVEL}}]{ \_\-level = {\ttfamily CRITICAL}, }
+\item[{{\bf DEBUG\_\-TYPE}}]{ \_\-type = {\ttfamily COUT}, }
+\item[{const char $\ast$}]{ filename = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1Log_aad9a535b7774066baec2ae69f95dc810}
+The constructor can take up to three parameters, all of which are optional. However, if DEBUG\_\-TYPE is set to FILE, the filename parameter must be passed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \_\-level}]The DEBUG\_\-LEVEL enum (default is CRITICAL) \item[{\em \_\-type}]The DEBUG\_\-TYPE enum (default is COUT) \item[{\em \_\-filename}]The file which will be written to. \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+level 
+
+type 
+
+output 
+\end{DoxySeeAlso}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em MissingParemeterException}]If filename is not passed, but DEBUG\_\-TYPE is set to FILE. \end{DoxyExceptions}
+\hypertarget{classTurnLeft_1_1Utils_1_1Log_ac04ffbc97a2d6689843fd11492fe8911}{
+\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}!$\sim$Log@{$\sim$Log}}
+\index{$\sim$Log@{$\sim$Log}!TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+\subsubsection[{$\sim$Log}]{\setlength{\rightskip}{0pt plus 5cm}TurnLeft::Utils::Log::$\sim$Log (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1Log_ac04ffbc97a2d6689843fd11492fe8911}
+The default destructor destroys the ofstream pointer! \begin{DoxySeeAlso}{See also}
+output 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTurnLeft_1_1Utils_1_1Log_a388ce24cc5be57d7b625d760b6ef708e}{
+\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+\subsubsection[{getLevel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DEBUG\_\-LEVEL} TurnLeft::Utils::Log::getLevel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1Log_a388ce24cc5be57d7b625d760b6ef708e}
+Standard accessor which returns the debug level. \begin{DoxySeeAlso}{See also}
+level 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+0=CRITICAL, 1=WARN, 2=VERBOSE, 3=ANNOYING 
+\end{DoxyReturn}
+\hypertarget{classTurnLeft_1_1Utils_1_1Log_a94ca126124af5c0f1058f60e1130d94b}{
+\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}!getType@{getType}}
+\index{getType@{getType}!TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+\subsubsection[{getType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DEBUG\_\-TYPE} TurnLeft::Utils::Log::getType (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1Log_a94ca126124af5c0f1058f60e1130d94b}
+Standard accessor which returns the debug type. \begin{DoxySeeAlso}{See also}
+type 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+0=COUT, 1=FILE 
+\end{DoxyReturn}
+\hypertarget{classTurnLeft_1_1Utils_1_1Log_ac14c5605af087f81b2c99b1c267af13d}{
+\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}!log@{log}}
+\index{log@{log}!TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}void TurnLeft::Utils::Log::log (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ message, }
+\item[{{\bf DEBUG\_\-LEVEL}}]{ \_\-level = {\ttfamily ANNOYING}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1Log_ac14c5605af087f81b2c99b1c267af13d}
+The log method will test to see if the log message meets the level requirements for the current DEBUG\_\-LEVEL setting. If so, it will log the message in the format specified by DEBUG\_\-TYPE. The second parameter is optional, and defaults to ANNOYING. The reason for this is two-\/fold: 1) It will make creating trash debug messages easier while developing, and 2) Because the class default is CRITICAL, instantiating objects with clss default settings, and calling the default \hyperlink{classTurnLeft_1_1Utils_1_1Log_ac14c5605af087f81b2c99b1c267af13d}{log()} method will not bother logging the message, thereby speeding up the code, meaning you the programmer can afford to be a little lazier. Note that this method IS virtual, so it can take on different behaviour in inherited classes if desired.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \_\-message}]The message to be written to the log \item[{\em \_\-level}]The importance of the message (default is ANNOYING) \end{DoxyParams}
+\hypertarget{classTurnLeft_1_1Utils_1_1Log_a88c51f5e9b80a18eb9c79340d2551557}{
+\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+\subsubsection[{setLevel}]{\setlength{\rightskip}{0pt plus 5cm}void TurnLeft::Utils::Log::setLevel (
+\begin{DoxyParamCaption}
+\item[{{\bf DEBUG\_\-LEVEL}}]{ \_\-level}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1Log_a88c51f5e9b80a18eb9c79340d2551557}
+Standard setter which alters the debug level of the log. This can be useful if you are working on a trouble spot within your program, and only want to retrieve verbose messages in that section. \begin{DoxySeeAlso}{See also}
+level 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \_\-level}]The new DEBUG\_\-LEVEL enum. \end{DoxyParams}
+\hypertarget{classTurnLeft_1_1Utils_1_1Log_ad27d1e632681c4cf80f352682e63df06}{
+\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}!setType@{setType}}
+\index{setType@{setType}!TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+\subsubsection[{setType}]{\setlength{\rightskip}{0pt plus 5cm}void TurnLeft::Utils::Log::setType (
+\begin{DoxyParamCaption}
+\item[{{\bf DEBUG\_\-TYPE}}]{ \_\-type, }
+\item[{const char $\ast$}]{ filename = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1Log_ad27d1e632681c4cf80f352682e63df06}
+Abnormal setter which optionally takes two parameters, the second being the filename if the new debug type is FILE. \begin{DoxySeeAlso}{See also}
+type 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \_\-type}]The new DEBUG\_\-TYPE enum \item[{\em \_\-filename}]If the new type is FILE, a filename must be passed. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/home/tom/dev/TurnLeftLib/utils/src/log/log.h\item 
+/home/tom/dev/TurnLeftLib/utils/src/log/log.cpp\end{DoxyCompactItemize}

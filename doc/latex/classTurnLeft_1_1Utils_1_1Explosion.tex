@@ -1,0 +1,100 @@
+\hypertarget{classTurnLeft_1_1Utils_1_1Explosion}{
+\section{TurnLeft::Utils::Explosion Class Reference}
+\label{classTurnLeft_1_1Utils_1_1Explosion}\index{TurnLeft::Utils::Explosion@{TurnLeft::Utils::Explosion}}
+}
+
+
+A class for splitting strings into an array, separated by a delimiter.  
+
+
+
+
+{\ttfamily \#include $<$explosion.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTurnLeft_1_1Utils_1_1Explosion_aa8e82cc3a2c0db540b429eb019e21e86}{Explosion} (std::string)
+\item 
+void \hyperlink{classTurnLeft_1_1Utils_1_1Explosion_ac517370d7a669bed21806f93211f588a}{explode} (char delim, std::string\mbox{[}$\,$\mbox{]}, bool alphaOnly, bool keepCase)
+\item 
+std::string $\ast$ \hyperlink{classTurnLeft_1_1Utils_1_1Explosion_ac0bb44dc711f42ae5b3ccd48ae41d562}{getArrayPtr} ()
+\item 
+int \hyperlink{classTurnLeft_1_1Utils_1_1Explosion_ad90d3a30cf6de4ca5c115bd7a6937727}{getNumWords} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class for splitting strings into an array, separated by a delimiter. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTurnLeft_1_1Utils_1_1Explosion_aa8e82cc3a2c0db540b429eb019e21e86}{
+\index{TurnLeft::Utils::Explosion@{TurnLeft::Utils::Explosion}!Explosion@{Explosion}}
+\index{Explosion@{Explosion}!TurnLeft::Utils::Explosion@{TurnLeft::Utils::Explosion}}
+\subsubsection[{Explosion}]{\setlength{\rightskip}{0pt plus 5cm}TurnLeft::Utils::Explosion::Explosion (
+\begin{DoxyParamCaption}
+\item[{std::string}]{ aString}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1Explosion_aa8e82cc3a2c0db540b429eb019e21e86}
+Standard constructor, takes in the string to be iterated over. 
+\begin{DoxyParams}{Parameters}
+\item[{\em a}]string of up to 300 words. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTurnLeft_1_1Utils_1_1Explosion_ac517370d7a669bed21806f93211f588a}{
+\index{TurnLeft::Utils::Explosion@{TurnLeft::Utils::Explosion}!explode@{explode}}
+\index{explode@{explode}!TurnLeft::Utils::Explosion@{TurnLeft::Utils::Explosion}}
+\subsubsection[{explode}]{\setlength{\rightskip}{0pt plus 5cm}void TurnLeft::Utils::Explosion::explode (
+\begin{DoxyParamCaption}
+\item[{char}]{ delim, }
+\item[{std::string}]{ array\mbox{[}$\,$\mbox{]}, }
+\item[{bool}]{ alphaOnly = {\ttfamily 1}, }
+\item[{bool}]{ keepCase = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1Explosion_ac517370d7a669bed21806f93211f588a}
+Splits the string at any instance of the delimiter char, filling the instance array. 
+\begin{DoxyParams}{Parameters}
+\item[{\em a}]character delimiting the string \item[{\em an}]array to be filled with the words' contents. \item[{\em (optional)}]Only keep alpha characters (default True). \item[{\em (optional)}]Maintain of strings (default False -\/-\/ converts to lower) \end{DoxyParams}
+
+
+If we've found a delimiter, or the end of the string, send everything in the buffer to a std::string and clear the buffer so that it can accept more input.
+
+\hypertarget{classTurnLeft_1_1Utils_1_1Explosion_ac0bb44dc711f42ae5b3ccd48ae41d562}{
+\index{TurnLeft::Utils::Explosion@{TurnLeft::Utils::Explosion}!getArrayPtr@{getArrayPtr}}
+\index{getArrayPtr@{getArrayPtr}!TurnLeft::Utils::Explosion@{TurnLeft::Utils::Explosion}}
+\subsubsection[{getArrayPtr}]{\setlength{\rightskip}{0pt plus 5cm}std::string $\ast$ TurnLeft::Utils::Explosion::getArrayPtr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1Explosion_ac0bb44dc711f42ae5b3ccd48ae41d562}
+Returns the pointer to the instance array. \begin{DoxyReturn}{Returns}
+a pointer to the instance array 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+arrayPtr 
+\end{DoxySeeAlso}
+\hypertarget{classTurnLeft_1_1Utils_1_1Explosion_ad90d3a30cf6de4ca5c115bd7a6937727}{
+\index{TurnLeft::Utils::Explosion@{TurnLeft::Utils::Explosion}!getNumWords@{getNumWords}}
+\index{getNumWords@{getNumWords}!TurnLeft::Utils::Explosion@{TurnLeft::Utils::Explosion}}
+\subsubsection[{getNumWords}]{\setlength{\rightskip}{0pt plus 5cm}int TurnLeft::Utils::Explosion::getNumWords (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1Explosion_ad90d3a30cf6de4ca5c115bd7a6937727}
+Retrieves the number of words that were parsed from the input string. \begin{DoxyReturn}{Returns}
+the number of words in the input string 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+numWords 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/home/tom/dev/TurnLeftLib/utils/src/explosion/explosion.h\item 
+/home/tom/dev/TurnLeftLib/utils/src/explosion/explosion.cpp\end{DoxyCompactItemize}

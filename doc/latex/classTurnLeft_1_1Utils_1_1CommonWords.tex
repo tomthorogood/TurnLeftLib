@@ -1,0 +1,72 @@
+\hypertarget{classTurnLeft_1_1Utils_1_1CommonWords}{
+\section{TurnLeft::Utils::CommonWords Class Reference}
+\label{classTurnLeft_1_1Utils_1_1CommonWords}\index{TurnLeft::Utils::CommonWords@{TurnLeft::Utils::CommonWords}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTurnLeft_1_1Utils_1_1CommonWords_a5fd443eff06ae619cfa2f6191e4e1959}{CommonWords} ()
+\item 
+\hyperlink{classTurnLeft_1_1Utils_1_1CommonWords_ae9799b4dcea1caa3f13263ddfcb17a2d}{CommonWords} (const char $\ast$filename)
+\item 
+\hyperlink{classTurnLeft_1_1Utils_1_1CommonWords_a1e016e619f21c72f00967572956be10e}{$\sim$CommonWords} ()
+\item 
+bool \hyperlink{classTurnLeft_1_1Utils_1_1CommonWords_a17fd3176d631231bfdc9007ea27d3dcd}{find} (std::string)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTurnLeft_1_1Utils_1_1CommonWords_a5fd443eff06ae619cfa2f6191e4e1959}{
+\index{TurnLeft::Utils::CommonWords@{TurnLeft::Utils::CommonWords}!CommonWords@{CommonWords}}
+\index{CommonWords@{CommonWords}!TurnLeft::Utils::CommonWords@{TurnLeft::Utils::CommonWords}}
+\subsubsection[{CommonWords}]{\setlength{\rightskip}{0pt plus 5cm}TurnLeft::Utils::CommonWords::CommonWords (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1CommonWords_a5fd443eff06ae619cfa2f6191e4e1959}
+Default constructor uses the standard filename, \char`\"{}commonwords.txt\char`\"{} which must be lcoated in the local directory. This can be altered at compile-\/time by defining TL\_\-UTILS\_\-COMMONWORDS\_\-LIB, or at run-\/time by passing in the name of the file to be used as is the case in the overloaded constructor method. \hypertarget{classTurnLeft_1_1Utils_1_1CommonWords_ae9799b4dcea1caa3f13263ddfcb17a2d}{
+\index{TurnLeft::Utils::CommonWords@{TurnLeft::Utils::CommonWords}!CommonWords@{CommonWords}}
+\index{CommonWords@{CommonWords}!TurnLeft::Utils::CommonWords@{TurnLeft::Utils::CommonWords}}
+\subsubsection[{CommonWords}]{\setlength{\rightskip}{0pt plus 5cm}TurnLeft::Utils::CommonWords::CommonWords (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ filename}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1CommonWords_ae9799b4dcea1caa3f13263ddfcb17a2d}
+Overloaded constructor takes the filename of the common words library as its default. 
+\begin{DoxyParams}{Parameters}
+\item[{\em The}]filename which will serve as the library of commonwords. \end{DoxyParams}
+\hypertarget{classTurnLeft_1_1Utils_1_1CommonWords_a1e016e619f21c72f00967572956be10e}{
+\index{TurnLeft::Utils::CommonWords@{TurnLeft::Utils::CommonWords}!$\sim$CommonWords@{$\sim$CommonWords}}
+\index{$\sim$CommonWords@{$\sim$CommonWords}!TurnLeft::Utils::CommonWords@{TurnLeft::Utils::CommonWords}}
+\subsubsection[{$\sim$CommonWords}]{\setlength{\rightskip}{0pt plus 5cm}TurnLeft::Utils::CommonWords::$\sim$CommonWords (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1CommonWords_a1e016e619f21c72f00967572956be10e}
+Deletes the txtfile pointer. \begin{DoxySeeAlso}{See also}
+txtfile 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTurnLeft_1_1Utils_1_1CommonWords_a17fd3176d631231bfdc9007ea27d3dcd}{
+\index{TurnLeft::Utils::CommonWords@{TurnLeft::Utils::CommonWords}!find@{find}}
+\index{find@{find}!TurnLeft::Utils::CommonWords@{TurnLeft::Utils::CommonWords}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}bool TurnLeft::Utils::CommonWords::find (
+\begin{DoxyParamCaption}
+\item[{std::string}]{ searchValue}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1CommonWords_a17fd3176d631231bfdc9007ea27d3dcd}
+Searches the commonwords library to determine if the paramterized string is present. \begin{DoxyReturn}{Returns}
+True if it was found, False otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/home/tom/dev/TurnLeftLib/utils/src/commonwords/commonwords.h\item 
+/home/tom/dev/TurnLeftLib/utils/src/commonwords/commonwords.cpp\end{DoxyCompactItemize}

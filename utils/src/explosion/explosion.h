@@ -1,5 +1,5 @@
 /*!
- * TurnLeftLib/utils/src/explosion.h
+ * \file TurnLeftLib/utils/src/explosion.h
  * The Explosion class was built to give PHP's 'explode' functionality,
  * aka 'split' in any other language (that was a jab at PHP). 
  */
@@ -10,7 +10,14 @@
 #ifndef TL_UTILS_EXPLOSION_H_
 #define TL_UTILS_EXPLOSION_H_
 
+
+/*! The TurnLeft namespace describes all C++ modules created by employees
+ * of Turn Left, LLC.
+ */
 namespace TurnLeft {
+/*! The Utils namespace encompasses all Turn Left modules that are used as 
+ * utilities for other software.
+ */
 namespace Utils {
 
 

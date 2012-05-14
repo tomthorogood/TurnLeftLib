@@ -1,0 +1,59 @@
+\hypertarget{namespaceTurnLeft_1_1Utils}{
+\section{TurnLeft::Utils Namespace Reference}
+\label{namespaceTurnLeft_1_1Utils}\index{TurnLeft::Utils@{TurnLeft::Utils}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{CommonWords}
+\item 
+class \hyperlink{classTurnLeft_1_1Utils_1_1Explosion}{Explosion}
+\begin{DoxyCompactList}\small\item\em A class for splitting strings into an array, separated by a delimiter. \item\end{DoxyCompactList}\item 
+class \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector}{HungryVector}
+\begin{DoxyCompactList}\small\item\em A less expensive implementation of the std::vector. The \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector}{HungryVector} is a subclass of the std::vector. It has two main functions: 1) You can add values to it; doing so will automatically increase a sentinel that will, when the time comes, double the size of the vector. This was done to avoid expensive dynamic resizing on a call-\/by-\/call basis. 2) If you want to free up some memory, you can trim the vector down to its absolute size once you're finished adding to it. \item\end{DoxyCompactList}\item 
+class \hyperlink{classTurnLeft_1_1Utils_1_1Log}{Log}
+\item 
+class \hyperlink{classTurnLeft_1_1Utils_1_1PtrArray}{PtrArray}
+\item 
+class \hyperlink{classTurnLeft_1_1Utils_1_1RandomCharSet}{RandomCharSet}
+\item 
+class \hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator}{WordAggregator}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceTurnLeft_1_1Utils_a25c509095b780d24d7ce75b2ee309ca0}{
+typedef std::map$<$ std::string, int $>$ {\bfseries FrequencyMap}}
+\label{namespaceTurnLeft_1_1Utils_a25c509095b780d24d7ce75b2ee309ca0}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceTurnLeft_1_1Utils_a55225b27548ba5d55b26a6a5f1ba294e}{DEBUG\_\-LEVEL} \{ {\bfseries CRITICAL}, 
+{\bfseries WARN}, 
+{\bfseries VERBOSE}, 
+{\bfseries ANNOYING}
+ \}
+\item 
+enum \hyperlink{namespaceTurnLeft_1_1Utils_a9d1cba01e5417c6262d11cc154c9a252}{DEBUG\_\-TYPE} \{ {\bfseries COUT}, 
+{\bfseries FILE}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{namespaceTurnLeft_1_1Utils}{Utils} namespace encompasses all Turn Left modules that are used as utilities for other software. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespaceTurnLeft_1_1Utils_a55225b27548ba5d55b26a6a5f1ba294e}{
+\index{TurnLeft::Utils@{TurnLeft::Utils}!DEBUG\_\-LEVEL@{DEBUG\_\-LEVEL}}
+\index{DEBUG\_\-LEVEL@{DEBUG\_\-LEVEL}!TurnLeft::Utils@{TurnLeft::Utils}}
+\subsubsection[{DEBUG\_\-LEVEL}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf TurnLeft::Utils::DEBUG\_\-LEVEL}}}
+\label{namespaceTurnLeft_1_1Utils_a55225b27548ba5d55b26a6a5f1ba294e}
+This enumerated type allows for the easy access of certain log levels. CRITICAL messages are reserved for the most severe messages, which would, for instance, still be applicable in a production environment. WARN messages are those which could be useful in production, and are things that should be monitored to see what side effects they might have. VERBOSE are messages which may be useful in production and development, and ANNOYING messages are those that are probably only useful in the early phase of development. \hypertarget{namespaceTurnLeft_1_1Utils_a9d1cba01e5417c6262d11cc154c9a252}{
+\index{TurnLeft::Utils@{TurnLeft::Utils}!DEBUG\_\-TYPE@{DEBUG\_\-TYPE}}
+\index{DEBUG\_\-TYPE@{DEBUG\_\-TYPE}!TurnLeft::Utils@{TurnLeft::Utils}}
+\subsubsection[{DEBUG\_\-TYPE}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf TurnLeft::Utils::DEBUG\_\-TYPE}}}
+\label{namespaceTurnLeft_1_1Utils_a9d1cba01e5417c6262d11cc154c9a252}
+This enumerated type differentiates between logs that send messages to the CLI versus those that are logged to a file. COUT and FILE are both pretty self-\/explanatory. 
