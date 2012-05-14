@@ -4,6 +4,11 @@
 }
 
 
+The \hyperlink{classTurnLeft_1_1Utils_1_1Log}{Log} class allows for a dynamic logging system which can be manipulated at will to provide different output for different sections of your program by instantiating only a single log object. Creating a log with no construction parameters will default to CRITICAL messages sent to the CLI.  
+
+
+
+
 {\ttfamily \#include $<$log.h$>$}
 
 \subsection*{Public Member Functions}
@@ -22,6 +27,15 @@ virtual void \hyperlink{classTurnLeft_1_1Utils_1_1Log_ac14c5605af087f81b2c99b1c2
 void \hyperlink{classTurnLeft_1_1Utils_1_1Log_a88c51f5e9b80a18eb9c79340d2551557}{setLevel} (\hyperlink{namespaceTurnLeft_1_1Utils_a55225b27548ba5d55b26a6a5f1ba294e}{DEBUG\_\-LEVEL})
 \item 
 void \hyperlink{classTurnLeft_1_1Utils_1_1Log_ad27d1e632681c4cf80f352682e63df06}{setType} (\hyperlink{namespaceTurnLeft_1_1Utils_a9d1cba01e5417c6262d11cc154c9a252}{DEBUG\_\-TYPE}, const char $\ast$filename)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceTurnLeft_1_1Utils_a55225b27548ba5d55b26a6a5f1ba294e}{DEBUG\_\-LEVEL} \hyperlink{classTurnLeft_1_1Utils_1_1Log_a0b4784c3fe291b88c37c9661307b195c}{level}
+\item 
+\hyperlink{namespaceTurnLeft_1_1Utils_a9d1cba01e5417c6262d11cc154c9a252}{DEBUG\_\-TYPE} \hyperlink{classTurnLeft_1_1Utils_1_1Log_a896206177d2453f7776d8150b1ffa6bd}{type}
+\item 
+std::ofstream \hyperlink{classTurnLeft_1_1Utils_1_1Log_abddbcefaefd8ea3c4614cdd88291fad2}{output}
 \end{DoxyCompactItemize}
 
 
@@ -46,11 +60,11 @@ The constructor can take up to three parameters, all of which are optional. Howe
 \begin{DoxyParams}{Parameters}
 \item[{\em \_\-level}]The DEBUG\_\-LEVEL enum (default is CRITICAL) \item[{\em \_\-type}]The DEBUG\_\-TYPE enum (default is COUT) \item[{\em \_\-filename}]The file which will be written to. \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-level 
+\hyperlink{classTurnLeft_1_1Utils_1_1Log_a0b4784c3fe291b88c37c9661307b195c}{level} 
 
-type 
+\hyperlink{classTurnLeft_1_1Utils_1_1Log_a896206177d2453f7776d8150b1ffa6bd}{type} 
 
-output 
+\hyperlink{classTurnLeft_1_1Utils_1_1Log_abddbcefaefd8ea3c4614cdd88291fad2}{output} 
 \end{DoxySeeAlso}
 
 \begin{DoxyExceptions}{Exceptions}
@@ -65,7 +79,7 @@ output
 )\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
 \label{classTurnLeft_1_1Utils_1_1Log_ac04ffbc97a2d6689843fd11492fe8911}
 The default destructor destroys the ofstream pointer! \begin{DoxySeeAlso}{See also}
-output 
+\hyperlink{classTurnLeft_1_1Utils_1_1Log_abddbcefaefd8ea3c4614cdd88291fad2}{output} 
 \end{DoxySeeAlso}
 
 
@@ -80,7 +94,7 @@ output
 )}}
 \label{classTurnLeft_1_1Utils_1_1Log_a388ce24cc5be57d7b625d760b6ef708e}
 Standard accessor which returns the debug level. \begin{DoxySeeAlso}{See also}
-level 
+\hyperlink{classTurnLeft_1_1Utils_1_1Log_a0b4784c3fe291b88c37c9661307b195c}{level} 
 \end{DoxySeeAlso}
 \begin{DoxyReturn}{Returns}
 0=CRITICAL, 1=WARN, 2=VERBOSE, 3=ANNOYING 
@@ -95,7 +109,7 @@ level
 )}}
 \label{classTurnLeft_1_1Utils_1_1Log_a94ca126124af5c0f1058f60e1130d94b}
 Standard accessor which returns the debug type. \begin{DoxySeeAlso}{See also}
-type 
+\hyperlink{classTurnLeft_1_1Utils_1_1Log_a896206177d2453f7776d8150b1ffa6bd}{type} 
 \end{DoxySeeAlso}
 \begin{DoxyReturn}{Returns}
 0=COUT, 1=FILE 
@@ -125,7 +139,7 @@ The log method will test to see if the log message meets the level requirements 
 )}}
 \label{classTurnLeft_1_1Utils_1_1Log_a88c51f5e9b80a18eb9c79340d2551557}
 Standard setter which alters the debug level of the log. This can be useful if you are working on a trouble spot within your program, and only want to retrieve verbose messages in that section. \begin{DoxySeeAlso}{See also}
-level 
+\hyperlink{classTurnLeft_1_1Utils_1_1Log_a0b4784c3fe291b88c37c9661307b195c}{level} 
 \end{DoxySeeAlso}
 
 \begin{DoxyParams}{Parameters}
@@ -141,12 +155,30 @@ level
 )}}
 \label{classTurnLeft_1_1Utils_1_1Log_ad27d1e632681c4cf80f352682e63df06}
 Abnormal setter which optionally takes two parameters, the second being the filename if the new debug type is FILE. \begin{DoxySeeAlso}{See also}
-type 
+\hyperlink{classTurnLeft_1_1Utils_1_1Log_a896206177d2453f7776d8150b1ffa6bd}{type} 
 \end{DoxySeeAlso}
 
 \begin{DoxyParams}{Parameters}
 \item[{\em \_\-type}]The new DEBUG\_\-TYPE enum \item[{\em \_\-filename}]If the new type is FILE, a filename must be passed. \end{DoxyParams}
 
+
+\subsection{Member Data Documentation}
+\hypertarget{classTurnLeft_1_1Utils_1_1Log_a0b4784c3fe291b88c37c9661307b195c}{
+\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}!level@{level}}
+\index{level@{level}!TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DEBUG\_\-LEVEL} {\bf TurnLeft::Utils::Log::level}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1Log_a0b4784c3fe291b88c37c9661307b195c}
+The current debug level enum \hypertarget{classTurnLeft_1_1Utils_1_1Log_abddbcefaefd8ea3c4614cdd88291fad2}{
+\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}!output@{output}}
+\index{output@{output}!TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+\subsubsection[{output}]{\setlength{\rightskip}{0pt plus 5cm}std::ofstream {\bf TurnLeft::Utils::Log::output}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1Log_abddbcefaefd8ea3c4614cdd88291fad2}
+If the type is set to FILE, a new output stream will be allocated on the heap. The object has responsibility of this pointer, and will delete it upon destruction. \hypertarget{classTurnLeft_1_1Utils_1_1Log_a896206177d2453f7776d8150b1ffa6bd}{
+\index{TurnLeft::Utils::Log@{TurnLeft::Utils::Log}!type@{type}}
+\index{type@{type}!TurnLeft::Utils::Log@{TurnLeft::Utils::Log}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DEBUG\_\-TYPE} {\bf TurnLeft::Utils::Log::type}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1Log_a896206177d2453f7776d8150b1ffa6bd}
+The current method of logging. Though this can change, it isn't erecommended to do so. 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 

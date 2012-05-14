@@ -26,6 +26,11 @@ void \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector_ade6e0a3c8b5524e487a0c724
 \item 
 void \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector_adf7287a513b121b56f543c6826a4216e}{dec} ()
 \end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector_a1b1c6ed260138ef704637a7a7ecedf26}{usage}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -101,6 +106,14 @@ Increments the sentinel variable, so that it will approach its 'maximum' faster.
 )}}
 \label{classTurnLeft_1_1Utils_1_1HungryVector_a1f47546497d946f2c5a988f242e4863f}
 Trims the vector down to the minimum size (meaning all non-\/default objects contained within the vector). This is done by simply resizing the vector to the size of 'usage', and is good for freeing up some memory. If for instance, your vector has just doubled from 800 to 1600 objects, but you only bled into the first 10, giving your vector's true size 810, you can free up 790 blocks of memory allocated to the vector's type by calling the \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector_a1f47546497d946f2c5a988f242e4863f}{trim()} method. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classTurnLeft_1_1Utils_1_1HungryVector_a1b1c6ed260138ef704637a7a7ecedf26}{
+\index{TurnLeft::Utils::HungryVector@{TurnLeft::Utils::HungryVector}!usage@{usage}}
+\index{usage@{usage}!TurnLeft::Utils::HungryVector@{TurnLeft::Utils::HungryVector}}
+\subsubsection[{usage}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ unsigned int {\bf TurnLeft::Utils::HungryVector}$<$ T $>$::{\bf usage}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1HungryVector_a1b1c6ed260138ef704637a7a7ecedf26}
+The total number of objects stored in the vector. 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

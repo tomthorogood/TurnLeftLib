@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -56,7 +57,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>TurnLeft::Utils::Explosion Class Reference</h1>  </div>
 </div>
@@ -75,6 +77,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#ac517370d7a669bed21806f93211f588a">explode</a> (char delim, std::string[], bool alphaOnly, bool keepCase)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#ac0bb44dc711f42ae5b3ccd48ae41d562">getArrayPtr</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#ad90d3a30cf6de4ca5c115bd7a6937727">getNumWords</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#ab45811e6b3a745ff8bf0bc0685820348">str</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#a918953ec29dc35a398bbf85bf0db5c8d">numWords</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#a56af88f749fdb6c519241f887caa03fa">arrayPtr</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>A class for splitting strings into an array, separated by a delimiter. </p>
@@ -173,7 +180,7 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 <p>Returns the pointer to the instance array. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a pointer to the instance array </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>arrayPtr </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#a56af88f749fdb6c519241f887caa03fa">arrayPtr</a> </dd></dl>
 
 </div>
 </div>
@@ -193,7 +200,52 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 <p>Retrieves the number of words that were parsed from the input string. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the number of words in the input string </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>numWords </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#a918953ec29dc35a398bbf85bf0db5c8d">numWords</a> </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a56af88f749fdb6c519241f887caa03fa"></a><!-- doxytag: member="TurnLeft::Utils::Explosion::arrayPtr" ref="a56af88f749fdb6c519241f887caa03fa" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string* <a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#a56af88f749fdb6c519241f887caa03fa">TurnLeft::Utils::Explosion::arrayPtr</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>A pointer to the array, if desired. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#ac0bb44dc711f42ae5b3ccd48ae41d562">getArrayPtr()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a918953ec29dc35a398bbf85bf0db5c8d"></a><!-- doxytag: member="TurnLeft::Utils::Explosion::numWords" ref="a918953ec29dc35a398bbf85bf0db5c8d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#a918953ec29dc35a398bbf85bf0db5c8d">TurnLeft::Utils::Explosion::numWords</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The number of words in the string. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#ac517370d7a669bed21806f93211f588a">explode()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab45811e6b3a745ff8bf0bc0685820348"></a><!-- doxytag: member="TurnLeft::Utils::Explosion::str" ref="ab45811e6b3a745ff8bf0bc0685820348" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html#ab45811e6b3a745ff8bf0bc0685820348">TurnLeft::Utils::Explosion::str</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The string to be exploded </p>
 
 </div>
 </div>
@@ -216,7 +268,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 13:32:17 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

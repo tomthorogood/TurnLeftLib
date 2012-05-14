@@ -34,6 +34,11 @@ namespace Utils{
 #define TL_UTILS_COMMONWORDS_MAX_SIZE 101;
 #endif //TL_UTILS_COMMONWORDS_LIB
 
+/*! \brief A class that contains common words that can be searched.
+ * The CommonWords class enables the loading and search of a library of
+ * common words. Typically, the reason to find them is to filter them out.
+ * \todo Create a "filter" method.
+ */
 class CommonWords
 {
 private:

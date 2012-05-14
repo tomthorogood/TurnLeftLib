@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -56,12 +57,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>TurnLeft::Utils::Log Class Reference</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="TurnLeft::Utils::Log" -->
+<p>The <a class="el" href="classTurnLeft_1_1Utils_1_1Log.html" title="The Log class allows for a dynamic logging system which can be manipulated at will to provide differe...">Log</a> class allows for a dynamic logging system which can be manipulated at will to provide different output for different sections of your program by instantiating only a single log object. Creating a log with no construction parameters will default to CRITICAL messages sent to the CLI.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="log_8h_source.html">log.h</a>&gt;</code></p>
 
 <p><a href="classTurnLeft_1_1Utils_1_1Log-members.html">List of all members.</a></p>
@@ -75,9 +80,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceTurnLeft_1_1Utils.html#a9d1cba01e5417c6262d11cc154c9a252">DEBUG_TYPE</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a94ca126124af5c0f1058f60e1130d94b">getType</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a88c51f5e9b80a18eb9c79340d2551557">setLevel</a> (<a class="el" href="namespaceTurnLeft_1_1Utils.html#a55225b27548ba5d55b26a6a5f1ba294e">DEBUG_LEVEL</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#ad27d1e632681c4cf80f352682e63df06">setType</a> (<a class="el" href="namespaceTurnLeft_1_1Utils.html#a9d1cba01e5417c6262d11cc154c9a252">DEBUG_TYPE</a>, const char *filename)</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceTurnLeft_1_1Utils.html#a55225b27548ba5d55b26a6a5f1ba294e">DEBUG_LEVEL</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a0b4784c3fe291b88c37c9661307b195c">level</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceTurnLeft_1_1Utils.html#a9d1cba01e5417c6262d11cc154c9a252">DEBUG_TYPE</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a896206177d2453f7776d8150b1ffa6bd">type</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ofstream&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#abddbcefaefd8ea3c4614cdd88291fad2">output</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>The <a class="el" href="classTurnLeft_1_1Utils_1_1Log.html">Log</a> class allows for a dynamic logging system which can be manipulated at will to provide different output for different sections of your program by instantiating only a single log object. Creating a log with no construction parameters will default to CRITICAL messages sent to the CLI. </p>
+<p>The <a class="el" href="classTurnLeft_1_1Utils_1_1Log.html" title="The Log class allows for a dynamic logging system which can be manipulated at will to provide differe...">Log</a> class allows for a dynamic logging system which can be manipulated at will to provide different output for different sections of your program by instantiating only a single log object. Creating a log with no construction parameters will default to CRITICAL messages sent to the CLI. </p>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aad9a535b7774066baec2ae69f95dc810"></a><!-- doxytag: member="TurnLeft::Utils::Log::Log" ref="aad9a535b7774066baec2ae69f95dc810" args="(DEBUG_LEVEL, DEBUG_TYPE, const char *)" -->
 <div class="memitem">
@@ -118,11 +128,11 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>level </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a0b4784c3fe291b88c37c9661307b195c">level</a> </dd>
 <dd>
-type </dd>
+<a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a896206177d2453f7776d8150b1ffa6bd">type</a> </dd>
 <dd>
-output </dd></dl>
+<a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#abddbcefaefd8ea3c4614cdd88291fad2">output</a> </dd></dl>
 <dl><dt><b>Exceptions:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>MissingParemeterException</em>&nbsp;</td><td>If filename is not passed, but DEBUG_TYPE is set to FILE. </td></tr>
@@ -147,7 +157,7 @@ output </dd></dl>
 </div>
 <div class="memdoc">
 <p>The default destructor destroys the ofstream pointer! </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>output </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#abddbcefaefd8ea3c4614cdd88291fad2">output</a> </dd></dl>
 
 </div>
 </div>
@@ -167,7 +177,7 @@ output </dd></dl>
 </div>
 <div class="memdoc">
 <p>Standard accessor which returns the debug level. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>level </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a0b4784c3fe291b88c37c9661307b195c">level</a> </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0=CRITICAL, 1=WARN, 2=VERBOSE, 3=ANNOYING </dd></dl>
 
 </div>
@@ -187,7 +197,7 @@ output </dd></dl>
 </div>
 <div class="memdoc">
 <p>Standard accessor which returns the debug type. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>type </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a896206177d2453f7776d8150b1ffa6bd">type</a> </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0=COUT, 1=FILE </dd></dl>
 
 </div>
@@ -243,7 +253,7 @@ output </dd></dl>
 </div>
 <div class="memdoc">
 <p>Standard setter which alters the debug level of the log. This can be useful if you are working on a trouble spot within your program, and only want to retrieve verbose messages in that section. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>level </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a0b4784c3fe291b88c37c9661307b195c">level</a> </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>_level</em>&nbsp;</td><td>The new DEBUG_LEVEL enum. </td></tr>
@@ -278,7 +288,7 @@ output </dd></dl>
 </div>
 <div class="memdoc">
 <p>Abnormal setter which optionally takes two parameters, the second being the filename if the new debug type is FILE. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>type </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a896206177d2453f7776d8150b1ffa6bd">type</a> </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>_type</em>&nbsp;</td><td>The new DEBUG_TYPE enum </td></tr>
@@ -286,6 +296,49 @@ output </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a0b4784c3fe291b88c37c9661307b195c"></a><!-- doxytag: member="TurnLeft::Utils::Log::level" ref="a0b4784c3fe291b88c37c9661307b195c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceTurnLeft_1_1Utils.html#a55225b27548ba5d55b26a6a5f1ba294e">DEBUG_LEVEL</a> <a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a0b4784c3fe291b88c37c9661307b195c">TurnLeft::Utils::Log::level</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The current debug level enum </p>
+
+</div>
+</div>
+<a class="anchor" id="abddbcefaefd8ea3c4614cdd88291fad2"></a><!-- doxytag: member="TurnLeft::Utils::Log::output" ref="abddbcefaefd8ea3c4614cdd88291fad2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ofstream <a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#abddbcefaefd8ea3c4614cdd88291fad2">TurnLeft::Utils::Log::output</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>If the type is set to FILE, a new output stream will be allocated on the heap. The object has responsibility of this pointer, and will delete it upon destruction. </p>
+
+</div>
+</div>
+<a class="anchor" id="a896206177d2453f7776d8150b1ffa6bd"></a><!-- doxytag: member="TurnLeft::Utils::Log::type" ref="a896206177d2453f7776d8150b1ffa6bd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceTurnLeft_1_1Utils.html#a9d1cba01e5417c6262d11cc154c9a252">DEBUG_TYPE</a> <a class="el" href="classTurnLeft_1_1Utils_1_1Log.html#a896206177d2453f7776d8150b1ffa6bd">TurnLeft::Utils::Log::type</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The current method of logging. Though this can change, it isn't erecommended to do so. </p>
 
 </div>
 </div>
@@ -308,7 +361,7 @@ output </dd></dl>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 13:32:17 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

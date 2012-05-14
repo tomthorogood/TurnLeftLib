@@ -11,11 +11,11 @@
 #define TL_UTILS_EXPLOSION_H_
 
 
-/*! The TurnLeft namespace describes all C++ modules created by employees
+/*! \brief The TurnLeft namespace describes all C++ modules created by employees
  * of Turn Left, LLC.
  */
 namespace TurnLeft {
-/*! The Utils namespace encompasses all Turn Left modules that are used as 
+/*! \brief The Utils namespace encompasses all Turn Left modules that are used as 
  * utilities for other software.
  */
 namespace Utils {

@@ -59,7 +59,7 @@ enum DEBUG_TYPE
     FILE
 };
 
-/*! The Log class allows for a dynamic logging system which can be manipulated
+/*! \brief The Log class allows for a dynamic logging system which can be manipulated
  * at will to provide different output for different sections of your program
  * by instantiating only a single log object. Creating a log with no
  * construction parameters will default to CRITICAL messages sent to the CLI.

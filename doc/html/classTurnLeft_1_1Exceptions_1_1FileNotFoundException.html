@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -56,21 +57,90 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>TurnLeft::Exceptions::FileNotFoundException Class Reference</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="TurnLeft::Exceptions::FileNotFoundException" -->
+<p>The <a class="el" href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException.html" title="The FileNotFoundException is a direct descendant of the std::exception class. It is typically thrown ...">FileNotFoundException</a> is a direct descendant of the std::exception class. It is typically thrown when a module attempts to open a file for reading, but the is_open test fails.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FileNotFoundException_8h_source.html">FileNotFoundException.h</a>&gt;</code></p>
+
 <p><a href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b2a077fa8d41f2d1a79ebe556ddd4c2"></a><!-- doxytag: member="TurnLeft::Exceptions::FileNotFoundException::FileNotFoundException" ref="a8b2a077fa8d41f2d1a79ebe556ddd4c2" args="(const char *path)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>FileNotFoundException</b> (const char *path)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8834fdcccd37f53b966df459d1884247"></a><!-- doxytag: member="TurnLeft::Exceptions::FileNotFoundException::what" ref="a8834fdcccd37f53b966df459d1884247" args="() const " -->
-const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>what</b> () const   throw ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException.html#a8b2a077fa8d41f2d1a79ebe556ddd4c2">FileNotFoundException</a> (const char *path)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException.html#a8834fdcccd37f53b966df459d1884247">what</a> () const   throw ()</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException.html#afbbbe3c619326d3da7f577fe172ddc7a">errorMessage</a></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>The <a class="el" href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException.html" title="The FileNotFoundException is a direct descendant of the std::exception class. It is typically thrown ...">FileNotFoundException</a> is a direct descendant of the std::exception class. It is typically thrown when a module attempts to open a file for reading, but the is_open test fails. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8b2a077fa8d41f2d1a79ebe556ddd4c2"></a><!-- doxytag: member="TurnLeft::Exceptions::FileNotFoundException::FileNotFoundException" ref="a8b2a077fa8d41f2d1a79ebe556ddd4c2" args="(const char *path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TurnLeft::Exceptions::FileNotFoundException::FileNotFoundException </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>path</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>When throwing a <a class="el" href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException.html" title="The FileNotFoundException is a direct descendant of the std::exception class. It is typically thrown ...">FileNotFoundException</a>, the path of the file that could not be found should be passed into the constructor to let the user know exactly WHICH file couldn't be found. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>path</em>&nbsp;</td><td>The filepath that could not be located. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a8834fdcccd37f53b966df459d1884247"></a><!-- doxytag: member="TurnLeft::Exceptions::FileNotFoundException::what" ref="a8834fdcccd37f53b966df459d1884247" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* TurnLeft::Exceptions::FileNotFoundException::what </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const  throw ()<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Implementation of the exception::what method that displays the auto-generated error message. </p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="afbbbe3c619326d3da7f577fe172ddc7a"></a><!-- doxytag: member="TurnLeft::Exceptions::FileNotFoundException::errorMessage" ref="afbbbe3c619326d3da7f577fe172ddc7a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException.html#afbbbe3c619326d3da7f577fe172ddc7a">TurnLeft::Exceptions::FileNotFoundException::errorMessage</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The error message is generated when this exception is thrown. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/tom/dev/TurnLeftLib/exceptions/src/<a class="el" href="FileNotFoundException_8h_source.html">FileNotFoundException.h</a></li>
 </ul>
@@ -89,7 +159,7 @@ const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>what</b> () c
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 13:32:17 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

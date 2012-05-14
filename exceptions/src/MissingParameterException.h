@@ -15,7 +15,7 @@
 namespace TurnLeft{
 namespace  Exceptions{
 
-/*! The MissingParameterException is thrown in the case of a typically optional
+/*! \brief The MissingParameterException is thrown in the case of a typically optional
  * parameter being required based the arguments of another parameter.
  */
 class MissingParameterException : public std::exception

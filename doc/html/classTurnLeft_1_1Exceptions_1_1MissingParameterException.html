@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -56,21 +57,86 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>TurnLeft::Exceptions::MissingParameterException Class Reference</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="TurnLeft::Exceptions::MissingParameterException" -->
+<p>The <a class="el" href="classTurnLeft_1_1Exceptions_1_1MissingParameterException.html" title="The MissingParameterException is thrown in the case of a typically optional parameter being required ...">MissingParameterException</a> is thrown in the case of a typically optional parameter being required based the arguments of another parameter.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="MissingParameterException_8h_source.html">MissingParameterException.h</a>&gt;</code></p>
+
 <p><a href="classTurnLeft_1_1Exceptions_1_1MissingParameterException-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5db66bc95c60f9eb83e71197efdf10a7"></a><!-- doxytag: member="TurnLeft::Exceptions::MissingParameterException::MissingParameterException" ref="a5db66bc95c60f9eb83e71197efdf10a7" args="(const char *method, const char *parameter)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>MissingParameterException</b> (const char *method, const char *parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a475acbb9e8b2365546c3d93468327c51"></a><!-- doxytag: member="TurnLeft::Exceptions::MissingParameterException::what" ref="a475acbb9e8b2365546c3d93468327c51" args="() const " -->
-const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>what</b> () const   throw ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Exceptions_1_1MissingParameterException.html#a5db66bc95c60f9eb83e71197efdf10a7">MissingParameterException</a> (const char *method, const char *parameter)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Exceptions_1_1MissingParameterException.html#a475acbb9e8b2365546c3d93468327c51">what</a> () const   throw ()</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5eff7906e125988f90dc5fc03dd4756"></a><!-- doxytag: member="TurnLeft::Exceptions::MissingParameterException::errorMessage" ref="ab5eff7906e125988f90dc5fc03dd4756" args="" -->
+const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>errorMessage</b></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>The <a class="el" href="classTurnLeft_1_1Exceptions_1_1MissingParameterException.html" title="The MissingParameterException is thrown in the case of a typically optional parameter being required ...">MissingParameterException</a> is thrown in the case of a typically optional parameter being required based the arguments of another parameter. </p>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a5db66bc95c60f9eb83e71197efdf10a7"></a><!-- doxytag: member="TurnLeft::Exceptions::MissingParameterException::MissingParameterException" ref="a5db66bc95c60f9eb83e71197efdf10a7" args="(const char *method, const char *parameter)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TurnLeft::Exceptions::MissingParameterException::MissingParameterException </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>method</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>parameter</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The constructor for the exception. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>method</em>&nbsp;</td><td>The method which is throwing the error </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>parameter</em>&nbsp;</td><td>The parameter the method cannot find. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a475acbb9e8b2365546c3d93468327c51"></a><!-- doxytag: member="TurnLeft::Exceptions::MissingParameterException::what" ref="a475acbb9e8b2365546c3d93468327c51" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* TurnLeft::Exceptions::MissingParameterException::what </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const  throw ()<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="return"><dt><b>Returns:</b></dt><dd>the Automatically generated error message for this exception. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/tom/dev/TurnLeftLib/exceptions/src/<a class="el" href="MissingParameterException_8h_source.html">MissingParameterException.h</a></li>
 </ul>
@@ -89,7 +155,7 @@ const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>what</b> () c
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 13:32:17 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

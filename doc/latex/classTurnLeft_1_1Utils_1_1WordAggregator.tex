@@ -17,6 +17,21 @@
 \item 
 std::vector$<$ std::string $>$ $\ast$ \hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator_a270d7b8a0a2b45b0ec5d2f8ef1911e0f}{getWordList} ()
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTurnLeft_1_1Utils_1_1WordAggregator_aad3c3827967a9b9e742dce95e28c96aa}{
+void {\bfseries parse} (std::string \&, FrequencyMap \&\_\-map)}
+\label{classTurnLeft_1_1Utils_1_1WordAggregator_aad3c3827967a9b9e742dce95e28c96aa}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{CommonWords} \hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator_a51f9ddd22dab31dc20cb6c80cdd5711f}{library}
+\item 
+std::vector$<$ std::string $>$ \hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator_a98ee20472e3bf576f23e3b525ab317fc}{wordList}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -67,6 +82,22 @@ This overloaded constrcutor takes in a single string, and may optioanlly contain
 )}}
 \label{classTurnLeft_1_1Utils_1_1WordAggregator_a270d7b8a0a2b45b0ec5d2f8ef1911e0f}
 Returns the list of individual words contained in the map. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classTurnLeft_1_1Utils_1_1WordAggregator_a51f9ddd22dab31dc20cb6c80cdd5711f}{
+\index{TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}!library@{library}}
+\index{library@{library}!TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}}
+\subsubsection[{library}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CommonWords} {\bf TurnLeft::Utils::WordAggregator::library}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1WordAggregator_a51f9ddd22dab31dc20cb6c80cdd5711f}
+The library of words that will be filtered out of the input text. \begin{DoxySeeAlso}{See also}
+\hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{TurnLeft::Utils::CommonWords} 
+\end{DoxySeeAlso}
+\hypertarget{classTurnLeft_1_1Utils_1_1WordAggregator_a98ee20472e3bf576f23e3b525ab317fc}{
+\index{TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}!wordList@{wordList}}
+\index{wordList@{wordList}!TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}}
+\subsubsection[{wordList}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::string$>$ {\bf TurnLeft::Utils::WordAggregator::wordList}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1WordAggregator_a98ee20472e3bf576f23e3b525ab317fc}
+A list of all of the words. This is needed in order to generate dynamic output from the map. It's actually probably not needed, but I don't have Internet at the moment so I can't look up a better way using the map API.  Find a way to get rid of this 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -63,6 +64,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="TurnLeft::Utils::PtrArray" -->
+<p>A class which allows for easier memory management that also prevents heap fragmentation. It utilizes arrays instead of vectors to improve performance.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ptrarray_8h_source.html">ptrarray.h</a>&gt;</code></p>
+
 <p><a href="classTurnLeft_1_1Utils_1_1PtrArray-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
@@ -84,9 +90,18 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">PointerType *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1PtrArray.html#afd0b2ddd5366a840347a2a7bf22e806e">allocator</a> [max]</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::bitset&lt; max &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1PtrArray.html#ade5460384048e16db12162996bd074cf">flags</a></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
 <h3>template&lt;size_t max, class PointerType&gt;<br/>
  class TurnLeft::Utils::PtrArray&lt; max, PointerType &gt;</h3>
 
+<p>A class which allows for easier memory management that also prevents heap fragmentation. It utilizes arrays instead of vectors to improve performance. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>max</em>&nbsp;</td><td>(Template Param)The maximum possible size of the array, which also will be the number of blocks of memory requested from the OS. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>PointerType</em>&nbsp;</td><td>(Template Param)The type of object to be held in this array. </td></tr>
+  </table>
+  </dd>
+</dl>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8670412ddd365845f034ec999e87efe7"></a><!-- doxytag: member="TurnLeft::Utils::PtrArray::PtrArray" ref="a8670412ddd365845f034ec999e87efe7" args="()" -->
 <div class="memitem">
@@ -369,7 +384,7 @@ template&lt;size_t max, class PointerType &gt; </div>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 13:32:17 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -2,20 +2,66 @@
 \section{TurnLeft::Exceptions::FileNotFoundException Class Reference}
 \label{classTurnLeft_1_1Exceptions_1_1FileNotFoundException}\index{TurnLeft::Exceptions::FileNotFoundException@{TurnLeft::Exceptions::FileNotFoundException}}
 }
+
+
+The \hyperlink{classTurnLeft_1_1Exceptions_1_1FileNotFoundException}{FileNotFoundException} is a direct descendant of the std::exception class. It is typically thrown when a module attempts to open a file for reading, but the is\_\-open test fails.  
+
+
+
+
+{\ttfamily \#include $<$FileNotFoundException.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_a8b2a077fa8d41f2d1a79ebe556ddd4c2}{
-{\bfseries FileNotFoundException} (const char $\ast$path)}
-\label{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_a8b2a077fa8d41f2d1a79ebe556ddd4c2}
-
+\hyperlink{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_a8b2a077fa8d41f2d1a79ebe556ddd4c2}{FileNotFoundException} (const char $\ast$path)
 \item 
-\hypertarget{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_a8834fdcccd37f53b966df459d1884247}{
-const char $\ast$ {\bfseries what} () const   throw ()}
-\label{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_a8834fdcccd37f53b966df459d1884247}
-
+const char $\ast$ \hyperlink{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_a8834fdcccd37f53b966df459d1884247}{what} () const   throw ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_afbbbe3c619326d3da7f577fe172ddc7a}{errorMessage}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The \hyperlink{classTurnLeft_1_1Exceptions_1_1FileNotFoundException}{FileNotFoundException} is a direct descendant of the std::exception class. It is typically thrown when a module attempts to open a file for reading, but the is\_\-open test fails. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_a8b2a077fa8d41f2d1a79ebe556ddd4c2}{
+\index{TurnLeft::Exceptions::FileNotFoundException@{TurnLeft::Exceptions::FileNotFoundException}!FileNotFoundException@{FileNotFoundException}}
+\index{FileNotFoundException@{FileNotFoundException}!TurnLeft::Exceptions::FileNotFoundException@{TurnLeft::Exceptions::FileNotFoundException}}
+\subsubsection[{FileNotFoundException}]{\setlength{\rightskip}{0pt plus 5cm}TurnLeft::Exceptions::FileNotFoundException::FileNotFoundException (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_a8b2a077fa8d41f2d1a79ebe556ddd4c2}
+When throwing a \hyperlink{classTurnLeft_1_1Exceptions_1_1FileNotFoundException}{FileNotFoundException}, the path of the file that could not be found should be passed into the constructor to let the user know exactly WHICH file couldn't be found. 
+\begin{DoxyParams}{Parameters}
+\item[{\em path}]The filepath that could not be located. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_a8834fdcccd37f53b966df459d1884247}{
+\index{TurnLeft::Exceptions::FileNotFoundException@{TurnLeft::Exceptions::FileNotFoundException}!what@{what}}
+\index{what@{what}!TurnLeft::Exceptions::FileNotFoundException@{TurnLeft::Exceptions::FileNotFoundException}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ TurnLeft::Exceptions::FileNotFoundException::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_a8834fdcccd37f53b966df459d1884247}
+Implementation of the exception::what method that displays the auto-\/generated error message. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_afbbbe3c619326d3da7f577fe172ddc7a}{
+\index{TurnLeft::Exceptions::FileNotFoundException@{TurnLeft::Exceptions::FileNotFoundException}!errorMessage@{errorMessage}}
+\index{errorMessage@{errorMessage}!TurnLeft::Exceptions::FileNotFoundException@{TurnLeft::Exceptions::FileNotFoundException}}
+\subsubsection[{errorMessage}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf TurnLeft::Exceptions::FileNotFoundException::errorMessage}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classTurnLeft_1_1Exceptions_1_1FileNotFoundException_afbbbe3c619326d3da7f577fe172ddc7a}
+The error message is generated when this exception is thrown. 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

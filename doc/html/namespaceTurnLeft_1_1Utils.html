@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li class="current"><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -61,17 +62,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>TurnLeft::Utils Namespace Reference</h1>  </div>
 </div>
 <div class="contents">
+
+<p>The <a class="el" href="namespaceTurnLeft_1_1Utils.html" title="The Utils namespace encompasses all Turn Left modules that are used as utilities for other software...">Utils</a> namespace encompasses all Turn Left modules that are used as utilities for other software.  
+<a href="#_details">More...</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html">CommonWords</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A class that contains common words that can be searched. The <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">CommonWords</a> class enables the loading and search of a library of common words. Typically, the reason to find them is to filter them out.  <a href="classTurnLeft_1_1Utils_1_1CommonWords.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html">Explosion</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A class for splitting strings into an array, separated by a delimiter.  <a href="classTurnLeft_1_1Utils_1_1Explosion.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1HungryVector.html">HungryVector</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A less expensive implementation of the std::vector. The <a class="el" href="classTurnLeft_1_1Utils_1_1HungryVector.html" title="A less expensive implementation of the std::vector. The HungryVector is a subclass of the std::vector...">HungryVector</a> is a subclass of the std::vector. It has two main functions: 1) You can add values to it; doing so will automatically increase a sentinel that will, when the time comes, double the size of the vector. This was done to avoid expensive dynamic resizing on a call-by-call basis. 2) If you want to free up some memory, you can trim the vector down to its absolute size once you're finished adding to it.  <a href="classTurnLeft_1_1Utils_1_1HungryVector.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html">Log</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The <a class="el" href="classTurnLeft_1_1Utils_1_1Log.html" title="The Log class allows for a dynamic logging system which can be manipulated at will to provide differe...">Log</a> class allows for a dynamic logging system which can be manipulated at will to provide different output for different sections of your program by instantiating only a single log object. Creating a log with no construction parameters will default to CRITICAL messages sent to the CLI.  <a href="classTurnLeft_1_1Utils_1_1Log.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1PtrArray.html">PtrArray</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">A class which allows for easier memory management that also prevents heap fragmentation. It utilizes arrays instead of vectors to improve performance.  <a href="classTurnLeft_1_1Utils_1_1PtrArray.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1RandomCharSet.html">RandomCharSet</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This class provides a simple way of generating random strings of characters. It can also take a constant seed as a parameter, allowing access to previous random strings that were generated.  <a href="classTurnLeft_1_1Utils_1_1RandomCharSet.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html">WordAggregator</a></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -90,7 +98,7 @@ Enumerations</h2></td></tr>
  }</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>The <a class="el" href="namespaceTurnLeft_1_1Utils.html">Utils</a> namespace encompasses all Turn Left modules that are used as utilities for other software. </p>
+<p>The <a class="el" href="namespaceTurnLeft_1_1Utils.html" title="The Utils namespace encompasses all Turn Left modules that are used as utilities for other software...">Utils</a> namespace encompasses all Turn Left modules that are used as utilities for other software. </p>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="a55225b27548ba5d55b26a6a5f1ba294e"></a><!-- doxytag: member="TurnLeft::Utils::DEBUG_LEVEL" ref="a55225b27548ba5d55b26a6a5f1ba294e" args="" -->
 <div class="memitem">
@@ -135,7 +143,7 @@ Enumerations</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 13:32:17 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -2,6 +2,15 @@
 \section{TurnLeft::Utils::PtrArray$<$ max, PointerType $>$ Class Template Reference}
 \label{classTurnLeft_1_1Utils_1_1PtrArray}\index{TurnLeft::Utils::PtrArray@{TurnLeft::Utils::PtrArray}}
 }
+
+
+A class which allows for easier memory management that also prevents heap fragmentation. It utilizes arrays instead of vectors to improve performance.  
+
+
+
+
+{\ttfamily \#include $<$ptrarray.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,8 +41,14 @@ PointerType $\ast$ \hyperlink{classTurnLeft_1_1Utils_1_1PtrArray_afd0b2ddd5366a8
 \item 
 std::bitset$<$ max $>$ \hyperlink{classTurnLeft_1_1Utils_1_1PtrArray_ade5460384048e16db12162996bd074cf}{flags}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
 \subsubsection*{template$<$size\_\-t max, class PointerType$>$ class TurnLeft::Utils::PtrArray$<$ max, PointerType $>$}
 
+A class which allows for easier memory management that also prevents heap fragmentation. It utilizes arrays instead of vectors to improve performance. 
+\begin{DoxyParams}{Parameters}
+\item[{\em max}](Template Param)The maximum possible size of the array, which also will be the number of blocks of memory requested from the OS. \item[{\em PointerType}](Template Param)The type of object to be held in this array. \end{DoxyParams}
 
 
 \subsection{Constructor \& Destructor Documentation}

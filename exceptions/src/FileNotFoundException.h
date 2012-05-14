@@ -14,12 +14,12 @@
 
 
 namespace TurnLeft {
-/*! The Exceptions namespace encompasses all types and classes within the 
+/*! \brief The Exceptions namespace encompasses all types and classes within the 
  * TurnLeft namespace that name exceptions that are used in the Turn Left lib.
  */
 namespace Exceptions {
 
-/*! The FileNotFoundException is a direct descendant of the std::exception
+/*! \brief The FileNotFoundException is a direct descendant of the std::exception
  * class. It is typically thrown when a module attempts to open a file for 
  * reading, but the is_open test fails.
  */

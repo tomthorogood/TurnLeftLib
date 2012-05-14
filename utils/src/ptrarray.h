@@ -23,7 +23,7 @@
 namespace TurnLeft{
 namespace Utils{
 
-/*\brief a class which allows for easier memory management that also prevents
+/*! \brief A class which allows for easier memory management that also prevents
  * heap fragmentation. It utilizes arrays instead of vectors to improve
  * performance.
  *

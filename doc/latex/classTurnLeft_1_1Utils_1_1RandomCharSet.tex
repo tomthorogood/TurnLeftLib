@@ -4,6 +4,11 @@
 }
 
 
+This class provides a simple way of generating random strings of characters. It can also take a constant seed as a parameter, allowing access to previous random strings that were generated.  
+
+
+
+
 {\ttfamily \#include $<$randomcharset.h$>$}
 
 \subsection*{Public Member Functions}
@@ -14,6 +19,15 @@
 \hyperlink{classTurnLeft_1_1Utils_1_1RandomCharSet_ab5dc9b4ec2888735ff37423603db85f3}{RandomCharSet} (int seed)
 \item 
 std::string \hyperlink{classTurnLeft_1_1Utils_1_1RandomCharSet_a305db09f6fd847f08b0335a5334a76e5}{generate} (int)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{classTurnLeft_1_1Utils_1_1RandomCharSet_a0a5376d136c91f1b4e91f192724e6380}{digit} (int)
+\item 
+char \hyperlink{classTurnLeft_1_1Utils_1_1RandomCharSet_a0d22c911e3c4b531b05b6edddd4c8673}{lower} (int)
+\item 
+char \hyperlink{classTurnLeft_1_1Utils_1_1RandomCharSet_a0f2b577fd31d7afa67017aaa4a961b20}{upper} (int)
 \end{DoxyCompactItemize}
 
 
@@ -42,6 +56,21 @@ The default constructor will base the seed on the current time. \hypertarget{cla
 The overloaded constructor will take an integer as a seed, which will return the same output as the last time that seed and stringlength were used. 
 
 \subsection{Member Function Documentation}
+\hypertarget{classTurnLeft_1_1Utils_1_1RandomCharSet_a0a5376d136c91f1b4e91f192724e6380}{
+\index{TurnLeft::Utils::RandomCharSet@{TurnLeft::Utils::RandomCharSet}!digit@{digit}}
+\index{digit@{digit}!TurnLeft::Utils::RandomCharSet@{TurnLeft::Utils::RandomCharSet}}
+\subsubsection[{digit}]{\setlength{\rightskip}{0pt plus 5cm}char TurnLeft::Utils::RandomCharSet::digit (
+\begin{DoxyParamCaption}
+\item[{int}]{ num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1RandomCharSet_a0a5376d136c91f1b4e91f192724e6380}
+Generates a digit between 0-\/9. 
+\begin{DoxyParams}{Parameters}
+\item[{\em num}]A number from the random set. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A digit between 0 and 9. 
+\end{DoxyReturn}
 \hypertarget{classTurnLeft_1_1Utils_1_1RandomCharSet_a305db09f6fd847f08b0335a5334a76e5}{
 \index{TurnLeft::Utils::RandomCharSet@{TurnLeft::Utils::RandomCharSet}!generate@{generate}}
 \index{generate@{generate}!TurnLeft::Utils::RandomCharSet@{TurnLeft::Utils::RandomCharSet}}
@@ -56,6 +85,36 @@ The generate method will return a string of random characters in the following p
 \item[{\em num}]The number of times a random pattern should be appended to the string -\/-\/ default is 1 (optional param). \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A pseudorandom string of length (num)$\ast$3. 
+\end{DoxyReturn}
+\hypertarget{classTurnLeft_1_1Utils_1_1RandomCharSet_a0d22c911e3c4b531b05b6edddd4c8673}{
+\index{TurnLeft::Utils::RandomCharSet@{TurnLeft::Utils::RandomCharSet}!lower@{lower}}
+\index{lower@{lower}!TurnLeft::Utils::RandomCharSet@{TurnLeft::Utils::RandomCharSet}}
+\subsubsection[{lower}]{\setlength{\rightskip}{0pt plus 5cm}char TurnLeft::Utils::RandomCharSet::lower (
+\begin{DoxyParamCaption}
+\item[{int}]{ num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1RandomCharSet_a0d22c911e3c4b531b05b6edddd4c8673}
+Generates a lowercase character between a-\/z. 
+\begin{DoxyParams}{Parameters}
+\item[{\em num}]A number from the random set. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a lowercase alpha character. 
+\end{DoxyReturn}
+\hypertarget{classTurnLeft_1_1Utils_1_1RandomCharSet_a0f2b577fd31d7afa67017aaa4a961b20}{
+\index{TurnLeft::Utils::RandomCharSet@{TurnLeft::Utils::RandomCharSet}!upper@{upper}}
+\index{upper@{upper}!TurnLeft::Utils::RandomCharSet@{TurnLeft::Utils::RandomCharSet}}
+\subsubsection[{upper}]{\setlength{\rightskip}{0pt plus 5cm}char TurnLeft::Utils::RandomCharSet::upper (
+\begin{DoxyParamCaption}
+\item[{int}]{ num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classTurnLeft_1_1Utils_1_1RandomCharSet_a0f2b577fd31d7afa67017aaa4a961b20}
+Generates an uppercase character between A-\/Z. 
+\begin{DoxyParams}{Parameters}
+\item[{\em num}]A number from the random set. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an uppercase alpha character. 
 \end{DoxyReturn}
 
 

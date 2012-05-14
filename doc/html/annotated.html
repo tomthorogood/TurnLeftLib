@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -53,15 +54,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 Here are the classes, structs, unions and interfaces with brief descriptions:<table>
-  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html">TurnLeft::Utils::CommonWords</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html">TurnLeft::Utils::CommonWords</a></td><td class="indexvalue">A class that contains common words that can be searched. The <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">CommonWords</a> class enables the loading and search of a library of common words. Typically, the reason to find them is to filter them out </td></tr>
   <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html">TurnLeft::Utils::Explosion</a></td><td class="indexvalue">A class for splitting strings into an array, separated by a delimiter </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException.html">TurnLeft::Exceptions::FileNotFoundException</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException.html">TurnLeft::Exceptions::FileNotFoundException</a></td><td class="indexvalue">The <a class="el" href="classTurnLeft_1_1Exceptions_1_1FileNotFoundException.html" title="The FileNotFoundException is a direct descendant of the std::exception class. It is typically thrown ...">FileNotFoundException</a> is a direct descendant of the std::exception class. It is typically thrown when a module attempts to open a file for reading, but the is_open test fails </td></tr>
   <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1HungryVector.html">TurnLeft::Utils::HungryVector&lt; T &gt;</a></td><td class="indexvalue">A less expensive implementation of the std::vector. The <a class="el" href="classTurnLeft_1_1Utils_1_1HungryVector.html" title="A less expensive implementation of the std::vector. The HungryVector is a subclass of the std::vector...">HungryVector</a> is a subclass of the std::vector. It has two main functions: 1) You can add values to it; doing so will automatically increase a sentinel that will, when the time comes, double the size of the vector. This was done to avoid expensive dynamic resizing on a call-by-call basis. 2) If you want to free up some memory, you can trim the vector down to its absolute size once you're finished adding to it </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html">TurnLeft::Utils::Log</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Exceptions_1_1MissingParameterException.html">TurnLeft::Exceptions::MissingParameterException</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1PtrArray.html">TurnLeft::Utils::PtrArray&lt; max, PointerType &gt;</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1RandomCharSet.html">TurnLeft::Utils::RandomCharSet</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classunittest_1_1Test.html">unittest::Test&lt; ExpectedResult &gt;</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1Log.html">TurnLeft::Utils::Log</a></td><td class="indexvalue">Allows for a dynamic logging system which can be manipulated at will to provide different output for different sections of your program by instantiating only a single log object. Creating a log with no construction parameters will default to CRITICAL messages sent to the CLI </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Exceptions_1_1MissingParameterException.html">TurnLeft::Exceptions::MissingParameterException</a></td><td class="indexvalue">The <a class="el" href="classTurnLeft_1_1Exceptions_1_1MissingParameterException.html" title="The MissingParameterException is thrown in the case of a typically optional parameter being required ...">MissingParameterException</a> is thrown in the case of a typically optional parameter being required based the arguments of another parameter </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1PtrArray.html">TurnLeft::Utils::PtrArray&lt; max, PointerType &gt;</a></td><td class="indexvalue">A class which allows for easier memory management that also prevents heap fragmentation. It utilizes arrays instead of vectors to improve performance </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1RandomCharSet.html">TurnLeft::Utils::RandomCharSet</a></td><td class="indexvalue">This class provides a simple way of generating random strings of characters. It can also take a constant seed as a parameter, allowing access to previous random strings that were generated </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classunittest_1_1Test.html">unittest::Test&lt; ExpectedResult &gt;</a></td><td class="indexvalue">The <a class="el" href="classunittest_1_1Test.html" title="The Test template class is an abstracted, simple class to display the results of unit tests...">Test</a> template class is an abstracted, simple class to display the results of unit tests. Each test can be named, given an expected value, and then a true value: test.name("MyClass::myMethod()").expect("Foo").test( myClass.myMethod() ); This will generate output to stderr shwoing the expected value, actual value, and the pass/fail status </td></tr>
   <tr><td class="indexkey"><a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html">TurnLeft::Utils::WordAggregator</a></td><td class="indexvalue"></td></tr>
 </table>
 </div>
@@ -79,7 +80,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:<ta
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 13:32:17 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

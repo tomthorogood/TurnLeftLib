@@ -2,19 +2,64 @@
 \section{TurnLeft::Exceptions::MissingParameterException Class Reference}
 \label{classTurnLeft_1_1Exceptions_1_1MissingParameterException}\index{TurnLeft::Exceptions::MissingParameterException@{TurnLeft::Exceptions::MissingParameterException}}
 }
+
+
+The \hyperlink{classTurnLeft_1_1Exceptions_1_1MissingParameterException}{MissingParameterException} is thrown in the case of a typically optional parameter being required based the arguments of another parameter.  
+
+
+
+
+{\ttfamily \#include $<$MissingParameterException.h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classTurnLeft_1_1Exceptions_1_1MissingParameterException_a5db66bc95c60f9eb83e71197efdf10a7}{
-{\bfseries MissingParameterException} (const char $\ast$method, const char $\ast$parameter)}
-\label{classTurnLeft_1_1Exceptions_1_1MissingParameterException_a5db66bc95c60f9eb83e71197efdf10a7}
-
+\hyperlink{classTurnLeft_1_1Exceptions_1_1MissingParameterException_a5db66bc95c60f9eb83e71197efdf10a7}{MissingParameterException} (const char $\ast$method, const char $\ast$parameter)
 \item 
-\hypertarget{classTurnLeft_1_1Exceptions_1_1MissingParameterException_a475acbb9e8b2365546c3d93468327c51}{
-const char $\ast$ {\bfseries what} () const   throw ()}
-\label{classTurnLeft_1_1Exceptions_1_1MissingParameterException_a475acbb9e8b2365546c3d93468327c51}
+const char $\ast$ \hyperlink{classTurnLeft_1_1Exceptions_1_1MissingParameterException_a475acbb9e8b2365546c3d93468327c51}{what} () const   throw ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTurnLeft_1_1Exceptions_1_1MissingParameterException_ab5eff7906e125988f90dc5fc03dd4756}{
+const char $\ast$ {\bfseries errorMessage}}
+\label{classTurnLeft_1_1Exceptions_1_1MissingParameterException_ab5eff7906e125988f90dc5fc03dd4756}
 
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classTurnLeft_1_1Exceptions_1_1MissingParameterException}{MissingParameterException} is thrown in the case of a typically optional parameter being required based the arguments of another parameter. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTurnLeft_1_1Exceptions_1_1MissingParameterException_a5db66bc95c60f9eb83e71197efdf10a7}{
+\index{TurnLeft::Exceptions::MissingParameterException@{TurnLeft::Exceptions::MissingParameterException}!MissingParameterException@{MissingParameterException}}
+\index{MissingParameterException@{MissingParameterException}!TurnLeft::Exceptions::MissingParameterException@{TurnLeft::Exceptions::MissingParameterException}}
+\subsubsection[{MissingParameterException}]{\setlength{\rightskip}{0pt plus 5cm}TurnLeft::Exceptions::MissingParameterException::MissingParameterException (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ method, }
+\item[{const char $\ast$}]{ parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTurnLeft_1_1Exceptions_1_1MissingParameterException_a5db66bc95c60f9eb83e71197efdf10a7}
+The constructor for the exception. 
+\begin{DoxyParams}{Parameters}
+\item[{\em method}]The method which is throwing the error \item[{\em parameter}]The parameter the method cannot find. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTurnLeft_1_1Exceptions_1_1MissingParameterException_a475acbb9e8b2365546c3d93468327c51}{
+\index{TurnLeft::Exceptions::MissingParameterException@{TurnLeft::Exceptions::MissingParameterException}!what@{what}}
+\index{what@{what}!TurnLeft::Exceptions::MissingParameterException@{TurnLeft::Exceptions::MissingParameterException}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ TurnLeft::Exceptions::MissingParameterException::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classTurnLeft_1_1Exceptions_1_1MissingParameterException_a475acbb9e8b2365546c3d93468327c51}
+\begin{DoxyReturn}{Returns}
+the Automatically generated error message for this exception. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -56,12 +57,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <h1>TurnLeft::Utils::RandomCharSet Class Reference</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="TurnLeft::Utils::RandomCharSet" -->
+<p>This class provides a simple way of generating random strings of characters. It can also take a constant seed as a parameter, allowing access to previous random strings that were generated.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="randomcharset_8h_source.html">randomcharset.h</a>&gt;</code></p>
 
 <p><a href="classTurnLeft_1_1Utils_1_1RandomCharSet-members.html">List of all members.</a></p>
@@ -71,6 +76,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1RandomCharSet.html#a6f1627e394133bac59f72711f36a2a56">RandomCharSet</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1RandomCharSet.html#ab5dc9b4ec2888735ff37423603db85f3">RandomCharSet</a> (int seed)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1RandomCharSet.html#a305db09f6fd847f08b0335a5334a76e5">generate</a> (int)</td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1RandomCharSet.html#a0a5376d136c91f1b4e91f192724e6380">digit</a> (int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1RandomCharSet.html#a0d22c911e3c4b531b05b6edddd4c8673">lower</a> (int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1RandomCharSet.html#a0f2b577fd31d7afa67017aaa4a961b20">upper</a> (int)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>This class provides a simple way of generating random strings of characters. It can also take a constant seed as a parameter, allowing access to previous random strings that were generated. </p>
@@ -113,6 +123,32 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a0a5376d136c91f1b4e91f192724e6380"></a><!-- doxytag: member="TurnLeft::Utils::RandomCharSet::digit" ref="a0a5376d136c91f1b4e91f192724e6380" args="(int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char TurnLeft::Utils::RandomCharSet::digit </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>num</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Generates a digit between 0-9. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>num</em>&nbsp;</td><td>A number from the random set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A digit between 0 and 9. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a305db09f6fd847f08b0335a5334a76e5"></a><!-- doxytag: member="TurnLeft::Utils::RandomCharSet::generate" ref="a305db09f6fd847f08b0335a5334a76e5" args="(int)" -->
 <div class="memitem">
 <div class="memproto">
@@ -139,6 +175,58 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a0d22c911e3c4b531b05b6edddd4c8673"></a><!-- doxytag: member="TurnLeft::Utils::RandomCharSet::lower" ref="a0d22c911e3c4b531b05b6edddd4c8673" args="(int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char TurnLeft::Utils::RandomCharSet::lower </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>num</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Generates a lowercase character between a-z. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>num</em>&nbsp;</td><td>A number from the random set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a lowercase alpha character. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f2b577fd31d7afa67017aaa4a961b20"></a><!-- doxytag: member="TurnLeft::Utils::RandomCharSet::upper" ref="a0f2b577fd31d7afa67017aaa4a961b20" args="(int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char TurnLeft::Utils::RandomCharSet::upper </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>num</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Generates an uppercase character between A-Z. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>num</em>&nbsp;</td><td>A number from the random set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>an uppercase alpha character. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/tom/dev/TurnLeftLib/utils/src/<a class="el" href="randomcharset_8h_source.html">randomcharset.h</a></li>
 </ul>
@@ -157,7 +245,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 13:32:17 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

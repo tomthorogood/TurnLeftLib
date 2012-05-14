@@ -14,7 +14,7 @@
 namespace TurnLeft {
 namespace Utils{
 
-/*! This class provides a simple way of generating random strings of characters.
+/*! \brief This class provides a simple way of generating random strings of characters.
  * It can also take a constant seed as a parameter, allowing access to previous
  * random strings that were generated.
  */

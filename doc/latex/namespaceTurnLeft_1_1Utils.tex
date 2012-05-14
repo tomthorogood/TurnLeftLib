@@ -2,21 +2,26 @@
 \section{TurnLeft::Utils Namespace Reference}
 \label{namespaceTurnLeft_1_1Utils}\index{TurnLeft::Utils@{TurnLeft::Utils}}
 }
+
+
+The \hyperlink{namespaceTurnLeft_1_1Utils}{Utils} namespace encompasses all Turn Left modules that are used as utilities for other software.  
+
+
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{CommonWords}
-\item 
+\begin{DoxyCompactList}\small\item\em A class that contains common words that can be searched. The \hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{CommonWords} class enables the loading and search of a library of common words. Typically, the reason to find them is to filter them out. \item\end{DoxyCompactList}\item 
 class \hyperlink{classTurnLeft_1_1Utils_1_1Explosion}{Explosion}
 \begin{DoxyCompactList}\small\item\em A class for splitting strings into an array, separated by a delimiter. \item\end{DoxyCompactList}\item 
 class \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector}{HungryVector}
 \begin{DoxyCompactList}\small\item\em A less expensive implementation of the std::vector. The \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector}{HungryVector} is a subclass of the std::vector. It has two main functions: 1) You can add values to it; doing so will automatically increase a sentinel that will, when the time comes, double the size of the vector. This was done to avoid expensive dynamic resizing on a call-\/by-\/call basis. 2) If you want to free up some memory, you can trim the vector down to its absolute size once you're finished adding to it. \item\end{DoxyCompactList}\item 
 class \hyperlink{classTurnLeft_1_1Utils_1_1Log}{Log}
-\item 
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classTurnLeft_1_1Utils_1_1Log}{Log} class allows for a dynamic logging system which can be manipulated at will to provide different output for different sections of your program by instantiating only a single log object. Creating a log with no construction parameters will default to CRITICAL messages sent to the CLI. \item\end{DoxyCompactList}\item 
 class \hyperlink{classTurnLeft_1_1Utils_1_1PtrArray}{PtrArray}
-\item 
+\begin{DoxyCompactList}\small\item\em A class which allows for easier memory management that also prevents heap fragmentation. It utilizes arrays instead of vectors to improve performance. \item\end{DoxyCompactList}\item 
 class \hyperlink{classTurnLeft_1_1Utils_1_1RandomCharSet}{RandomCharSet}
-\item 
+\begin{DoxyCompactList}\small\item\em This class provides a simple way of generating random strings of characters. It can also take a constant seed as a parameter, allowing access to previous random strings that were generated. \item\end{DoxyCompactList}\item 
 class \hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator}{WordAggregator}
 \end{DoxyCompactItemize}
 \subsection*{Typedefs}

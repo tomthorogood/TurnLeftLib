@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -56,21 +57,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>TurnLeft::Utils::CommonWords Class Reference</h1>  </div>
 </div>
 <div class="contents">
 <!-- doxytag: class="TurnLeft::Utils::CommonWords" -->
+<p>A class that contains common words that can be searched. The <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">CommonWords</a> class enables the loading and search of a library of common words. Typically, the reason to find them is to filter them out.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="commonwords_8h_source.html">commonwords.h</a>&gt;</code></p>
+
 <p><a href="classTurnLeft_1_1Utils_1_1CommonWords-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a5fd443eff06ae619cfa2f6191e4e1959">CommonWords</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#ae9799b4dcea1caa3f13263ddfcb17a2d">CommonWords</a> (const char *filename)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#ae9799b4dcea1caa3f13263ddfcb17a2d">CommonWords</a> (const char *<a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#aad1fbed4daae28a7e3023f2dcca967bc">filename</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a1e016e619f21c72f00967572956be10e">~CommonWords</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a17fd3176d631231bfdc9007ea27d3dcd">find</a> (std::string)</td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a9321eea96b880922e9469c8ae8c4e24d">fopen</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#abfe3e0005d694c24214529661cc2e190">init</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e82c55a2d38a7e3148c58ce62c1c50a"></a><!-- doxytag: member="TurnLeft::Utils::CommonWords::numInput" ref="a7e82c55a2d38a7e3148c58ce62c1c50a" args="" -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><b>numInput</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a682e0ab0f53b53cca62ff898c0fb58de">library</a> [<a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#afc0cb129b7578c3ea5bf63cf3284e630">MAX_LIBRARY_SIZE</a>]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#aad1fbed4daae28a7e3023f2dcca967bc">filename</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ifstream&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#af284f9a4b03f822914fe9a7c6e4e267c">txtfile</a></td></tr>
+<tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#afc0cb129b7578c3ea5bf63cf3284e630">MAX_LIBRARY_SIZE</a> = TL_UTILS_COMMONWORDS_MAX_SIZE</td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>A class that contains common words that can be searched. The <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">CommonWords</a> class enables the loading and search of a library of common words. Typically, the reason to find them is to filter them out. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Create a "filter" method. </dd></dl>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5fd443eff06ae619cfa2f6191e4e1959"></a><!-- doxytag: member="TurnLeft::Utils::CommonWords::CommonWords" ref="a5fd443eff06ae619cfa2f6191e4e1959" args="()" -->
 <div class="memitem">
@@ -130,7 +156,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Deletes the txtfile pointer. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>txtfile </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#af284f9a4b03f822914fe9a7c6e4e267c">txtfile</a> </dd></dl>
 
 </div>
 </div>
@@ -155,6 +181,107 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9321eea96b880922e9469c8ae8c4e24d"></a><!-- doxytag: member="TurnLeft::Utils::CommonWords::fopen" ref="a9321eea96b880922e9469c8ae8c4e24d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TurnLeft::Utils::CommonWords::fopen </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Attempts to open a file for reading; if the file does not exist or otherwise cannot be opened, a FileNotFoundException will be thrown. Otherwise, the <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">CommonWords</a> object will assume responsibility of a pointer to an input stream buffer. </p>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>FileNotFoundException</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a pointer to an input stream buffer. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#aad1fbed4daae28a7e3023f2dcca967bc">filename</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abfe3e0005d694c24214529661cc2e190"></a><!-- doxytag: member="TurnLeft::Utils::CommonWords::init" ref="abfe3e0005d694c24214529661cc2e190" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TurnLeft::Utils::CommonWords::init </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Factored construction code </p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="aad1fbed4daae28a7e3023f2dcca967bc"></a><!-- doxytag: member="TurnLeft::Utils::CommonWords::filename" ref="aad1fbed4daae28a7e3023f2dcca967bc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#aad1fbed4daae28a7e3023f2dcca967bc">TurnLeft::Utils::CommonWords::filename</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The name of the file containing the common words library. </p>
+
+</div>
+</div>
+<a class="anchor" id="a682e0ab0f53b53cca62ff898c0fb58de"></a><!-- doxytag: member="TurnLeft::Utils::CommonWords::library" ref="a682e0ab0f53b53cca62ff898c0fb58de" args="[MAX_LIBRARY_SIZE]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a682e0ab0f53b53cca62ff898c0fb58de">TurnLeft::Utils::CommonWords::library</a>[<a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#afc0cb129b7578c3ea5bf63cf3284e630">MAX_LIBRARY_SIZE</a>]<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The array of words read in from the textfile. These words have all already been converted to lowercase! </p>
+
+</div>
+</div>
+<a class="anchor" id="afc0cb129b7578c3ea5bf63cf3284e630"></a><!-- doxytag: member="TurnLeft::Utils::CommonWords::MAX_LIBRARY_SIZE" ref="afc0cb129b7578c3ea5bf63cf3284e630" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#afc0cb129b7578c3ea5bf63cf3284e630">TurnLeft::Utils::CommonWords::MAX_LIBRARY_SIZE</a> = TL_UTILS_COMMONWORDS_MAX_SIZE<code> [static, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The number of lines expected in the txtfile containing the library of commonwords. This defaults to 101, but can be defined in an external config if desired in order to increase the size of the library. </p>
+
+</div>
+</div>
+<a class="anchor" id="af284f9a4b03f822914fe9a7c6e4e267c"></a><!-- doxytag: member="TurnLeft::Utils::CommonWords::txtfile" ref="af284f9a4b03f822914fe9a7c6e4e267c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ifstream <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html#af284f9a4b03f822914fe9a7c6e4e267c">TurnLeft::Utils::CommonWords::txtfile</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>A pointer to an input stream buffer. This belongs to to the object, and will be deleted once the object goes out of scope. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/tom/dev/TurnLeftLib/utils/src/commonwords/<a class="el" href="commonwords_8h_source.html">commonwords.h</a></li>
 <li>/home/tom/dev/TurnLeftLib/utils/src/commonwords/commonwords.cpp</li>
@@ -174,7 +301,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 13:32:17 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
