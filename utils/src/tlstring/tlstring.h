@@ -37,8 +37,7 @@ public:
     TLString(std::string);
     /*! Returns a std::string representation of this object. */
     std::string str();
-    /*! Returns a const char* representation of this object. */
-    const char* c_str();
+
     /*! Sets this object to the empty string (equivalent to also doing:
      * TLStrObj = "";). Chainable.
      */

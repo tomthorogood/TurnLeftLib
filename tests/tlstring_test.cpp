@@ -13,7 +13,6 @@
 int main()
 {
 	unittest::Test <std::string> strtest;
-	unittest::Test <const char*> chtest;
 
 	TurnLeft::Utils::TLString str1;
 	TurnLeft::Utils::TLString str2("Allons-y!");
@@ -21,11 +20,8 @@ int main()
 
 	strtest.name("str()").expect("Allons-y!").test( str2.str() );
 	strtest.name("str()").expect("Exterminate.").test(str3.str());
-	std::cout << str3.c_str() << std::endl;;
-	chtest.name("c_str()").expect("Exterminate.").test( str3.c_str() );
 
 	str1 = str2;
-	chtest.name("op=, c_cstr()").expect("Exterminate.").test(str1.c_str());
 	str1 = str2 + str3;
 	strtest.name("op=,op+,str()").expect("Allons-y!Exterminate.").test(str1.str());
 	strtest.name("tolower()").expect("allonsyexterminate").test(str1.toLower().str());

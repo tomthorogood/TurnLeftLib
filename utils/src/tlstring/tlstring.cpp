@@ -31,25 +31,11 @@ TLString::str()
 	return stream.str();
 }
 
-const char*
-TLString::c_str()
-{
-	return str().c_str();
-}
-
-TLString&
-TLString::clr()
-{
-	stream.clear();
-	stream.str("");
-	return *this;
-}
-
 TLString&
 TLString::toUpper(bool keepNonAlpha=false)
 {
 	int len = str().length();
-	const char* _ch = c_str();
+	const char* _ch = str().c_str();
 	clr();
 	for (int i = 0; i < len; i++)
 	{
@@ -72,7 +58,7 @@ TLString&
 TLString::toLower(bool keepNonAlpha=false)
 {
 	int len = str().length();
-	const char* _ch = c_str();
+	const char* _ch = str().c_str();
 	clr();
 	for (int i = 0; i < len; i++)
 	{
@@ -95,7 +81,7 @@ TLString&
 TLString::filter(char ch)
 {
 	int len = str().length();
-	const char* _ch = c_str();
+	const char* _ch = str().c_str();
 	clr();
 	for (int i = 0; i < len; i++)
 	{
