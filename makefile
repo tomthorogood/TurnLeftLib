@@ -1,6 +1,6 @@
 COMPILE_DEBUG = g++ -Wall -g
 INCLUDES = -I/home/tom/Dev/ -I/usr/include/c++/4.6.3
-TESTS = commonwords explosion ptrarray wordaggregator hungryvector log
+TESTS = commonwords explosion ptrarray wordaggregator hungryvector log tlstring
 TEST_SUFFIX = "_test.cpp"
 TXT_RESOURCES = commonwords aggregatortext aggregatortext2 
 TXT_OUTPUTS = logtest_output
