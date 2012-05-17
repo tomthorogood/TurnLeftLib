@@ -53,7 +53,7 @@ public:
 	 * \param size The initial number of objects in the vector.
 	 * \param value The default value for those initial objects
 	 */
-	HungryVector(size_t size, T value);
+	HungryVector(int size, T value);
 	/*! The add() method will insert a new object into the vector.
 	 * If the vector has reached its declared size, the vector will
 	 * be resized to double its current size.
@@ -89,7 +89,7 @@ HungryVector<T>::HungryVector()
 }
 
 template <class T>
-HungryVector<T>::HungryVector(size_t size, T value)
+HungryVector<T>::HungryVector(int size, T value)
 :   std::vector<T>(size,value)
 {
     usage = 0;
