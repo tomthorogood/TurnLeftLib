@@ -1,3 +1,0 @@
-#ifndef TL_UTILS_TLSTRING_H_
-#include "src/tlstring/tlstring.cpp"
-#endif

@@ -44,11 +44,13 @@ int main()
     std::cout << "Instantiating aggregator" << std::endl;
     TurnLeft::Utils::WordAggregator aggregator (wordvector, frequencies);
     std::cout << "...done." << std::endl;
-    wordList = aggregator.getWordList();
 
-    for (unsigned int i = 0; i < wordList->size(); i++)
+    TurnLeft::Utils::FrequencyIterator iter;
+    iter = frequencies.begin();
+    while (iter != frequencies.end())
     {
-        std::cout << frequencies[wordList->at(i)] << std::endl;
+        std::cout << iter->first << ": " << iter->second << std::endl;
+        ++iter;
     }
 
     return 0;
