@@ -6,7 +6,7 @@ TXT_RESOURCES = commonwords aggregatortext aggregatortext2
 TXT_OUTPUTS = logtest_output
 CC = $(COMPILE_DEBUG) -c $(INCLUDES)
 
-all: tlstring log ptrarray hungryvector explosion commonwords \
+all: log ptrarray hungryvector explosion commonwords \
 	randomcharset wordaggregator
 
 commonwords:
@@ -39,9 +39,5 @@ wordaggregator:
 	cp WordAggregator WordAggregator.cc;
 	$(CC)  WordAggregator.cc src/wordaggregator/wordaggregator.cpp \
 	src/wordaggregator/wordaggregator.h;
-tlstring:
-	cp TLString TLString.cc;
-	$(CC) TLString.cc src/tlstring/tlstring.cpp \
-	src/tlstring/tlstring.h;
 clean:
 	rm *.o *.cc
