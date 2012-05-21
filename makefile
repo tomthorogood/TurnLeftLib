@@ -41,6 +41,7 @@ install:
 	cp libturnleft.a $(LIBOUTPUT)
 	mkdir -p $(HEADEROUTPUT)
 	cp -r . $(HEADEROUTPUT)
+	cd $(HEADEROUTPUT) && $(MAKE) clean-objects
 
 .PHONY: tests utils exceptions
 
