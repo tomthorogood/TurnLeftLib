@@ -6,6 +6,7 @@
  */
 
 #include "commonwords.h"
+#include <Exceptions>
 
 namespace TurnLeft{
 namespace Utils{
@@ -13,12 +14,19 @@ namespace Utils{
 CommonWords::CommonWords()
 {
     txtfile.open(TL_UTILS_COMMONWORDS_LIB);
+    if (!txtfile.is_open())
+    {
+        throw (TurnLeft::Exceptions::FileNotFoundException(TL_UTILS_COMMONWORDS_LIB));
+    }
     init();
 }
 
 CommonWords::CommonWords(const char* filename)
-:   txtfile()
 {
+    if (!txtfile.is_open())
+    {
+        throw (TurnLeft::Exceptions::FileNotFoundException(filename));
+    }
     txtfile.open(filename);
     init();
 }

@@ -1,5 +1,5 @@
 COMPILE_DEBUG = g++ -Wall -g
-INCLUDES = -I$(CURDIR)../ -I/usr/include/c++/4.6.3
+INCLUDES = -I$(CURDIR) -I$(CURDIR)/../ -I/usr/include/c++/4.6.3
 TESTS = commonwords explosion ptrarray wordaggregator hungryvector log
 TEST_SUFFIX = "_test.cpp"
 TXT_RESOURCES = commonwords aggregatortext aggregatortext2 
@@ -41,6 +41,8 @@ install:
 	cp libturnleft.a $(LIBOUTPUT)
 	mkdir -p $(HEADEROUTPUT)
 	cp -r . $(HEADEROUTPUT)
+	cp $(CURDIR)/utils/src/commonwords/commonwords.txt $(HEADEROUTPUT)
+	chmod 775 $(HEADEROUTPUT)/commonwords.txt
 	cd $(HEADEROUTPUT) && $(MAKE) clean-objects
 
 .PHONY: tests utils exceptions

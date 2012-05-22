@@ -8,7 +8,7 @@
 int main()
 {
 	unittest::Test<int> inttest;
-	TurnLeft::Utils::CommonWords library("commonwords.txt");
+	TurnLeft::Utils::CommonWords library;
 	std::string testString ="this is a fabulous endeavor";
     TurnLeft::Utils::Explosion explosion(testString);
     

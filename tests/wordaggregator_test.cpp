@@ -40,7 +40,6 @@ int main()
     wordvector[0] = str1;
     wordvector[1] = str2;
     TurnLeft::Utils::FrequencyMap frequencies;
-    std::vector <std::string> *wordList;
     std::cout << "Instantiating aggregator" << std::endl;
     TurnLeft::Utils::WordAggregator aggregator (wordvector, frequencies);
     std::cout << "...done." << std::endl;
