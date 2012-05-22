@@ -44,7 +44,7 @@ Explosion::explode (char delimiter, std::string array[],
          * send everything in the buffer to a std::string and clear
          * the buffer so that it can accept more input.
          */
-        if (char_ == delimiter || ch == maxLength-1)
+        if (char_ == delimiter || char_ == '/' || ch == maxLength-1)
 	    {
 	        std::string asString = buffer.str();
             array[numWords] = asString;
