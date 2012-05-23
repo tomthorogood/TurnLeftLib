@@ -73,8 +73,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html#a721da98f0dec33c9abadd19c04669165">WordAggregator</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html#a10b5f069149857994a6db20e21e9ca11">WordAggregator</a> (std::vector&lt; std::string &gt; &amp;words, FrequencyMap &amp;_map, const char *libFilename)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html#af61d528ba324a2436f0cf0cdabe29448">WordAggregator</a> (<a class="el" href="classTurnLeft_1_1Utils_1_1HungryVector.html">FrequencyVector</a> &amp;words, FrequencyMap &amp;_map, const char *libFilename)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html#a9e1a0859a5a78786c59ccaebd30440e7">WordAggregator</a> (std::string &amp;words, FrequencyMap &amp;_map, const char *libFilename)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt; *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html#a270d7b8a0a2b45b0ec5d2f8ef1911e0f">getWordList</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad3c3827967a9b9e742dce95e28c96aa"></a><!-- doxytag: member="TurnLeft::Utils::WordAggregator::parse" ref="aad3c3827967a9b9e742dce95e28c96aa" args="(std::string &amp;, FrequencyMap &amp;_map)" -->
@@ -82,7 +82,6 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>parse</b> (std::strin
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html">CommonWords</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html#a51f9ddd22dab31dc20cb6c80cdd5711f">library</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html#a98ee20472e3bf576f23e3b525ab317fc">wordList</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>The <a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html">WordAggregator</a> class parses a string, separating words into an array, filtering out common words, and finally counting the number of times each word appears in the array. This class relies on other tools in this library: <a class="el" href="classTurnLeft_1_1Utils_1_1HungryVector.html" title="A less expensive implementation of the std::vector. The HungryVector is a subclass of the std::vector...">HungryVector</a>, <a class="el" href="classTurnLeft_1_1Utils_1_1Explosion.html" title="A class for splitting strings into an array, separated by a delimiter.">Explosion</a>, and <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">CommonWords</a> </p>
@@ -136,6 +135,56 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>The standard constructor takes in a vector of strings, and may optionally contain a filename to be passed into the <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">CommonWords</a> library constructor. This constructor is useful when aggregating multiple blocks of text. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>words</em>&nbsp;</td><td>A vector containing chunks of text. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>_map</em>&nbsp;</td><td>A frequency map to be filled with the results </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>libFilename</em>&nbsp;</td><td>(Optional) The filename of the common words library (default is NULL, which will invoke the preprocessed setting). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af61d528ba324a2436f0cf0cdabe29448"></a><!-- doxytag: member="TurnLeft::Utils::WordAggregator::WordAggregator" ref="af61d528ba324a2436f0cf0cdabe29448" args="(FrequencyVector &amp;words, FrequencyMap &amp;_map, const char *libFilename)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TurnLeft::Utils::WordAggregator::WordAggregator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTurnLeft_1_1Utils_1_1HungryVector.html">FrequencyVector</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>words</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FrequencyMap &amp;&nbsp;</td>
+          <td class="paramname"> <em>_map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>libFilename</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The overloaded constructor takes in a <a class="el" href="classTurnLeft_1_1Utils_1_1HungryVector.html" title="A less expensive implementation of the std::vector. The HungryVector is a subclass of the std::vector...">HungryVector</a> of strings, and may optionally contain a filename to be passed into the <a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">CommonWords</a> library constructor. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>words</em>&nbsp;</td><td>A <a class="el" href="classTurnLeft_1_1Utils_1_1HungryVector.html" title="A less expensive implementation of the std::vector. The HungryVector is a subclass of the std::vector...">HungryVector</a> containing chunks of text. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>_map</em>&nbsp;</td><td>A frequency map to be filled with the results </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>libFilename</em>&nbsp;</td><td>(Optional) The filename of the common words library (default is NULL, which will invoke the preprocessed setting). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -173,25 +222,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a270d7b8a0a2b45b0ec5d2f8ef1911e0f"></a><!-- doxytag: member="TurnLeft::Utils::WordAggregator::getWordList" ref="a270d7b8a0a2b45b0ec5d2f8ef1911e0f" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::string &gt; * TurnLeft::Utils::WordAggregator::getWordList </td>
-          <td>(</td>
-          <td class="paramname"></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the list of individual words contained in the map. </p>
-
-</div>
-</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="a51f9ddd22dab31dc20cb6c80cdd5711f"></a><!-- doxytag: member="TurnLeft::Utils::WordAggregator::library" ref="a51f9ddd22dab31dc20cb6c80cdd5711f" args="" -->
 <div class="memitem">
@@ -205,20 +235,6 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 <p>The library of words that will be filtered out of the input text. </p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">TurnLeft::Utils::CommonWords</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a98ee20472e3bf576f23e3b525ab317fc"></a><!-- doxytag: member="TurnLeft::Utils::WordAggregator::wordList" ref="a98ee20472e3bf576f23e3b525ab317fc" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::string&gt; <a class="el" href="classTurnLeft_1_1Utils_1_1WordAggregator.html#a98ee20472e3bf576f23e3b525ab317fc">TurnLeft::Utils::WordAggregator::wordList</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>A list of all of the words. This is needed in order to generate dynamic output from the map. It's actually probably not needed, but I don't have Internet at the moment so I can't look up a better way using the map API.  Find a way to get rid of this </p>
 
 </div>
 </div>
@@ -241,7 +257,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed May 23 2012 07:16:23 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

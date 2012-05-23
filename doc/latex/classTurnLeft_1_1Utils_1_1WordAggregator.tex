@@ -13,9 +13,9 @@
 \item 
 \hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator_a10b5f069149857994a6db20e21e9ca11}{WordAggregator} (std::vector$<$ std::string $>$ \&words, FrequencyMap \&\_\-map, const char $\ast$libFilename)
 \item 
-\hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator_a9e1a0859a5a78786c59ccaebd30440e7}{WordAggregator} (std::string \&words, FrequencyMap \&\_\-map, const char $\ast$libFilename)
+\hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator_af61d528ba324a2436f0cf0cdabe29448}{WordAggregator} (\hyperlink{classTurnLeft_1_1Utils_1_1HungryVector}{FrequencyVector} \&words, FrequencyMap \&\_\-map, const char $\ast$libFilename)
 \item 
-std::vector$<$ std::string $>$ $\ast$ \hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator_a270d7b8a0a2b45b0ec5d2f8ef1911e0f}{getWordList} ()
+\hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator_a9e1a0859a5a78786c59ccaebd30440e7}{WordAggregator} (std::string \&words, FrequencyMap \&\_\-map, const char $\ast$libFilename)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -29,8 +29,6 @@ void {\bfseries parse} (std::string \&, FrequencyMap \&\_\-map)}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{CommonWords} \hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator_a51f9ddd22dab31dc20cb6c80cdd5711f}{library}
-\item 
-std::vector$<$ std::string $>$ \hyperlink{classTurnLeft_1_1Utils_1_1WordAggregator_a98ee20472e3bf576f23e3b525ab317fc}{wordList}
 \end{DoxyCompactItemize}
 
 
@@ -58,7 +56,24 @@ Default constructor also calls default constructor of library. Not very useful, 
 \end{DoxyParamCaption}
 )}}
 \label{classTurnLeft_1_1Utils_1_1WordAggregator_a10b5f069149857994a6db20e21e9ca11}
-The standard constructor takes in a vector of strings, and may optionally contain a filename to be passed into the \hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{CommonWords} library constructor. This constructor is useful when aggregating multiple blocks of text. \hypertarget{classTurnLeft_1_1Utils_1_1WordAggregator_a9e1a0859a5a78786c59ccaebd30440e7}{
+The standard constructor takes in a vector of strings, and may optionally contain a filename to be passed into the \hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{CommonWords} library constructor. This constructor is useful when aggregating multiple blocks of text. 
+\begin{DoxyParams}{Parameters}
+\item[{\em words}]A vector containing chunks of text. \item[{\em \_\-map}]A frequency map to be filled with the results \item[{\em libFilename}](Optional) The filename of the common words library (default is NULL, which will invoke the preprocessed setting). \end{DoxyParams}
+\hypertarget{classTurnLeft_1_1Utils_1_1WordAggregator_af61d528ba324a2436f0cf0cdabe29448}{
+\index{TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}!WordAggregator@{WordAggregator}}
+\index{WordAggregator@{WordAggregator}!TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}}
+\subsubsection[{WordAggregator}]{\setlength{\rightskip}{0pt plus 5cm}TurnLeft::Utils::WordAggregator::WordAggregator (
+\begin{DoxyParamCaption}
+\item[{{\bf FrequencyVector} \&}]{ words, }
+\item[{FrequencyMap \&}]{ \_\-map, }
+\item[{const char $\ast$}]{ libFilename = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classTurnLeft_1_1Utils_1_1WordAggregator_af61d528ba324a2436f0cf0cdabe29448}
+The overloaded constructor takes in a \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector}{HungryVector} of strings, and may optionally contain a filename to be passed into the \hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{CommonWords} library constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em words}]A \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector}{HungryVector} containing chunks of text. \item[{\em \_\-map}]A frequency map to be filled with the results \item[{\em libFilename}](Optional) The filename of the common words library (default is NULL, which will invoke the preprocessed setting). \end{DoxyParams}
+\hypertarget{classTurnLeft_1_1Utils_1_1WordAggregator_a9e1a0859a5a78786c59ccaebd30440e7}{
 \index{TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}!WordAggregator@{WordAggregator}}
 \index{WordAggregator@{WordAggregator}!TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}}
 \subsubsection[{WordAggregator}]{\setlength{\rightskip}{0pt plus 5cm}TurnLeft::Utils::WordAggregator::WordAggregator (
@@ -71,18 +86,6 @@ The standard constructor takes in a vector of strings, and may optionally contai
 \label{classTurnLeft_1_1Utils_1_1WordAggregator_a9e1a0859a5a78786c59ccaebd30440e7}
 This overloaded constrcutor takes in a single string, and may optioanlly contain a filename to be passed into the \hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{CommonWords} library constructor. This constructor is useful when only parsing one block of text. 
 
-\subsection{Member Function Documentation}
-\hypertarget{classTurnLeft_1_1Utils_1_1WordAggregator_a270d7b8a0a2b45b0ec5d2f8ef1911e0f}{
-\index{TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}!getWordList@{getWordList}}
-\index{getWordList@{getWordList}!TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}}
-\subsubsection[{getWordList}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ std::string $>$ $\ast$ TurnLeft::Utils::WordAggregator::getWordList (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}
-\label{classTurnLeft_1_1Utils_1_1WordAggregator_a270d7b8a0a2b45b0ec5d2f8ef1911e0f}
-Returns the list of individual words contained in the map. 
-
 \subsection{Member Data Documentation}
 \hypertarget{classTurnLeft_1_1Utils_1_1WordAggregator_a51f9ddd22dab31dc20cb6c80cdd5711f}{
 \index{TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}!library@{library}}
@@ -92,12 +95,7 @@ Returns the list of individual words contained in the map.
 The library of words that will be filtered out of the input text. \begin{DoxySeeAlso}{See also}
 \hyperlink{classTurnLeft_1_1Utils_1_1CommonWords}{TurnLeft::Utils::CommonWords} 
 \end{DoxySeeAlso}
-\hypertarget{classTurnLeft_1_1Utils_1_1WordAggregator_a98ee20472e3bf576f23e3b525ab317fc}{
-\index{TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}!wordList@{wordList}}
-\index{wordList@{wordList}!TurnLeft::Utils::WordAggregator@{TurnLeft::Utils::WordAggregator}}
-\subsubsection[{wordList}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::string$>$ {\bf TurnLeft::Utils::WordAggregator::wordList}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
-\label{classTurnLeft_1_1Utils_1_1WordAggregator_a98ee20472e3bf576f23e3b525ab317fc}
-A list of all of the words. This is needed in order to generate dynamic output from the map. It's actually probably not needed, but I don't have Internet at the moment so I can't look up a better way using the map API.  Find a way to get rid of this 
+
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 

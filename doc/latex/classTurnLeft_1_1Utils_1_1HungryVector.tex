@@ -16,7 +16,7 @@ A less expensive implementation of the std::vector. The \hyperlink{classTurnLeft
 \item 
 \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector_a3f92da70d31c708265ea772783e5453a}{HungryVector} ()
 \item 
-\hyperlink{classTurnLeft_1_1Utils_1_1HungryVector_a07d3be21e184f8f80cde62d4303fb1d3}{HungryVector} (size\_\-t size, T value)
+\hyperlink{classTurnLeft_1_1Utils_1_1HungryVector_a94809b454b9ceea51f4e3c332e5db7ae}{HungryVector} (int size, T value)
 \item 
 void \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector_a9eeefa75b26da7317c0e22929e729464}{add} (T value)
 \item 
@@ -50,16 +50,16 @@ Because this is a template, its class type must be declared at compile time.
 \end{DoxyParamCaption}
 )}}
 \label{classTurnLeft_1_1Utils_1_1HungryVector_a3f92da70d31c708265ea772783e5453a}
-Default constructor works just fine, and creates a vector of size 0. This isn't recommended, as you then will have to resize it, and start the doubling operation from 1. \hypertarget{classTurnLeft_1_1Utils_1_1HungryVector_a07d3be21e184f8f80cde62d4303fb1d3}{
+Default constructor works just fine, and creates a vector of size 0. This isn't recommended, as you then will have to resize it, and start the doubling operation from 1. \hypertarget{classTurnLeft_1_1Utils_1_1HungryVector_a94809b454b9ceea51f4e3c332e5db7ae}{
 \index{TurnLeft::Utils::HungryVector@{TurnLeft::Utils::HungryVector}!HungryVector@{HungryVector}}
 \index{HungryVector@{HungryVector}!TurnLeft::Utils::HungryVector@{TurnLeft::Utils::HungryVector}}
 \subsubsection[{HungryVector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf TurnLeft::Utils::HungryVector}$<$ T $>$::{\bf HungryVector} (
 \begin{DoxyParamCaption}
-\item[{size\_\-t}]{ size, }
+\item[{int}]{ size, }
 \item[{T}]{ value}
 \end{DoxyParamCaption}
 )}}
-\label{classTurnLeft_1_1Utils_1_1HungryVector_a07d3be21e184f8f80cde62d4303fb1d3}
+\label{classTurnLeft_1_1Utils_1_1HungryVector_a94809b454b9ceea51f4e3c332e5db7ae}
 The overloaded constructor takes a size and a default value, creating a vector of size 'size', all of whose values will be set to the default. If you're storing more complex objects in this vector, a good idea is to instantiate the vector like so: \hyperlink{classTurnLeft_1_1Utils_1_1HungryVector}{HungryVector} $<$MyClass$>$ vec(100, MyClass()); 
 \begin{DoxyParams}{Parameters}
 \item[{\em size}]The initial number of objects in the vector. \item[{\em value}]The default value for those initial objects \end{DoxyParams}

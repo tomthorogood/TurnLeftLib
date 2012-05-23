@@ -66,16 +66,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The <a class="el" href="classunittest_1_1Test.html" title="The Test template class is an abstracted, simple class to display the results of unit tests...">Test</a> template class is an abstracted, simple class to display the results of unit tests. Each test can be named, given an expected value, and then a true value: test.name("MyClass::myMethod()").expect("Foo").test( myClass.myMethod() ); This will generate output to stderr shwoing the expected value, actual value, and the pass/fail status.  
 <a href="#_details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="test_8h_source.html">test.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="src_2test_8h_source.html">test.h</a>&gt;</code></p>
 
 <p><a href="classunittest_1_1Test-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1Test.html#ab0710bc26685edad9d465b9281c6cc9f">Test</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classunittest_1_1Test.html">Test</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1Test.html#a1903e808d53a1fd1c7550f8af6a0bdaf">expect</a> (ExpectedResult value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classunittest_1_1Test.html">Test</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1Test.html#a6a0f892a9db7f6c11b1b237f1b46e487">name</a> (std::string)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classunittest_1_1Test.html">Test</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1Test.html#a3d050190dab1a5a3180ba683814feaf5">expect</a> (ExpectedResult value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classunittest_1_1Test.html">Test</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1Test.html#abffe1fce54d311766a4c177f6b0fa9cd">name</a> (std::string)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1Test.html#a68e6b4f7a18747533b9000640a8e0abb">test</a> (ExpectedResult value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc6e0bcb4b8f44c09b4c6f3a0402a98a"></a><!-- doxytag: member="unittest::Test::expect" ref="afc6e0bcb4b8f44c09b4c6f3a0402a98a" args="(ExpectedResult value)" -->
+<a class="el" href="classunittest_1_1Test.html">Test</a>&lt; ExpectedResult &gt; &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>expect</b> (ExpectedResult value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a403bc965292a355e1d0c997c15232e3e"></a><!-- doxytag: member="unittest::Test::name" ref="a403bc965292a355e1d0c997c15232e3e" args="(std::string)" -->
+<a class="el" href="classunittest_1_1Test.html">Test</a>&lt; ExpectedResult &gt; &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>name</b> (std::string)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68e6b4f7a18747533b9000640a8e0abb"></a><!-- doxytag: member="unittest::Test::test" ref="a68e6b4f7a18747533b9000640a8e0abb" args="(ExpectedResult value)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>test</b> (ExpectedResult value)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ExpectedResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1Test.html#a4c5c14e9919c00b53f973cac370455b0">expected</a></td></tr>
@@ -115,14 +121,14 @@ template&lt;class ExpectedResult &gt; </div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a1903e808d53a1fd1c7550f8af6a0bdaf"></a><!-- doxytag: member="unittest::Test::expect" ref="a1903e808d53a1fd1c7550f8af6a0bdaf" args="(ExpectedResult value)" -->
+<a class="anchor" id="a3d050190dab1a5a3180ba683814feaf5"></a><!-- doxytag: member="unittest::Test::expect" ref="a3d050190dab1a5a3180ba683814feaf5" args="(ExpectedResult value)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class ExpectedResult &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classunittest_1_1Test.html">Test</a>&lt; ExpectedResult &gt; <a class="el" href="classunittest_1_1Test.html">unittest::Test</a>&lt; ExpectedResult &gt;::expect </td>
+          <td class="memname"><a class="el" href="classunittest_1_1Test.html">Test</a>&lt; ExpectedResult &gt; &amp; <a class="el" href="classunittest_1_1Test.html">unittest::Test</a>&lt; ExpectedResult &gt;::expect </td>
           <td>(</td>
           <td class="paramtype">ExpectedResult&nbsp;</td>
           <td class="paramname"> <em>value</em></td>
@@ -143,14 +149,14 @@ template&lt;class ExpectedResult &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a6a0f892a9db7f6c11b1b237f1b46e487"></a><!-- doxytag: member="unittest::Test::name" ref="a6a0f892a9db7f6c11b1b237f1b46e487" args="(std::string)" -->
+<a class="anchor" id="abffe1fce54d311766a4c177f6b0fa9cd"></a><!-- doxytag: member="unittest::Test::name" ref="abffe1fce54d311766a4c177f6b0fa9cd" args="(std::string)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class ExpectedResult &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classunittest_1_1Test.html">Test</a>&lt; ExpectedResult &gt; <a class="el" href="classunittest_1_1Test.html">unittest::Test</a>&lt; ExpectedResult &gt;::name </td>
+          <td class="memname"><a class="el" href="classunittest_1_1Test.html">Test</a>&lt; ExpectedResult &gt; &amp; <a class="el" href="classunittest_1_1Test.html">unittest::Test</a>&lt; ExpectedResult &gt;::name </td>
           <td>(</td>
           <td class="paramtype">std::string&nbsp;</td>
           <td class="paramname"> <em>aName</em></td>
@@ -230,7 +236,7 @@ template&lt;class ExpectedResult &gt; </div>
 </div>
 <div class="memdoc">
 <p>The result expected in the next test. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classunittest_1_1Test.html#a1903e808d53a1fd1c7550f8af6a0bdaf">expect</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classunittest_1_1Test.html#a3d050190dab1a5a3180ba683814feaf5">expect</a> </dd></dl>
 
 </div>
 </div>
@@ -247,12 +253,13 @@ template&lt;class ExpectedResult &gt; </div>
 </div>
 <div class="memdoc">
 <p>The name of the test. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classunittest_1_1Test.html#a6a0f892a9db7f6c11b1b237f1b46e487">name</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classunittest_1_1Test.html#abffe1fce54d311766a4c177f6b0fa9cd">name</a> </dd></dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/tom/dev/TurnLeftLib/utils/src/<a class="el" href="test_8h_source.html">test.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/home/tom/dev/TurnLeftLib/utils/src/<a class="el" href="src_2test_8h_source.html">test.h</a></li>
+<li>/home/tom/dev/TurnLeftLib/utils/<a class="el" href="test_8h_source.html">test.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -269,7 +276,7 @@ template&lt;class ExpectedResult &gt; </div>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed May 23 2012 07:16:23 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

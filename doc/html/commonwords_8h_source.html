@@ -64,35 +64,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 
 <a name="l00032"></a>00032 <span class="preprocessor">#ifndef TL_UTILS_COMMONWORDS_LIB</span>
-<a name="l00033"></a>00033 <span class="preprocessor"></span><span class="preprocessor">#define TL_UTILS_COMMONWORDS_LIB &quot;commonwords.txt&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#define TL_UTILS_COMMONWORDS_MAX_SIZE 101;</span>
-<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#endif //TL_UTILS_COMMONWORDS_LIB</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span><span class="preprocessor">#define TL_UTILS_COMMONWORDS_LIB &quot;/usr/include/TurnLeftLib/commonwords.txt&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#define TL_UTILS_COMMONWORDS_MAX_SIZE 101</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
 <a name="l00036"></a>00036 <span class="preprocessor"></span>
-<a name="l00042"></a><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html">00042</a> <span class="keyword">class </span><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">CommonWords</a>
-<a name="l00043"></a>00043 {
-<a name="l00044"></a>00044 <span class="keyword">private</span>:
-<a name="l00050"></a><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#afc0cb129b7578c3ea5bf63cf3284e630">00050</a>         <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#afc0cb129b7578c3ea5bf63cf3284e630">MAX_LIBRARY_SIZE</a> = TL_UTILS_COMMONWORDS_MAX_SIZE;
-<a name="l00051"></a>00051         <span class="keywordtype">int</span> numInput;   <span class="comment">//Tracks the number of lines read from the file.</span>
-<a name="l00052"></a>00052 
-<a name="l00056"></a><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a682e0ab0f53b53cca62ff898c0fb58de">00056</a>         std::string <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a682e0ab0f53b53cca62ff898c0fb58de">library</a>[<a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#afc0cb129b7578c3ea5bf63cf3284e630">MAX_LIBRARY_SIZE</a>];
+<a name="l00041"></a><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html">00041</a> <span class="keyword">class </span><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html" title="A class that contains common words that can be searched. The CommonWords class enables the loading an...">CommonWords</a>
+<a name="l00042"></a>00042 {
+<a name="l00043"></a>00043 <span class="keyword">private</span>:
+<a name="l00049"></a><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#afc0cb129b7578c3ea5bf63cf3284e630">00049</a>         <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#afc0cb129b7578c3ea5bf63cf3284e630">MAX_LIBRARY_SIZE</a> = TL_UTILS_COMMONWORDS_MAX_SIZE;
+<a name="l00050"></a>00050         <span class="keywordtype">int</span> numInput;   <span class="comment">//Tracks the number of lines read from the file.</span>
+<a name="l00051"></a>00051 
+<a name="l00055"></a><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a682e0ab0f53b53cca62ff898c0fb58de">00055</a>         std::string <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a682e0ab0f53b53cca62ff898c0fb58de">library</a>[<a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#afc0cb129b7578c3ea5bf63cf3284e630">MAX_LIBRARY_SIZE</a>];
+<a name="l00056"></a>00056 
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058 
-<a name="l00060"></a><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#aad1fbed4daae28a7e3023f2dcca967bc">00060</a>         <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#aad1fbed4daae28a7e3023f2dcca967bc">filename</a>;
-<a name="l00061"></a>00061 
-<a name="l00070"></a>00070     <span class="keywordtype">void</span> <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a9321eea96b880922e9469c8ae8c4e24d">fopen</a>();
-<a name="l00071"></a>00071 
-<a name="l00075"></a><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#af284f9a4b03f822914fe9a7c6e4e267c">00075</a>         std::ifstream <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#af284f9a4b03f822914fe9a7c6e4e267c">txtfile</a>;
-<a name="l00076"></a>00076 
-<a name="l00078"></a>00078         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#abfe3e0005d694c24214529661cc2e190">init</a>();
-<a name="l00079"></a>00079 <span class="keyword">public</span>:
-<a name="l00086"></a>00086         <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a5fd443eff06ae619cfa2f6191e4e1959">CommonWords</a>();
-<a name="l00087"></a>00087 
-<a name="l00092"></a>00092         <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a5fd443eff06ae619cfa2f6191e4e1959">CommonWords</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#aad1fbed4daae28a7e3023f2dcca967bc">filename</a>);
-<a name="l00093"></a>00093 
-<a name="l00097"></a>00097         <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a1e016e619f21c72f00967572956be10e">~CommonWords</a>();
-<a name="l00098"></a>00098 
-<a name="l00103"></a>00103         <span class="keywordtype">bool</span> <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a17fd3176d631231bfdc9007ea27d3dcd">find</a>(std::string);
-<a name="l00104"></a>00104 };
+<a name="l00059"></a><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#aad1fbed4daae28a7e3023f2dcca967bc">00059</a>         <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#aad1fbed4daae28a7e3023f2dcca967bc">filename</a>;
+<a name="l00060"></a>00060 
+<a name="l00069"></a>00069     <span class="keywordtype">void</span> <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a9321eea96b880922e9469c8ae8c4e24d">fopen</a>();
+<a name="l00070"></a>00070 
+<a name="l00074"></a><a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#af284f9a4b03f822914fe9a7c6e4e267c">00074</a>         std::ifstream <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#af284f9a4b03f822914fe9a7c6e4e267c">txtfile</a>;
+<a name="l00075"></a>00075 
+<a name="l00077"></a>00077         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#abfe3e0005d694c24214529661cc2e190">init</a>();
+<a name="l00078"></a>00078 <span class="keyword">public</span>:
+<a name="l00085"></a>00085         <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a5fd443eff06ae619cfa2f6191e4e1959">CommonWords</a>();
+<a name="l00086"></a>00086 
+<a name="l00091"></a>00091         <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a5fd443eff06ae619cfa2f6191e4e1959">CommonWords</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#aad1fbed4daae28a7e3023f2dcca967bc">filename</a>);
+<a name="l00092"></a>00092 
+<a name="l00096"></a>00096         <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a1e016e619f21c72f00967572956be10e">~CommonWords</a>();
+<a name="l00097"></a>00097 
+<a name="l00102"></a>00102         <span class="keywordtype">bool</span> <a class="code" href="classTurnLeft_1_1Utils_1_1CommonWords.html#a17fd3176d631231bfdc9007ea27d3dcd">find</a>(std::string);
+<a name="l00103"></a>00103 };
+<a name="l00104"></a>00104 
 <a name="l00105"></a>00105 }}
 <a name="l00106"></a>00106 <span class="preprocessor">#endif</span>
 </pre></div></div>
@@ -111,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon May 14 2012 14:03:34 by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed May 23 2012 07:16:23 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
