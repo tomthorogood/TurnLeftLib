@@ -4,6 +4,7 @@
  * includes are wrapped in ifndef/endifs, so there's no harm, no foul.
  */
 
+
 #ifndef TL_UTILS_
 #define TL_UTILS_
 
@@ -14,6 +15,5 @@
 #include "utils/RandomCharSet"
 #include "utils/WordAggregator"
 #include "utils/Explosion"
-
 
 #endif // TL_UTILS_

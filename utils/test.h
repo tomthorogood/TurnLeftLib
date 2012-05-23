@@ -16,8 +16,8 @@ namespace unittest
 
     public:
         Test();
-        Test expect (ExpectedResult value);
-        Test name   (std::string);
+        Test<ExpectedResult>& expect (ExpectedResult value);
+        Test<ExpectedResult>& name   (std::string);
         void test   (ExpectedResult value);
     };
 
@@ -26,7 +26,7 @@ namespace unittest
         { }
 
     template <class ExpectedResult>
-        Test <ExpectedResult>
+        Test <ExpectedResult>&
         Test<ExpectedResult>::expect(ExpectedResult value)
         {
             expected = value;
@@ -34,7 +34,7 @@ namespace unittest
         }
 
     template <class ExpectedResult>
-        Test <ExpectedResult>
+        Test <ExpectedResult>&
         Test<ExpectedResult>::name(std::string aName)
         {
             testName = aName;

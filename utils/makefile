@@ -1,5 +1,5 @@
 COMPILE_DEBUG = g++ -Wall -g
-INCLUDES = -I/home/tom/dev/ -I/usr/include/c++/4.4
+INCLUDES = -I$(CURDIR)/../../ -I$(CURDIR)/../ -I/usr/include/c++/4.6.3
 TESTS = commonwords explosion ptrarray wordaggregator hungryvector log
 TEST_SUFFIX = "_test.cpp"
 TXT_RESOURCES = commonwords aggregatortext aggregatortext2 
@@ -39,6 +39,5 @@ wordaggregator:
 	cp WordAggregator WordAggregator.cc;
 	$(CC)  WordAggregator.cc src/wordaggregator/wordaggregator.cpp \
 	src/wordaggregator/wordaggregator.h;
-
 clean:
 	rm *.o *.cc

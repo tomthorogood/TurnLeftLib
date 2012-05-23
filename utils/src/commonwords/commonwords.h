@@ -30,10 +30,9 @@ namespace Utils{
  * use the defaults.
  */
 #ifndef TL_UTILS_COMMONWORDS_LIB
-#define TL_UTILS_COMMONWORDS_LIB "commonwords.txt"
-#define TL_UTILS_COMMONWORDS_MAX_SIZE 101;
-#endif //TL_UTILS_COMMONWORDS_LIB
-
+#define TL_UTILS_COMMONWORDS_LIB "/usr/include/TurnLeftLib/commonwords.txt"
+#define TL_UTILS_COMMONWORDS_MAX_SIZE 101
+#endif
 /*! \brief A class that contains common words that can be searched.
  * The CommonWords class enables the loading and search of a library of
  * common words. Typically, the reason to find them is to filter them out.
@@ -102,5 +101,6 @@ public:
 	 */
 	bool find(std::string);
 };
+
 }}
 #endif

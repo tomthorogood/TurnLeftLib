@@ -21,6 +21,16 @@ WordAggregator::WordAggregator (std::vector <std::string> &words, FrequencyMap& 
     }
 }
 
+WordAggregator::WordAggregator (FrequencyVector& words, FrequencyMap& _map,
+        const char* libFilename=0)
+:   library(libFilename)
+{
+    for (unsigned int i=0; i < words.size(); i++)
+    {
+        parse(words[i], _map);
+    }
+}
+
 void
 WordAggregator::parse (std::string& words, FrequencyMap& _map)
 {
@@ -37,15 +47,8 @@ WordAggregator::parse (std::string& words, FrequencyMap& _map)
         if (found || add)
         {
             _map[wordset[w]]++;
-            if (add) wordList.push_back(wordset[w]);
         }
     }
-}
-
-std::vector <std::string>*
-WordAggregator::getWordList()
-{
-    return &wordList;
 }
 
 }}

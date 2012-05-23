@@ -1,10 +1,12 @@
 COMPILE_DEBUG = g++ -Wall -g
-INCLUDES = -I/home/tom/dev/ -I/usr/include/c++/4.4
+INCLUDES = -I$(CURDIR) -I$(CURDIR)/../ -I/usr/include/c++/4.6.3
 TESTS = commonwords explosion ptrarray wordaggregator hungryvector log
 TEST_SUFFIX = "_test.cpp"
 TXT_RESOURCES = commonwords aggregatortext aggregatortext2 
 TXT_OUTPUTS = logtest_output
 CC = $(COMPILE_DEBUG) -c $(INCLUDES)
+LIBOUTPUT = /usr/local/lib
+HEADEROUTPUT = /usr/include/TurnLeftLib
 
 tests:
 	for f in $(TESTS); \
@@ -36,7 +38,12 @@ utils:
 		utils/WordAggregator.o
 
 install:
-	cp libturnleft.a /usr/local/lib/
+	cp libturnleft.a $(LIBOUTPUT)
+	mkdir -p $(HEADEROUTPUT)
+	cp -r . $(HEADEROUTPUT)
+	cp $(CURDIR)/utils/src/commonwords/commonwords.txt $(HEADEROUTPUT)
+	chmod 775 $(HEADEROUTPUT)/commonwords.txt
+	cd $(HEADEROUTPUT) && $(MAKE) clean-objects
 
 .PHONY: tests utils exceptions
 
@@ -52,10 +59,10 @@ clean-tests:
 		do rm $$f; done;
 
 clean-objects:
+	cd utils/ && $(MAKE) clean
 	rm -rf *.o
 	rm -rf *.cc
 	rm -rf *.a
-	cd utils/ && $(MAKE) clean
 
 clean: clean-tests clean-objects
 

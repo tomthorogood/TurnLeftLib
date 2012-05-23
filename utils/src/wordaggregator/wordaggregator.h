@@ -28,6 +28,8 @@ namespace TurnLeft {
 namespace Utils {
 
 typedef std::map <std::string, int> FrequencyMap;
+typedef FrequencyMap::iterator FrequencyIterator;
+typedef HungryVector <std::string> FrequencyVector;
 
 /*! The WordAggregator class parses a string, separating words into an array, 
  * filtering out common words, and finally counting the number of times each
@@ -41,12 +43,6 @@ private:
      * \sa TurnLeft::Utils::CommonWords */
 	CommonWords library;
 
-    /*! A list of all of the words. This is needed in order to generate dynamic
-     * output from the map. It's actually probably not needed, but I don't have
-     * Internet at the moment so I can't look up a better way using the map API.
-     * @TODO Find a way to get rid of this
-     */
-    std::vector <std::string> wordList;
     void parse(std::string&, FrequencyMap& _map);
 
 public:
@@ -57,8 +53,23 @@ public:
     /*! The standard constructor takes in a vector of strings, and may optionally
      * contain a filename to be passed into the CommonWords library constructor.
      * This constructor is useful when aggregating multiple blocks of text.
+     * \param words A vector containing chunks of text.
+     * \param _map A frequency map to be filled with the results
+     * \param libFilename (Optional) The filename of the common words library
+     * (default is NULL, which will invoke the preprocessed setting).
      */
 	WordAggregator(std::vector<std::string>& words, FrequencyMap& _map, 
+            const char* libFilename);
+
+    /*! The overloaded constructor takes in a HungryVector of strings, and may
+     * optionally contain a filename to be passed into the CommonWords library
+     * constructor.
+     * \param words A HungryVector containing chunks of text.
+     * \param _map A frequency map to be filled with the results
+     * \param libFilename (Optional) The filename of the common words library
+     * (default is NULL, which will invoke the preprocessed setting).
+     */
+    WordAggregator(FrequencyVector& words, FrequencyMap& _map,
             const char* libFilename);
 
     /*! This overloaded constrcutor takes in a single string, and may optioanlly
@@ -67,9 +78,6 @@ public:
      */
     WordAggregator(std::string& words, FrequencyMap& _map, 
             const char* libFilename);
-
-    /*! Returns the list of individual words contained in the map. */
-    std::vector <std::string>* getWordList();
 
 };
 
