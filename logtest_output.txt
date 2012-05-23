@@ -1,2 +1,0 @@
-Critical Warning
-Less Critical Warning

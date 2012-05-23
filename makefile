@@ -56,7 +56,7 @@ clean-tests:
 	for f in $(TXT_RESOURCES); \
 		do rm $$f.txt; done;
 	for f in $(TXT_OUTPUTS); \
-		do rm $$f; done;
+		do rm $$f.txt; done;
 
 clean-objects:
 	cd utils/ && $(MAKE) clean
