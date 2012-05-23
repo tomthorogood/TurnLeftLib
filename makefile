@@ -63,6 +63,7 @@ clean-objects:
 	rm -rf *.o
 	rm -rf *.cc
 	rm -rf *.a
+	rm -rf *.gch
 
 clean: clean-tests clean-objects
 

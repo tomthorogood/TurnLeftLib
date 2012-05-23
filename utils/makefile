@@ -40,4 +40,4 @@ wordaggregator:
 	$(CC)  WordAggregator.cc src/wordaggregator/wordaggregator.cpp \
 	src/wordaggregator/wordaggregator.h;
 clean:
-	rm *.o *.cc
+	rm *.o *.cc *.gch
