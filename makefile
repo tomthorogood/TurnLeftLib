@@ -29,6 +29,7 @@ exceptions:
 utils:
 	cd utils/ && $(MAKE) all	
 	ar crs libturnleft.a \
+		utils/Inlines.o \
 		utils/Log.o \
 		utils/PtrArray.o \
 		utils/HungryVector.o \

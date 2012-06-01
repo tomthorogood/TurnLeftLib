@@ -6,7 +6,7 @@ TXT_RESOURCES = commonwords aggregatortext aggregatortext2
 TXT_OUTPUTS = logtest_output
 CC = $(COMPILE_DEBUG) -c $(INCLUDES)
 
-all: log ptrarray hungryvector explosion commonwords \
+all: inlines log ptrarray hungryvector explosion commonwords \
 	randomcharset wordaggregator
 
 commonwords:
@@ -39,5 +39,10 @@ wordaggregator:
 	cp WordAggregator WordAggregator.cc;
 	$(CC)  WordAggregator.cc src/wordaggregator/wordaggregator.cpp \
 	src/wordaggregator/wordaggregator.h;
+
+inlines:
+	cp Inlines Inlines.cc;
+	$(CC) Inlines.cc src/inlines.h;
+
 clean:
 	rm *.o *.cc *.gch
