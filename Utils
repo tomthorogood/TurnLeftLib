@@ -15,5 +15,6 @@
 #include "utils/RandomCharSet"
 #include "utils/WordAggregator"
 #include "utils/Explosion"
+#include "utils/EnumParser"
 
 #endif // TL_UTILS_

@@ -1,6 +1,6 @@
 COMPILE_DEBUG = g++ -Wall -g
 INCLUDES = -I$(CURDIR) -I$(CURDIR)/../ -I/usr/include/c++/4.6.3
-TESTS = commonwords explosion ptrarray wordaggregator hungryvector log
+TESTS = commonwords explosion ptrarray wordaggregator hungryvector log enumparser
 TEST_SUFFIX = "_test.cpp"
 TXT_RESOURCES = commonwords aggregatortext aggregatortext2 
 TXT_OUTPUTS = logtest_output
@@ -59,11 +59,11 @@ clean-tests:
 		do rm $$f.txt; done;
 
 clean-objects:
-	cd utils/ && $(MAKE) clean
 	rm -rf *.o
 	rm -rf *.cc
 	rm -rf *.a
 	rm -rf *.gch
+	cd utils/ && $(MAKE) clean
 
 clean: clean-tests clean-objects
 
