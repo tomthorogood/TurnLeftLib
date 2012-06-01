@@ -6,7 +6,11 @@ TXT_RESOURCES = commonwords aggregatortext aggregatortext2
 TXT_OUTPUTS = logtest_output
 CC = $(COMPILE_DEBUG) -c $(INCLUDES)
 
-all: inlines log enumparser ptrarray hungryvector explosion commonwords \
+<<<<<<< HEAD
+all: log enumparser ptrarray hungryvector explosion commonwords \
+=======
+all: inlines log ptrarray hungryvector explosion commonwords \
+>>>>>>> d5a03dcf7dda8432754afc497f7073cb9e59adfe
 	randomcharset wordaggregator
 
 commonwords:
@@ -40,13 +44,15 @@ wordaggregator:
 	$(CC)  WordAggregator.cc src/wordaggregator/wordaggregator.cpp \
 	src/wordaggregator/wordaggregator.h;
 
+<<<<<<< HEAD
 enumparser:
 	cp EnumParser EnumParser.cc
 	$(CC) EnumParser.cc src/enumparser.h
-
+=======
 inlines:
 	cp Inlines Inlines.cc;
 	$(CC) Inlines.cc src/inlines.h;
+>>>>>>> d5a03dcf7dda8432754afc497f7073cb9e59adfe
 
 clean:
 	rm *.o *.cc *.gch
