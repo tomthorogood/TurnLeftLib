@@ -31,6 +31,7 @@ utils:
 	ar crs libturnleft.a \
 		utils/Inlines.o \
 		utils/Log.o \
+		utils/EnumParser.o \
 		utils/PtrArray.o \
 		utils/HungryVector.o \
 		utils/Explosion.o \
@@ -60,10 +61,7 @@ clean-tests:
 		do rm $$f.txt; done;
 
 clean-objects:
-	rm -rf *.o
-	rm -rf *.cc
 	rm -rf *.a
-	rm -rf *.gch
 	cd utils/ && $(MAKE) clean
 
 clean: clean-tests clean-objects
