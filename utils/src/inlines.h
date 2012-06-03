@@ -13,6 +13,12 @@ inline void trimchar (std::string& str, const char& voip=' ')
     str = str.substr(firstGoodChar,lenToEnd);
 }
 
+template <class T>
+inline bool isset (const T& test, int mask)
+{
+    return test & mask == mask;
+}
+
 }}
 
 #endif
