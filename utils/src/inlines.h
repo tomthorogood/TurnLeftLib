@@ -19,6 +19,16 @@ inline bool isset (const T& test, int mask)
     return test & mask == mask;
 }
 
+template <class T>
+inline bool exor (const T& alpha, const T& beta, const T& value)
+{
+    return (
+            (alpha == value && beta == value) 
+            ||
+            (alpha != value && beta != value)
+           );
+}
+
 }}
 
 #endif

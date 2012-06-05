@@ -49,4 +49,4 @@ inlines:
 	$(CC) Inlines.cc src/inlines.h;
 
 clean:
-	rm *.o *.cc *.gch
+	rm -rf *.o *.cc *.gch

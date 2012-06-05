@@ -22,17 +22,20 @@ protected:
 public:
 	EnumParser(){};
 	virtual ~EnumParser(){};
-	T parse(const std::string& value)
-	{
-		typedef typename std::map<std::string, T>::const_iterator IValue;
-		IValue iValue =	enumMap.find(value);
-		return iValue->second;
-	}
+    int parse(const std::string& value);
     void add (T num, const std::string& value)
     {
         enumMap[value] = num;
     }
 };
+
+template <typename T>
+int EnumParser <T>::parse(const std::string& value)
+{
+    typedef typename std::map<std::string, T>::const_iterator IValue;
+    IValue iValue =	enumMap.find(value);
+    return iValue->second;
+}
 
 }}
 #endif /* TL_UTILS_ENUMPARSER_H_ */
