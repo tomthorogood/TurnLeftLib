@@ -6,11 +6,11 @@
  */
 
 
+
+#ifndef TL_EXCEPTIONS_FILENOTFOUNDEXCEPTION_H_
+#define TL_EXCEPTIONS_FILENOTFOUNDEXCEPTION_H_
 #include <exception>
 #include <sstream>
-
-#ifndef TL_EXCEPTIONS_FILENOTFONDEXCEPTION_H_
-#define TL_EXCEPTIONS_FILENOTFONDEXCEPTION_H_
 
 
 namespace TurnLeft {

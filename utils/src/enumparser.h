@@ -11,8 +11,12 @@
 #include <map>
 #include <string>
 
+#include <Exceptions>
+
 namespace TurnLeft{
 namespace Utils{
+
+using Exceptions::UnparseableEnumException;
 
 template <typename T>
 class EnumParser
@@ -34,6 +38,10 @@ int EnumParser <T>::parse(const std::string& value)
 {
     typedef typename std::map<std::string, T>::const_iterator IValue;
     IValue iValue =	enumMap.find(value);
+    if (iValue == enumMap.end())
+    {
+        throw UnparseableEnumException(value);
+    }
     return iValue->second;
 }
 

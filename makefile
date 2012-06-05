@@ -29,6 +29,7 @@ exceptions:
 utils:
 	cd utils/ && $(MAKE) all	
 	ar crs libturnleft.a \
+		utils/PackedData.o \
 		utils/Inlines.o \
 		utils/Log.o \
 		utils/EnumParser.o \
@@ -54,11 +55,11 @@ install:
 #####################
 clean-tests:
 	for f in $(TESTS); \
-		do rm $$f; done;
-	for f in $(TXT_RESOURCES); \
-		do rm $$f.txt; done;
+		do rm -f $$f; done;
+	for f in -f $(TXT_RESOURCES); \
+		do rm -f $$f.txt; done;
 	for f in $(TXT_OUTPUTS); \
-		do rm $$f.txt; done;
+		do rm -f $$f.txt; done;
 
 clean-objects:
 	rm -rf *.a

@@ -17,5 +17,6 @@
 #include "utils/WordAggregator"
 #include "utils/Explosion"
 #include "utils/EnumParser"
+#include "utils/PackedData"
 
 #endif // TL_UTILS_

@@ -6,8 +6,12 @@ TXT_RESOURCES = commonwords aggregatortext aggregatortext2
 TXT_OUTPUTS = logtest_output
 CC = $(COMPILE_DEBUG) -c $(INCLUDES)
 
-all: inlines log enumparser ptrarray hungryvector explosion commonwords \
+all: packeddata inlines log enumparser ptrarray hungryvector explosion commonwords \
 	randomcharset wordaggregator
+
+packeddata:
+	cp PackedData PackedData.cc;
+	$(CC) PackedData.cc src/PackedData.h;
 
 commonwords:
 	cp CommonWords CommonWords.cc;
