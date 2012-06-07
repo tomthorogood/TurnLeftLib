@@ -39,6 +39,16 @@ public:
         return flags;
     }
 
+    inline bool operator== (const T& other)
+    {
+        return other == flags;
+    }
+
+    inline bool operator== (const PackedData<T>& other)
+    {
+        return other == flags;
+    }
+
 };
 
 }}
