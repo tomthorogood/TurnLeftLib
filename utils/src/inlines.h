@@ -1,7 +1,7 @@
 #ifndef TL_UTILS_INLINES_H_
 #define TL_UTILS_INLINES_H_
 
-#include "config.h"
+#include "utils_config.h"
 #include <string>
 
 TL_UTILS_NAMESPACE

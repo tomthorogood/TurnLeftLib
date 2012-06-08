@@ -8,7 +8,7 @@
 #ifndef TURNLEFT_UTILS_STRINGS_H_
 #define TURNLEFT_UTILS_STRINGS_H_
 
-#include "config.h"
+#include "utils_config.h"
 #include <string>
 #include <vector>
 #include <sstream>

@@ -18,12 +18,10 @@
 #define WORDSET_ARRAY_SIZE 300
 #define FREQUENCY_INIT_SIZE 100
 
-#include "config.h"
+#include "utils_config.h"
 #include <vector>
 #include <map>
-#include <explosion.h>
-#include <hungryvector.h>
-#include <commonwords.h>
+#include <TurnLeftLib/Utils>
 
 TL_UTILS_NAMESPACE
 

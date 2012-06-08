@@ -16,7 +16,7 @@
 
 #ifndef TL_UTILS_COMMONWORDS_H_
 #define TL_UTILS_COMMONWORDS_H_
-#include "config.h"
+#include "utils_config.h"
 #include <iostream>     // for std::cout
 #include <fstream>      // for std::ifstream
 #include <sstream>      // for std::stringstream

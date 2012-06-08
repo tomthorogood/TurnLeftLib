@@ -5,8 +5,7 @@
  *      Author: tom
  */
 
-#include <strings.h>
-
+#include <TurnLeftLib/src/strings.h>
 TL_UTILS_NAMESPACE
 
 Explosion::Explosion(std::string aString)

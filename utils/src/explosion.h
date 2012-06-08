@@ -4,7 +4,7 @@
  * aka 'split' in any other language (that was a jab at PHP). 
  */
 
-#include "config.h"
+#include "utils_config.h"
 #include <string>
 #include <vector>
 #include <sstream>

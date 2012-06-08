@@ -1,6 +1,5 @@
 
-#include <wordaggregator.h>
-
+#include <TurnLeftLib/src/wordaggregator.h>
 TL_UTILS_NAMESPACE
 
 WordAggregator::WordAggregator (std::string& words, FrequencyMap& _map, 

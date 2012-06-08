@@ -21,7 +21,7 @@
 #ifndef TL_UTILS_DEBUG_LEVEL_H_
 #define TL_UTILS_DEBUG_LEVEL_H_
 
-#include "config.h"
+#include "utils_config.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>

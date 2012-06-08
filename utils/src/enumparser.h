@@ -8,7 +8,7 @@
 #ifndef TL_UTILS_ENUMPARSER_H_
 #define TL_UTILS_ENUMPARSER_H_
 
-#include "config.h"
+#include "utils_config.h"
 #include <map>
 #include <string>
 #include <TurnLeftLib/Exceptions>

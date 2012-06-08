@@ -53,9 +53,8 @@ clean-this:
 	rm -f $(LIB_FILENAME)
 
 clean-subs:
-	for d in $(SUBS); do \
-		cd $$d && $(MAKE) clean; \
-		done;
+	cd $(UTILS_DIR) && $(MAKE) clean
+	cd $(EXCEPTIONS_DIR) && $(MAKE) clean
 
 uninstall:
 	rm -rf $(HEADER_INSTALL_DIR)/

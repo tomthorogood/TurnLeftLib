@@ -8,7 +8,7 @@
 #ifndef TL_UTILS_HUNGRYVECTOR_H_
 #define TL_UTILS_HUNGRYVECTOR_H_
 
-#include "config.h"
+#include "utils_config.h"
 #include <vector>
 
 TL_UTILS_NAMESPACE

@@ -20,7 +20,7 @@
 #ifndef TL_UTILS_PTRARRAY_H_
 #define TL_UTILS_PTRARRAY_H_
 
-#include "config.h"
+#include "utils_config.h"
 #include <bitset>
 
 TL_UTILS_NAMESPACE
