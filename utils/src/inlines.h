@@ -1,10 +1,11 @@
-#include <string>
-
 #ifndef TL_UTILS_INLINES_H_
 #define TL_UTILS_INLINES_H_
 
-namespace TurnLeft{
-namespace Utils{
+#include "config.h"
+#include <string>
+
+TL_UTILS_NAMESPACE
+
 inline void trimchar (std::string& str, const char& voip=' ')
 {
     int lastGoodChar = str.find_last_not_of(voip);
@@ -29,6 +30,6 @@ inline bool exor (const T& alpha, const T& beta, const T& value)
            );
 }
 
-}}
+ECAPSEMAN_SLITU_LT
 
 #endif

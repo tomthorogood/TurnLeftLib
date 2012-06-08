@@ -1,0 +1,8 @@
+#ifndef TURNLEFT_EXCEPTIONS
+#define TURNLEFT_EXCEPTIONS
+
+#include "src/FileNotFoundException.h"
+#include "src/MissingParameterException.h"
+#include "src/UnparseableEnumException.h"
+
+#endif

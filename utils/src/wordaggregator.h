@@ -1,115 +1,86 @@
 /*
- * wordaggregator.h
+ * Part of the Turn Left C++ Lib.
+ * This file contains two datatypes.
  *
- *  Created on: May 2, 2012
- *      Author: tom
+ * 1) The WordFrequency struct, which is simply a way to map a string
+ * to the number of times it is used in a block of text.
+ * 2) The WordAggregator class, which parses a string, first splitting it into
+ * an array, then filtering out the commonwords, and finally counting the number
+ * of times each other word appears in the text.
+ *
+ * It should be noted that this class is not to be used lightly: it's very expensive.
+ * Suggestions are welcome on how to optimize this code for better performance!
  */
 
-#ifndef WORDAGGREGATOR_H_
-#define WORDAGGREGATOR_H_
-
-#ifndef COMMONWORDS_TXT_
-#define COMMONWORDS_TXT_ "commonwords.txt"
-#endif //COMMONWORDS_TXT_
+#ifndef TL_UTILS_WORDAGGREGATOR_H_
+#define TL_UTILS_WORDAGGREGATOR_H_
 
 #define WORDSET_ARRAY_SIZE 300
 #define FREQUENCY_INIT_SIZE 100
 
+#include "config.h"
 #include <vector>
-#include "../utils.hpp"
+#include <map>
+#include <explosion.h>
+#include <hungryvector.h>
+#include <commonwords.h>
 
-namespace TurnLeft {
-namespace Utils {
+TL_UTILS_NAMESPACE
 
-struct WordFrequency {
-	std::string word;
-	int frequency;
-	WordFrequency(){word="";frequency=0;}
-};
+typedef std::map <std::string, int> FrequencyMap;
+typedef FrequencyMap::iterator FrequencyIterator;
+typedef HungryVector <std::string> FrequencyVector;
 
+/*! The WordAggregator class parses a string, separating words into an array, 
+ * filtering out common words, and finally counting the number of times each
+ * word appears in the array. This class relies on other tools in this library:
+ * HungryVector, Explosion, and CommonWords
+ */
 class WordAggregator
 {
 private:
+    /*! The library of words that will be filtered out of the input text.
+     * \sa TurnLeft::Utils::CommonWords */
 	CommonWords library;
-	HungryVector <WordFrequency> frequencies;
+
+    void parse(std::string&, FrequencyMap& _map);
+
 public:
+    /*! Default constructor also calls default constructor of library. Not
+     * very useful, but offered for completeness. */
 	WordAggregator(){};
-	WordAggregator(std::vector<std::string>& words);
-	WordFrequency init;
-	HungryVector <WordFrequency> * getVector();
+
+    /*! The standard constructor takes in a vector of strings, and may optionally
+     * contain a filename to be passed into the CommonWords library constructor.
+     * This constructor is useful when aggregating multiple blocks of text.
+     * \param words A vector containing chunks of text.
+     * \param _map A frequency map to be filled with the results
+     * \param libFilename (Optional) The filename of the common words library
+     * (default is NULL, which will invoke the preprocessed setting).
+     */
+	WordAggregator(std::vector<std::string>& words, FrequencyMap& _map, 
+            const char* libFilename);
+
+    /*! The overloaded constructor takes in a HungryVector of strings, and may
+     * optionally contain a filename to be passed into the CommonWords library
+     * constructor.
+     * \param words A HungryVector containing chunks of text.
+     * \param _map A frequency map to be filled with the results
+     * \param libFilename (Optional) The filename of the common words library
+     * (default is NULL, which will invoke the preprocessed setting).
+     */
+    WordAggregator(FrequencyVector& words, FrequencyMap& _map,
+            const char* libFilename);
+
+    /*! This overloaded constrcutor takes in a single string, and may optioanlly
+     * contain a filename to be passed into the CommonWords library constructor.
+     * This constructor is useful when only parsing one block of text.
+     */
+    WordAggregator(std::string& words, FrequencyMap& _map, 
+            const char* libFilename);
+
 };
 
-WordAggregator::WordAggregator (std::vector <std::string> &words)
-:	library(COMMONWORDS_TXT_),
- 	frequencies(FREQUENCY_INIT_SIZE, WordFrequency())
-{
-	int size = frequencies.size();
-	for (int i = 0; i < words.size(); i++)
-	{
-		/* Create an array of the default size. */
-		std::string wordset[WORDSET_ARRAY_SIZE];
-
-		/* Create an explosion using the currently iterated string,
-		 * and split the string into an array using ' ' as the delimiter.
-		 */
-		Explosion explosion(words[i]);
-		explosion.explode(' ');
-		explosion.getArray(wordset);
-
-		/* To speed up parsing, insert the values into a hungry vector which
-		 * can be resized dynamically.
-		 */
-		TurnLeft::Utils::HungryVector <std::string> wordvec(WORDSET_ARRAY_SIZE/2,"");
-		for (int y = 0; y < WORDSET_ARRAY_SIZE; y++)
-		{
-			if (wordset[y] == "") break;
-			wordvec.add(wordset[y]);
-		}
-		wordvec.trim();
-
-		/** Iterate through the vector of words in the currently selected string
-		 * and determine whether each word is already in the frequency list.
-		 */
-		for (int w=0; w < wordvec.size(); w++)
-		{
-			bool found = false;
-			int s = 0;
-			while (s < frequencies.size() && !found)
-			{
-				if (frequencies[s].word == "") break;
-				if (frequencies[s].word == wordvec[w])
-				{
-					found = true;
-				}
-				else
-				{
-					s++;
-				}
-			}
-
-			if (found)
-			{
-				frequencies[s].frequency++;
-			}
-
-			else if (!library.find(wordvec[w]))
-			{
-				frequencies.inc();
-				frequencies[s].word = wordvec[w];
-				frequencies[s].frequency++;
-			}
-			frequencies.trim();
-		}
-	}
-}
-
-HungryVector<WordFrequency>*
-WordAggregator::getVector()
-{
-	return &frequencies;
-}
-
-}}
-
+ECAPSEMAN_SLITU_LT
 
 #endif /* WORDAGGREGATOR_H_ */

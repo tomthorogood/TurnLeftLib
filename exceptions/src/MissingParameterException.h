@@ -8,12 +8,12 @@
 #ifndef MISSINGPARAMETEREXCEPTION_H_
 #define MISSINGPARAMETEREXCEPTION_H_
 
+#include "config.h"
 #include <exception>
 #include <string>
 #include <sstream>
 
-namespace TurnLeft{
-namespace  Exceptions{
+TL_EXCEPTIONS_NAMESPACE
 
 /*! \brief The MissingParameterException is thrown in the case of a typically optional
  * parameter being required based the arguments of another parameter.
@@ -27,23 +27,11 @@ public:
      * \param method The method which is throwing the error
      * \param parameter The parameter the method cannot find.
      */
-    MissingParameterException (const char* method, const char* parameter)
-    :   exception()
-    {
-        std::stringstream stream;
-        stream << "[MISSING PARAMETER] in method " << method << ": " << parameter;
-        errorMessage = stream.str().c_str();
-    }
+    MissingParameterException(const char* method, const char* parameter);
 
     /*! \return the Automatically generated error message for this exception. */
-    const char* what() const throw()
-    {
-        return this->errorMessage;
-    }
+    inline const char* what() const throw();
 };
 
-}
-}
-
-
+ECAPSEMAN_SNOITPECXE_LT
 #endif /* MISSINGPARAMETEREXCEPTION_H_ */

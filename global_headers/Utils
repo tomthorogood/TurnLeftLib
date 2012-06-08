@@ -1,0 +1,22 @@
+/*
+ * An  abstracted way to include the Turn Left Lib.
+ * Each of the following may also be included separately if desired. All 
+ * includes are wrapped in ifndef/endifs, so there's no harm, no foul.
+ */
+
+
+#ifndef TL_UTILS_HEADERS
+#define TL_UTILS_HEADERS
+
+#include "src/inlines.h"
+#include "src/commonwords.h"
+#include "src/hungryvector.h"
+#include "src/log.h"
+#include "src/ptrarray.h"
+#include "src/randomcharset.h"
+#include "src/wordaggregator.h"
+#include "src/explosion.h"
+#include "src/enumparser.h"
+#include "src/PackedData.h"
+
+#endif // TL_UTILS_HEADERS

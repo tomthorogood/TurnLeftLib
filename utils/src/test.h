@@ -25,35 +25,43 @@ namespace unittest
     {
         /*! The result expected in the next test.
          * \sa expect */
-        ExpectedResult  expected;
+        ExpectedResult expected;
 
         /*! The actual result of the test.
          * \sa test
          */
-        ExpectedResult  actual;
+        ExpectedResult actual;
 
         /*! The name of the test.
          * \sa name
          */
-        std::string     testName;
+        std::string testName;
 
     public:
 
         /*! The constructor takes no arguments. */
-        Test();
+        Test(){};
 
         /*! The expect method sets the expected value of the next test.
          * \sa expected
          * \param value The value expected from the next test.
          */
-        Test expect (ExpectedResult value);
+        inline Test& expect (ExpectedResult value)
+        {
+            expected = value;
+            return *this;
+        }
 
         /*! The name method sets the name of the next test.
          * \sa testName
          * \param name The name of the next test (typically the method name 
          * plus optional arguments)
          */
-        Test name   (std::string);
+        inline Test& name (std::string)
+        {
+            testName = aName;
+            return *this;
+        }
 
         /*! The test method will evaluate the expression passed in, and compare
          * the result to the expected result, displaying the output.
@@ -61,32 +69,7 @@ namespace unittest
          * \param value a value or expression which evaluates to a value of
          * the same datatype this test is expecting.
          */
-        void test   (ExpectedResult value);
-    };
-
-    template <class ExpectedResult>
-        Test<ExpectedResult>::Test()
-        { }
-
-    template <class ExpectedResult>
-        Test <ExpectedResult>
-        Test<ExpectedResult>::expect(ExpectedResult value)
-        {
-            expected = value;
-            return *this;
-        }
-
-    template <class ExpectedResult>
-        Test <ExpectedResult>
-        Test<ExpectedResult>::name(std::string aName)
-        {
-            testName = aName;
-            return *this;
-        }
-
-    template <class ExpectedResult>
-        void 
-        Test<ExpectedResult>::test(ExpectedResult value)
+        void test (ExpectedResult value)
         {
             actual = value;
             std::cout << testName << ": ";
@@ -94,6 +77,7 @@ namespace unittest
             std::cout << "Actual: " << actual;
             std::cout << " => " << status[actual==expected] << std::endl;
         }
+    };
 }
 
 #endif

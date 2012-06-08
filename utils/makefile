@@ -1,56 +1,29 @@
-COMPILE_DEBUG = g++ -Wall -g
-INCLUDES = -I$(CURDIR)/../../ -I$(CURDIR)/../ -I/usr/include/c++/4.6.3
-TESTS = commonwords explosion ptrarray wordaggregator hungryvector log
-TEST_SUFFIX = "_test.cpp"
-TXT_RESOURCES = commonwords aggregatortext aggregatortext2 
-TXT_OUTPUTS = logtest_output
-CC = $(COMPILE_DEBUG) -c $(INCLUDES)
+SRCDIR = src
+OBJDIR = obj
 
-all: packeddata inlines log enumparser ptrarray hungryvector explosion commonwords \
-	randomcharset wordaggregator
+INCLUDE_DIRS = /usr/include /usr/local/include $(CURDIR) $(CURDIR)/$(SRCDIR) $(CURDIR)/../../ 
+INCLUDES = $(foreach f, $(INCLUDE_DIRS), -I$(f))
 
-packeddata:
-	cp PackedData PackedData.cc;
-	$(CC) PackedData.cc src/PackedData.h;
+HEADER_FILES = $(wildcard $(SRCDIR)/*.h)
+SRC_FILES = $(wildcard $(SRCDIR)/*.cpp)
+OBJECT_FILES = $(addprefix $(OBJDIR)/, $(patsubst %.cpp, %.o, $(notdir $(SRC_FILES))))
 
-commonwords:
-	cp CommonWords CommonWords.cc;
-	$(CC) CommonWords.cc src/commonwords/commonwords.cpp \
-	src/commonwords/commonwords.h;
+all : $(OBJECT_FILES)
 
-explosion:
-	cp Explosion Explosion.cc;
-	$(CC) Explosion.cc src/explosion/explosion.cpp \
-	src/explosion/explosion.h
+$(OBJECT_FILES) : | $(OBJDIR)/
 
-hungryvector:
-	cp HungryVector HungryVector.cc;
-	$(CC) HungryVector.cc src/hungryvector.h;
+$(OBJDIR)/%.o : $(SRCDIR)/%.cpp
+	g++ -c -Wall $(INCLUDES) -o $@ $<
 
-log:
-	cp Log Log.cc
-	$(CC)  Log.cc src/log/log.cpp src/log/log.h
-
-ptrarray:
-	cp PtrArray PtrArray.cc;
-	$(CC)  PtrArray.cc src/ptrarray.h ;
-
-randomcharset:
-	cp RandomCharSet RandomCharSet.cc;
-	$(CC) RandomCharSet.cc src/randomcharset.h;
-
-wordaggregator:
-	cp WordAggregator WordAggregator.cc;
-	$(CC)  WordAggregator.cc src/wordaggregator/wordaggregator.cpp \
-	src/wordaggregator/wordaggregator.h;
-
-enumparser:
-	cp EnumParser EnumParser.cc
-	$(CC) EnumParser.cc src/enumparser.h
-
-inlines:
-	cp Inlines Inlines.cc;
-	$(CC) Inlines.cc src/inlines.h;
+$(OBJDIR)/:
+	mkdir -p $(OBJDIR)/
 
 clean:
-	rm -rf *.o *.cc *.gch
+	rm -rf $(OBJDIR)
+	clear&&clear
+
+test-output:
+	echo $(INCLUDES)
+	echo $(HEADER_FILES)
+	echo $(SRC_FILES)
+	echo $(OBJECT_FILES)

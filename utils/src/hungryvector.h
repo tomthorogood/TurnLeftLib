@@ -7,10 +7,11 @@
 
 #ifndef TL_UTILS_HUNGRYVECTOR_H_
 #define TL_UTILS_HUNGRYVECTOR_H_
+
+#include "config.h"
 #include <vector>
 
-namespace TurnLeft {
-namespace Utils {
+TL_UTILS_NAMESPACE
 
 /*! \brief A less expensive implementation of the std::vector.
  * The HungryVector is a subclass of the std::vector. It has
@@ -43,7 +44,10 @@ public:
 	 * will have to resize it, and start the doubling operation
 	 * from 1.
 	 */
-	HungryVector();
+	HungryVector ()
+    {
+        usage = 0;
+    }
 
 	/*! The overloaded constructor takes a size and a default
 	 * value, creating a vector of size 'size', all of whose
@@ -53,13 +57,24 @@ public:
 	 * \param size The initial number of objects in the vector.
 	 * \param value The default value for those initial objects
 	 */
-	HungryVector(int size, T value);
+	HungryVector(int size, T value)
+    {
+        usage = 0;
+    }
 	/*! The add() method will insert a new object into the vector.
 	 * If the vector has reached its declared size, the vector will
 	 * be resized to double its current size.
 	 * \param value The value to be added.
 	 */
-	void add(T value);
+	inline void add (T value)
+    {
+        if (usage == this->size()-1)
+        {
+            this->resize(this->size()*2);
+        }
+        this->at(usage) = value;
+        usage++;
+    }
 
 	/*! Trims the vector down to the minimum size (meaning all non-default
 	 * objects contained within the vector). This is done by simply resizing
@@ -69,69 +84,30 @@ public:
 	 * 810, you can free up 790 blocks of memory allocated to the vector's type
 	 * by calling the trim() method.
 	 */
-	void trim();
+	inline void trim()
+    {
+        this->resize(usage);
+    }
 
 	/*! Increments the sentinel variable, so that it will approach its
 	 * 'maximum' faster.
 	 */
-	void inc();
+	inline void inc()
+    {
+        if (usage == this->size()-1)
+            {
+                this->resize(this->size()*2);
+            }
+        usage++;
+    }
 	/*! Decrements the sentinel variable, to slow down its approach to the
 	 * 'maximum'
 	 */
-	void dec();
+	inline void dec()
+    {
+        usage--;
+    }
 };
 
-template <class T>
-HungryVector<T>::HungryVector()
-:	std::vector<T>()
-{
-	usage = 0;
-}
-
-template <class T>
-HungryVector<T>::HungryVector(int size, T value)
-:   std::vector<T>(size,value)
-{
-    usage = 0;
-}
-
-template <class T>
-void
-HungryVector<T>::add(T value)
-{
-    if (usage == this->size()-1)
-    {
-        this->resize(this->size()*2);
-    }
-    this->at(usage) = value;
-    usage++;
-}
-
-template <class T>
-void
-HungryVector<T>::trim()
-{
-    this->resize(usage);
-}
-
-template <class T>
-void
-HungryVector<T>::inc()
-{
-    if (usage == this->size()-1)
-        {
-            this->resize(this->size()*2);
-        }
-    usage++;
-}
-
-template <class T>
-void
-HungryVector<T>::dec()
-{
-    usage--;
-}
-
-}}
-
+ECAPSEMAN_SLITU_LT
 #endif /* HUNGRYVECTOR_H_ */

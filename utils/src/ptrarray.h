@@ -19,9 +19,11 @@
 
 #ifndef TL_UTILS_PTRARRAY_H_
 #define TL_UTILS_PTRARRAY_H_
+
+#include "config.h"
 #include <bitset>
-namespace TurnLeft{
-namespace Utils{
+
+TL_UTILS_NAMESPACE
 
 /*! \brief A class which allows for easier memory management that also prevents
  * heap fragmentation. It utilizes arrays instead of vectors to improve
@@ -47,13 +49,15 @@ public:
 	/*! The default construcotr initializes all members of the allocator
 	 * to NULL and all flags to 0 (off).
 	 */
-	PtrArray(){
+	PtrArray()
+    {
 		for (unsigned int i = 0; i < max; i++)
 		{
 			allocator[i] = NULL;
 		}
 		flags.reset();
 	}
+
 	virtual ~PtrArray()
 	{
 		while (!flags.none())
@@ -141,7 +145,7 @@ public:
 	/*! Retrieves the current stack size.
 	 * \return an integer between 0 and Max-1
 	 */
-	int size()
+	inline int size()
 	{
 		return flags.count();
 	}
@@ -150,7 +154,7 @@ public:
 	 * has not yet been initialized, returns the most recently initialized pointer.
 	 * \return a pointer to a PointerType object.
 	 */
-	PointerType* dig(int location)
+	inline PointerType* dig(int location)
 	{
 		return allocator[location];
 	}
@@ -159,7 +163,7 @@ public:
      * Works well when using the alloc() method.
      * \sa alloc()
      */
-    PtrArray& rem()
+    inline PtrArray& rem()
 	{
 		delete allocator[top()];
 		flags.set(top(), false);
@@ -171,7 +175,7 @@ public:
      * \sa allocAt()
      * \param The location in the array you wish to free.
      */
-    void remAt(int loc)
+    inline void remAt(int loc)
     {
         if (!flags.test(loc)) return;
         flags.set(loc,false);
@@ -183,12 +187,12 @@ public:
 	 * while the array is still in scope, the pointer can still be accessed with dig(), 
      * unless the alloc() method assigns a new pointer to that location in the array..
 	 */
-	PtrArray& transfer(int loc)
+	inline PtrArray& transfer(int loc)
 	{
 		flags.set(loc,false);
 		return *this;
 	}
 };
 
-}}
+ECAPSEMAN_SLITU_LT
 #endif /* TL_UTILS_PTRARRAY_H_ */

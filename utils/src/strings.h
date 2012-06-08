@@ -5,14 +5,16 @@
  *      Author: tom
  */
 
-#include <string>
-#include <vector>
-#include <sstream>
 #ifndef TURNLEFT_UTILS_STRINGS_H_
 #define TURNLEFT_UTILS_STRINGS_H_
 
-namespace TurnLeft {
-namespace Utils {
+#include "config.h"
+#include <string>
+#include <vector>
+#include <sstream>
+#include <iostream>
+
+TL_UTILS_NAMESPACE
 
 class Explosion
 {
@@ -35,7 +37,8 @@ class Explosion
 
 public:
 	Explosion(){};
-	/*! Standard constructor, takes in the string to be iterated over.
+	
+    /*! Standard constructor, takes in the string to be iterated over.
 	 * @param a string of up to 300 words.*/
 	Explosion(std::string);
 
@@ -44,7 +47,7 @@ public:
 	 * @return a reference to this object for method chaining
 	 * \sa strArray
 	 */
-	Explosion& getArray (std::string[]);
+	inline Explosion& getArray (std::string[]);
 
 	/*! Splits the string at any instance of the delimiter char, filling the instance array.
 	 * @param a character delimiting the string
@@ -58,15 +61,14 @@ public:
 	 * @return a pointer to the instance array
 	 * \sa arrayPtr
 	 */
-	std::string *getArrayPtr();
+	inline std::string *getArrayPtr();
 
 	/*! Retrieves the number of words that were parsed from the input string.
 	 * @return the number of words in the input string
 	 * \sa numWords
 	 */
-	int getNumWords();
+	inline int getNumWords();
 };
 
-}}
-
+ECAPSEMAN_SLITU_LT
 #endif /* TURNLEFT_UTILS_STRINGS_H_ */

@@ -1,16 +1,17 @@
 #ifndef PACKED_DATA_H_
 #define PACKED_DATA_H_
 
+#include "config.h"
 
-namespace TurnLeft{
-namespace Utils {
+TL_UTILS_NAMESPACE
 
 template <typename T>
 class PackedData {
 private:
     T flags;
 public:
-    PackedData() {
+    PackedData() 
+    {
         flags = 0;
     }
 
@@ -48,9 +49,7 @@ public:
     {
         return other == flags;
     }
-
 };
 
-}}
-
+ECAPSEMAN_SLITU_LT
 #endif /*PACKED_DATA_H_ */

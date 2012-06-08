@@ -1,69 +1,68 @@
-COMPILE_DEBUG = g++ -Wall -g
-INCLUDES = -I$(CURDIR) -I$(CURDIR)/../ -I/usr/include/c++/4.6.3
-TESTS = commonwords explosion ptrarray wordaggregator hungryvector log enumparser
-TEST_SUFFIX = "_test.cpp"
-TXT_RESOURCES = commonwords aggregatortext aggregatortext2 
-TXT_OUTPUTS = logtest_output
-CC = $(COMPILE_DEBUG) -c $(INCLUDES)
-LIBOUTPUT = /usr/local/lib
-HEADEROUTPUT = /usr/include/TurnLeftLib
+LIBRARY_NAME = turnleft
+LIB_FILENAME = lib$(LIBRARY_NAME).a
 
-tests:
-	for f in $(TESTS); \
-	do  $(COMPILE_DEBUG) $(INCLUDES) tests/$$f$(TEST_SUFFIX) -o $$f; done;
-	for f in $(TXT_RESOURCES); \
-		do cp tests/$$f.txt .; done;
+HEADER_INSTALL_DIR = /usr/local/include/TurnLeftLib
+LIB_INSTALL_DIR = /usr/local/lib
 
-mtest:
-	for x in $(TESTS); \
-	do \
-		echo "$(COMPILE_DEBUG) $(INCLUDES) tests/$$x$(TEST_SUFFIX) -o $$x" ;\
-	done
+OBJECTS_DIR = obj
 
+UTILS_DIR = utils
+UTILS_HEADERS = $(wildcard $(UTILS_DIR)/src/*.h)
+UTILS_OBJECTS = $(wildcard $(UTILS_DIR)/$(OBJECTS_DIR)/*.o)
 
-exceptions:
-	cp Exceptions Exceptions.cc
-	g++ -c $(INCLUDES) Exceptions.cc exceptions/src/FileNotFoundException.h \
-	exceptions/src/MissingParameterException.h
+EXCEPTIONS_DIR = exceptions
+EXCEPTIONS_HEADERS = $(wildcard $(EXCEPTIONS_DIR)/src/*.h)
+EXCEPTIONS_OBJECTS = $(wildcard $(EXCEPTIONS_DIR)/$(OBJECTS_DIR)/*.o)
 
-utils:
-	cd utils/ && $(MAKE) all	
-	ar crs libturnleft.a \
-		utils/PackedData.o \
-		utils/Inlines.o \
-		utils/Log.o \
-		utils/EnumParser.o \
-		utils/PtrArray.o \
-		utils/HungryVector.o \
-		utils/Explosion.o \
-		utils/CommonWords.o \
-		utils/RandomCharSet.o \
-		utils/WordAggregator.o
+ABSTRACT_HEADERS = $(wildcard global_headers/*)
+ALL_OBJECTS = $(UTILS_OBJECTS) $(EXCEPTIONS_OBJECTS)
 
-install:
-	cp libturnleft.a $(LIBOUTPUT)
-	mkdir -p $(HEADEROUTPUT)
-	cp -r . $(HEADEROUTPUT)
-	cp $(CURDIR)/utils/src/commonwords/commonwords.txt $(HEADEROUTPUT)
-	chmod 775 $(HEADEROUTPUT)/commonwords.txt
-	cd $(HEADEROUTPUT) && $(MAKE) clean-objects
+SUBS = $(UTILS_DIR) $(EXCEPTIONS_DIR)
 
-.PHONY: tests utils exceptions
+$(LIB_FILENAME): exceptions utils
+	ar -crf $(LIB_FILENAME) $(UTILS_OBJECTS) $(EXCEPTIONS_OBJECTS)
 
-#####################
-# CLEANUP FUNCTIONS #
-#####################
-clean-tests:
-	for f in $(TESTS); \
-		do rm -f $$f; done;
-	for f in -f $(TXT_RESOURCES); \
-		do rm -f $$f.txt; done;
-	for f in $(TXT_OUTPUTS); \
-		do rm -f $$f.txt; done;
+exceptions: $(EXCEPTIONS_OBJECTS)
+	cd $(EXCEPTIONS_DIR)/ && $(MAKE)
 
-clean-objects:
-	rm -rf *.a
-	cd utils/ && $(MAKE) clean
+utils : $(UTILS_OBJECTS)
+	cd $(UTILS_DIR)/ && $(MAKE)
 
-clean: clean-tests clean-objects
+install: | $(HEADER_INSTALL_DIR) $(LIB_INSTALL_DIR) $(HEADER_INSTALL_DIR)/src
+	cp $(LIB_FILENAME) $(LIB_INSTALL_DIR)
 
+	for f in $(EXCEPTIONS_HEADERS) $(UTILS_HEADERS); do \
+		cp $$f $(HEADER_INSTALL_DIR)/src; \
+		done;
+	for f in $(ABSTRACT_HEADERS); do \
+		cp $$f $(HEADER_INSTALL_DIR)/; \
+		done;
+
+$(HEADER_INSTALL_DIR) :
+	mkdir -p $@
+
+$(LIB_INSTALL_DIR) :
+	mkdir -p $@
+
+$(HEADER_INSTALL_DIR)/src :
+	mkdir -p $@
+
+clean: clean-this clean-subs
+
+clean-this:
+	rm -f $(LIB_FILENAME)
+
+clean-subs:
+	for d in $(SUBS); do \
+		cd $$d && $(MAKE) clean; \
+		done;
+
+uninstall:
+	rm -rf $(HEADER_INSTALL_DIR)/
+	rm -f $(LIB_INSTALL_DIR)/$(LIB_FILENAME)
+
+test-output:
+	echo $(UTILS_OBJECTS)
+	echo $(ALL_OBJECTS)
+
+.PHONY: utils exceptions

@@ -5,10 +5,9 @@
  *      Author: tom
  */
 
-#include "strings.h"
-#include <iostream>
-namespace TurnLeft {
-namespace Utils {
+#include <strings.h>
+
+TL_UTILS_NAMESPACE
 
 Explosion::Explosion(std::string aString)
 {
@@ -16,8 +15,7 @@ Explosion::Explosion(std::string aString)
     numWords = 0;
 }
 
-Explosion&
-Explosion::getArray(std::string arr[])
+inline Explosion& Explosion::getArray(std::string arr[])
 {
 	for (int i = 0; i < numWords; i++)
 	{
@@ -26,14 +24,12 @@ Explosion::getArray(std::string arr[])
 	return *this;
 }
 
-std::string*
-Explosion::getArrayPtr()
+inline std::string* Explosion::getArrayPtr()
 {
     return arrayPtr;
 }
 
-Explosion&
-Explosion::explode (char delimiter)
+Explosion& Explosion::explode (char delimiter)
 {
     std::stringstream buffer;
 	int maxLength = str.length();
@@ -62,10 +58,9 @@ Explosion::explode (char delimiter)
 	return *this;
 }
 
-int
-Explosion::getNumWords()
+inline int Explosion::getNumWords()
 {
     return numWords;
 }
 
-}}
+ECAPSEMAN_SLITU_LT
