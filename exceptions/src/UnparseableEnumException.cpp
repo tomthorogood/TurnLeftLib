@@ -9,9 +9,4 @@ UnparseableEnumException::UnparseableEnumException(const std::string& value)
     errMsg = err.c_str();
 }
 
-inline const char* UnparseableEnumException::what() const throw()
-{
-    return this->errMsg;
-}
-
 ECAPSEMAN_SNOITPECXE_LT

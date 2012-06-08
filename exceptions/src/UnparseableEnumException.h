@@ -1,7 +1,7 @@
 #ifndef TL_EXCEPTIONS_UNPARSEABLE_ENUM_H_
 #define TL_EXCEPTIONS_UNPARSEABLE_ENUM_H_
 
-#include "config.h"
+#include "exc_config.h"
 #include <exception>
 #include <string>
 
@@ -16,7 +16,10 @@ private:
 
 public:
     UnparseableEnumException (const std::string& value);
-    inline const char* what() const throw();
+    inline const char* what() const throw()
+    {
+        return this->errMsg;
+    }
 };
 
 ECAPSEMAN_SNOITPECXE_LT

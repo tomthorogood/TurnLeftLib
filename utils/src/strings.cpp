@@ -15,20 +15,6 @@ Explosion::Explosion(std::string aString)
     numWords = 0;
 }
 
-inline Explosion& Explosion::getArray(std::string arr[])
-{
-	for (int i = 0; i < numWords; i++)
-	{
-	    arr[i] = strArray[i];
-	}
-	return *this;
-}
-
-inline std::string* Explosion::getArrayPtr()
-{
-    return arrayPtr;
-}
-
 Explosion& Explosion::explode (char delimiter)
 {
     std::stringstream buffer;
@@ -56,11 +42,6 @@ Explosion& Explosion::explode (char delimiter)
 	    }
 	}
 	return *this;
-}
-
-inline int Explosion::getNumWords()
-{
-    return numWords;
 }
 
 ECAPSEMAN_SLITU_LT

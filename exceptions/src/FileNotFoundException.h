@@ -7,7 +7,7 @@
 
 #ifndef TL_EXCEPTIONS_FILENOTFOUNDEXCEPTION_H_
 #define TL_EXCEPTIONS_FILENOTFOUNDEXCEPTION_H_
-#include "config.h"
+#include "exc_config.h"
 #include <exception>
 #include <sstream>
 
@@ -40,7 +40,10 @@ public:
     /*! Implementation of the exception::what method that displays the
      * auto-generated error message.
      */
-    inline const char* what() const throw();
+    inline const char* what() const throw()
+    {
+        return this->errorMessage;
+    }
 };
 
 ECAPSEMAN_SNOITPECXE_LT

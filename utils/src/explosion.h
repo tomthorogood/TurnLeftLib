@@ -57,13 +57,19 @@ public:
 	 * @return a pointer to the instance array
 	 * \sa arrayPtr
 	 */
-	inline std::string *getArrayPtr();
+	inline std::string *getArrayPtr()
+    {
+        return arrayPtr;
+    }
 
 	/*! Retrieves the number of words that were parsed from the input string.
 	 * @return the number of words in the input string
 	 * \sa numWords
 	 */
-	inline int getNumWords();
+	inline int getNumWords()
+    {
+        return numWords;
+    }
 };
 
 }}

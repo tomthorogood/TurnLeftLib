@@ -121,19 +121,28 @@ public:
      * \sa level
      * \return 0=CRITICAL, 1=WARN, 2=VERBOSE, 3=ANNOYING
      */
-    inline DEBUG_LEVEL getLevel();
+    inline DEBUG_LEVEL getLevel()
+    {
+        return level;
+    }
     /*! Standard accessor which returns the debug type.
      * \sa type
      * \return 0=COUT, 1=FILE
      */
-    inline DEBUG_TYPE getType();
+    inline DEBUG_TYPE getType()
+    {
+        return type;
+    }
     /*! Standard setter which alters the debug level of the log.
      * This can be useful if you are working on a trouble spot within your
      * program, and only want to retrieve verbose messages in that section.
      * \sa level
      * \param _level The new DEBUG_LEVEL enum.
      */
-    inline void setLevel(DEBUG_LEVEL);
+    inline void setLevel(DEBUG_LEVEL _level)
+    {
+        level = _level;
+    }
 
     /*! Abnormal setter which optionally takes two parameters, the second
      * being the filename if the new debug type is FILE.

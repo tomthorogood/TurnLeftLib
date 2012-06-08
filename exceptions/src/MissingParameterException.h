@@ -8,7 +8,7 @@
 #ifndef MISSINGPARAMETEREXCEPTION_H_
 #define MISSINGPARAMETEREXCEPTION_H_
 
-#include "config.h"
+#include "exc_config.h"
 #include <exception>
 #include <string>
 #include <sstream>
@@ -30,7 +30,10 @@ public:
     MissingParameterException(const char* method, const char* parameter);
 
     /*! \return the Automatically generated error message for this exception. */
-    inline const char* what() const throw();
+    inline const char* what() const throw()
+    {
+        return this->errorMessage;
+    }
 };
 
 ECAPSEMAN_SNOITPECXE_LT

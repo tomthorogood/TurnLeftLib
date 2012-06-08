@@ -14,10 +14,6 @@ Explosion::Explosion(std::string aString)
     numWords = 0;
 }
 
-inline std::string* Explosion::getArrayPtr()
-{
-    return arrayPtr;
-}
 
 void Explosion::explode (char delimiter, std::string array[], 
         bool alphaOnly, bool keepCase)
@@ -53,11 +49,6 @@ void Explosion::explode (char delimiter, std::string array[],
 	        buffer.str("");
 	    }
 	}
-}
-
-inline int Explosion::getNumWords()
-{
-    return numWords;
 }
 
 ECAPSEMAN_SLITU_LT

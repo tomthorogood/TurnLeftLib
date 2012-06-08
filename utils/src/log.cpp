@@ -53,20 +53,7 @@ void Log::log(const char* message, DEBUG_LEVEL _level=ANNOYING)
     }
 }
 
-inline DEBUG_LEVEL Log::getLevel()
-{
-    return level;
-}
 
-inline DEBUG_TYPE Log::getType()
-{
-    return type;
-}
-
-inline void Log::setLevel(DEBUG_LEVEL _level)
-{
-    level = _level;
-}
 
 void Log::setType(DEBUG_TYPE _type, const char* filename=0)
 {

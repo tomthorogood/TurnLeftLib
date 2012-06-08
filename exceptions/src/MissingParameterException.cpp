@@ -9,9 +9,5 @@ MissingParameterException::MissingParameterException (const char* method, const 
     errorMessage = stream.str().c_str();
 }
 
-inline const char* MissingParameterException::what() const throw()
-{
-    return this->errorMessage;
-}
 
 ECAPSEMAN_SNOITPECXE_LT

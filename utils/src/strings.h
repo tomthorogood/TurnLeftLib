@@ -47,7 +47,14 @@ public:
 	 * @return a reference to this object for method chaining
 	 * \sa strArray
 	 */
-	inline Explosion& getArray (std::string[]);
+	inline Explosion& getArray (std::string arr[])
+    {
+        for (int i = 0; i < numWords; i++)
+        {
+            arr[i] = strArray[i];
+        }
+        return *this;
+    }
 
 	/*! Splits the string at any instance of the delimiter char, filling the instance array.
 	 * @param a character delimiting the string
@@ -61,13 +68,19 @@ public:
 	 * @return a pointer to the instance array
 	 * \sa arrayPtr
 	 */
-	inline std::string *getArrayPtr();
+	inline std::string *getArrayPtr()
+    {
+        return arrayPtr;
+    }
 
 	/*! Retrieves the number of words that were parsed from the input string.
 	 * @return the number of words in the input string
 	 * \sa numWords
 	 */
-	inline int getNumWords();
+	inline int getNumWords()
+    {
+        return numWords;
+    }
 };
 
 ECAPSEMAN_SLITU_LT
