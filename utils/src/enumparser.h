@@ -50,7 +50,7 @@ public:
      */
     T parseEnum(const std::string& value)
     {
-        typedef typename std::map<std::string, t>::const_iterator IValue;
+        typedef typename std::map<std::string, T>::const_iterator IValue;
         IValue iValue = enumMap.find(value);
         if (iValue == enumMap.end())
         {
