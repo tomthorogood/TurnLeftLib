@@ -48,13 +48,19 @@ class RandomCharSet
     }
 public:
     /*! The default constructor will base the seed on the current time. */
-    RandomCharSet();
+    RandomCharSet()
+    {
+        srand( time(NULL) );
+    }
 
     /*! The overloaded constructor will take an integer as a seed, which will
      * return the same output as the last time that seed and stringlength were
      * used.
      */
-    RandomCharSet(int seed);
+    RandomCharSet(int seed)
+    {
+        srand(seed);
+    }
 
     /*! The generate method will return a string of random characters in 
      * the following pattern: [upper][digit][lower], repeated as many
