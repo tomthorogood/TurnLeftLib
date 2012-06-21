@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <TurnLeftLib/src/hungryvector.h>
 #ifndef TL_UTILS_EXPLOSION_H_
 #define TL_UTILS_EXPLOSION_H_
 

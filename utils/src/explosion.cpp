@@ -15,7 +15,7 @@ Explosion::Explosion(std::string aString)
 }
 
 
-void Explosion::explode (char delimiter, std::string array[], 
+void Explosion::explode (char delimiter, std::string array[],
         bool alphaOnly, bool keepCase)
 {
     std::stringstream buffer;

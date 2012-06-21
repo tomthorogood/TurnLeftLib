@@ -8,24 +8,26 @@ OBJECTS_DIR = obj
 
 UTILS_DIR = utils
 UTILS_HEADERS = $(wildcard $(UTILS_DIR)/src/*.h)
-UTILS_OBJECTS = $(wildcard $(UTILS_DIR)/$(OBJECTS_DIR)/*.o)
+UTILS_SRC = $(notdir $(wildcard $(UTILS_DIR)/src/*.cpp))
+UTILS_OBJECTS = $(addprefix $(UTILS_DIR)/$(OBJECTS_DIR)/, $(patsubst %.cpp, %.o, $(UTILS_SRC)))
 
 EXCEPTIONS_DIR = exceptions
 EXCEPTIONS_HEADERS = $(wildcard $(EXCEPTIONS_DIR)/src/*.h)
-EXCEPTIONS_OBJECTS = $(wildcard $(EXCEPTIONS_DIR)/$(OBJECTS_DIR)/*.o)
+EXCEPTIONS_SRC = $(notdir $(wildcard $(EXCEPTIONS_DIR)/src/*.cpp))
+EXCEPTIONS_OBJECTS = $(addprefix $(EXCEPTIONS_DIR)/$(OBJECTS_DIR)/, $(patsubst %.cpp, %.o, $(EXCEPTIONS_SRC)))
 
 ABSTRACT_HEADERS = $(wildcard global_headers/*)
 ALL_OBJECTS = $(UTILS_OBJECTS) $(EXCEPTIONS_OBJECTS)
 
 SUBS = $(UTILS_DIR) $(EXCEPTIONS_DIR)
 
-$(LIB_FILENAME): exceptions utils
+$(LIB_FILENAME): | $(EXCEPTIONS_OBJECTS) $(UTILS_OBJECTS)
 	ar -crf $(LIB_FILENAME) $(UTILS_OBJECTS) $(EXCEPTIONS_OBJECTS)
 
-exceptions: $(EXCEPTIONS_OBJECTS)
+$(EXCEPTIONS_DIR)/%.o:
 	cd $(EXCEPTIONS_DIR)/ && $(MAKE)
 
-utils : $(UTILS_OBJECTS)
+$(UTILS_DIR)/%.o:
 	cd $(UTILS_DIR)/ && $(MAKE)
 
 install: | $(HEADER_INSTALL_DIR) $(LIB_INSTALL_DIR) $(HEADER_INSTALL_DIR)/src
@@ -61,7 +63,7 @@ uninstall:
 	rm -f $(LIB_INSTALL_DIR)/$(LIB_FILENAME)
 
 test-output:
-	echo $(UTILS_OBJECTS)
-	echo $(ALL_OBJECTS)
+	@echo $(UTILS_OBJECTS)
+	@echo $(EXCEPTIONS_OBJECTS)
 
 .PHONY: utils exceptions
