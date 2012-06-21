@@ -2,10 +2,14 @@
 #define TL_UTILS_INLINES_H_
 
 #include "utils_config.h"
+#include <sstream>
+#include <stdlib.h>
+#include <string.h>
 #include <string>
 
 TL_UTILS_NAMESPACE
-
+typedef unsigned char* CharArray;
+typedef const char* c_str;
 inline void trimchar (std::string& str, const char& voip=' ')
 {
     int lastGoodChar = str.find_last_not_of(voip);
@@ -28,6 +32,61 @@ inline bool exor (const T& alpha, const T& beta, const T& value)
             ||
             (alpha != value && beta != value)
            );
+}
+
+inline CharArray str_to_uchar (std::string input)
+{
+	char* copy = (char*) calloc(input.length(),sizeof(char));
+	strcpy(copy, input.c_str());
+	CharArray ucopy =
+			reinterpret_cast <CharArray> (copy);
+	return ucopy;
+}
+
+inline std::string uchar_to_str (CharArray input)
+{
+	c_str c_in =
+			reinterpret_cast <c_str> (input);
+	return std::string(c_in);
+}
+
+template <size_t size>
+inline std::string uchar_to_int_str (CharArray input)
+{
+	std::stringstream strm;
+	for (int i = 0; i < size; i++)
+	{
+		int ch = (int) input[i];
+		strm << ch << " ";
+	}
+	return strm.str();
+}
+
+template <size_t size>
+inline CharArray int_str_to_uchar (std::string input)
+{
+	std::stringstream strm;
+	int len = input.length();
+	CharArray out = (CharArray) calloc (size, sizeof(char));
+	int num_sets = 0;
+
+	for (int i = 0; i < len; i++)
+	{
+		char ch = input.at(i);
+		if (ch != ' ')
+		{
+			strm << ch;
+		}
+		else
+		{
+			std::string num_str = strm.str();
+			int n = atoi(num_str.c_str());
+			out[num_sets] = (unsigned char) n;
+			num_sets++;
+			strm.str("");
+		}
+	}
+	return out;
 }
 
 ECAPSEMAN_SLITU_LT
