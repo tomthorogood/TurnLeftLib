@@ -47,6 +47,7 @@ public:
 	HungryVector ()
     {
         usage = 0;
+        this->resize(1);
     }
 
 	/*! The overloaded constructor takes a size and a default
@@ -57,7 +58,8 @@ public:
 	 * \param size The initial number of objects in the vector.
 	 * \param value The default value for those initial objects
 	 */
-	HungryVector(int size, T value)
+	HungryVector(unsigned long int size, T value)
+        : std::vector<T>(size, value)
     {
         usage = 0;
     }

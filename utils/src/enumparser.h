@@ -34,7 +34,7 @@ public:
     /*! Takes a constant reference to a string as its parameter,
      * returning an integer representing the enumerated type.
      */
-    int parse(const std::string& value)
+    T parse(const std::string& value)
     {
         typedef typename std::map<std::string, T>::const_iterator IValue;
         IValue iValue =	enumMap.find(value);
