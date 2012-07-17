@@ -46,7 +46,7 @@ install:
 uninstall:
 	rm -rf $(UTILS_INSTALL)
 	rm -rf $(EXCEPTIONS_INSTALL)
-	rm -f /usr/local/bin/$(LIB_FILENAME)
+	rm -f /usr/local/lib/$(LIB_FILENAME)
 
 test-output:
 	@echo $(UTILS_OBJECTS)
