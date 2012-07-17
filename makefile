@@ -38,6 +38,7 @@ clean-subs:
 install:
 	mkdir -p $(EXCEPTIONS_INSTALL)
 	mkdir -p $(UTILS_INSTALL)
+	cp TurnLeft.h /usr/local/include/TurnLeftLib/
 	cp $(UTILS_HEADERS) $(UTILS_INSTALL)
 	cp $(EXCEPTIONS_HEADERS) $(EXCEPTIONS_INSTALL)
 	cp $(LIB_FILENAME) /usr/local/bin/
@@ -46,6 +47,7 @@ install:
 uninstall:
 	rm -rf $(UTILS_INSTALL)
 	rm -rf $(EXCEPTIONS_INSTALL)
+	rm -f /usr/local/include/TurnLeftLib/TurnLeft.h
 	rm -f /usr/local/lib/$(LIB_FILENAME)
 
 test-output:
