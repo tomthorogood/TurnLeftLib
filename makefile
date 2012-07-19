@@ -41,7 +41,7 @@ install:
 	cp TurnLeft.h /usr/local/include/TurnLeftLib/
 	cp $(UTILS_HEADERS) $(UTILS_INSTALL)
 	cp $(EXCEPTIONS_HEADERS) $(EXCEPTIONS_INSTALL)
-	cp $(LIB_FILENAME) /usr/local/bin/
+	cp $(LIB_FILENAME) /usr/local/lib/
 
 
 uninstall:
