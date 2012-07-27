@@ -20,15 +20,6 @@ Explosion::Explosion(std::string aString)
     numWords = 0;
 }
 
-inline std::string* Explosion::getArrayPtr()
-{
-	return arrayPtr;
-}
-
-inline int Explosion::getNumWords()
-{
-	return numWords;
-}
 
 void Explosion::explode (char delimiter, std::string array[],
         bool alphaOnly, bool keepCase)

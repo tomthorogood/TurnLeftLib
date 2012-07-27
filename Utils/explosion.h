@@ -66,6 +66,16 @@ public:
     int getNumWords();
 };
 
+inline std::string* Explosion::getArrayPtr()
+{
+	return arrayPtr;
+}
+
+inline int Explosion::getNumWords()
+{
+	return numWords;
+}
+
 }//namespace Utils
 }//namespace TurnLeft
 
