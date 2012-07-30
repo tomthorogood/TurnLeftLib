@@ -33,7 +33,7 @@ void Explosion::explode (char delimiter, std::string array[],
         /* If it's a letter, or the object doesn't care whether about 
          * non alpha characters
          */
-        if (isalpha(char_) || !alphaOnly)
+        if ( (isalpha(char_) || !alphaOnly) && char_ != delimiter)
 	    {
 	        if (!keepCase && isupper(char_)) char_ = tolower(char_);
 	        buffer << char_;
@@ -50,8 +50,11 @@ void Explosion::explode (char delimiter, std::string array[],
                 || ch == maxLength-1)
 	    {
 	        std::string asString = buffer.str();
-            array[numWords] = asString;
-	        numWords++;
+            if (asString != "")
+            {
+                array[numWords] = asString;
+                numWords++;
+            }
 	        buffer.str("");
 	    }
 	}
