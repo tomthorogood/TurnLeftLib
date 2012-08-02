@@ -13,10 +13,29 @@ namespace TurnLeft
 namespace Utils
 {
 
+inline CharArray str_to_uchar (std::string input)
+{
+	char* copy = (char*) calloc(input.length(),sizeof(char));
+	strcpy(copy, input.c_str());
+	CharArray ucopy =
+			reinterpret_cast <CharArray> (copy);
+	return ucopy;
+} //str_to_uchar
 
-inline CharArray str_to_uchar (std::string input);
-inline std::string uchar_to_str (CharArray input);
-inline void trimchar (std::string& str, const char& voip=' ');
+inline std::string uchar_to_str (CharArray input)
+{
+	c_str c_in =
+			reinterpret_cast <c_str> (input);
+	return std::string(c_in);
+} //uchar_to_str
+
+inline void trimchar (std::string& str, const char& voip=' ')
+{
+    int lastGoodChar = str.find_last_not_of(voip);
+    int firstGoodChar = str.find_first_not_of(voip);
+    int lenToEnd = lastGoodChar - firstGoodChar + 1;
+    str = str.substr(firstGoodChar,lenToEnd);
+} //trimchar
 
 template <class T>
 inline bool isset (const T& test, int mask)
