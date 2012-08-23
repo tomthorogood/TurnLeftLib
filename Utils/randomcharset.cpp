@@ -27,7 +27,7 @@ RandomCharSet::RandomCharSet(int seed)
 	srand(seed);
 }
 
-inline std::string RandomCharSet::generate(int num)
+std::string RandomCharSet::generate(int num)
 {
 	std::stringstream stream;
 	for (int i = 0; i < num; i++)

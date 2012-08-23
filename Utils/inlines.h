@@ -15,8 +15,11 @@ namespace Utils
 
 inline CharArray str_to_uchar (std::string input)
 {
-	char* copy = (char*) calloc(input.length(),sizeof(char));
-	strcpy(copy, input.c_str());
+
+    const char* cinput = input.c_str();
+    size_t len = (strlen(cinput) * sizeof(char)) + 1;
+    char* copy = (char*) malloc (len);
+	strcpy(copy, cinput);
 	CharArray ucopy =
 			reinterpret_cast <CharArray> (copy);
 	return ucopy;
