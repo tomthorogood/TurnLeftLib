@@ -45,6 +45,16 @@ inline void stolower (std::string& str)
     }
 }
 
+inline void sreplace(std::string& str, char inc, char rep)
+{
+    int len = str.length();
+    for (int c = 0; c < len; c++)
+    {
+        char sch = str.at(c);
+        if (sch == inc) str.at(c) = rep;
+    }
+}
+
 inline void trimchar (std::string& str, const char& voip=' ')
 {
     int lastGoodChar = str.find_last_not_of(voip);
