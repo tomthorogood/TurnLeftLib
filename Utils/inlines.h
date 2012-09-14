@@ -32,6 +32,19 @@ inline std::string uchar_to_str (CharArray input)
 	return std::string(c_in);
 } //uchar_to_str
 
+inline void stolower (std::string& str)
+{
+    int len = str.length();
+    for (int c = 0; c < len; c++)
+    {
+        char ch = str.at(c);
+        if (isalpha(ch))
+        {
+            str.at(c) = tolower(ch);
+        }
+    }
+}
+
 inline void trimchar (std::string& str, const char& voip=' ')
 {
     int lastGoodChar = str.find_last_not_of(voip);
