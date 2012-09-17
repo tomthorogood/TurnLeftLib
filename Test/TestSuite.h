@@ -8,7 +8,7 @@
 #ifndef TESTSUITE_H_
 #define TESTSUITE_H_
 
-#include <Test.h>
+#include "Test.h"
 #include <vector>
 #include <sstream>
 

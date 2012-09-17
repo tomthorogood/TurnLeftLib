@@ -8,7 +8,7 @@
 #ifndef EVALUATION_H_
 #define EVALUATION_H_
 
-#include <TestValue.h>
+#include "TestValue.h"
 #include <stdarg.h>
 typedef TestValue (*fn)(va_list*);
 

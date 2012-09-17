@@ -9,8 +9,8 @@
 #define TEST_H_
 #include <string>
 
-#include <TestValue.h>
-#include <Evaluation.h>
+#include "TestValue.h"
+#include "Evaluation.h"
 enum ValueType
 {
 	EXPECTED,
