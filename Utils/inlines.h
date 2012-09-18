@@ -49,7 +49,7 @@ inline std::string itoa(int i)
 {
     std::stringstream s;
     s << i;
-    return i.str();
+    return s.str();
 }
 
 inline void sreplace(std::string& str, char inc, char rep)
