@@ -45,6 +45,13 @@ inline void stolower (std::string& str)
     }
 }
 
+inline std::string itoa(int i)
+{
+    std::stringstream s;
+    s << i;
+    return i.str();
+}
+
 inline void sreplace(std::string& str, char inc, char rep)
 {
     int len = str.length();

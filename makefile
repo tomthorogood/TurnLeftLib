@@ -34,7 +34,7 @@ clean-this:
 clean-subs:
 	cd Exceptions && $(MAKE) clean
 	cd Utils && $(MAKE) clean
-	cd Test && $(MAKE) clean
+	cd TestSuite && $(MAKE) clean
 
 install:
 	mkdir -p $(EXCEPTIONS_INSTALL)
