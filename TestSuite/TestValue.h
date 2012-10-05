@@ -9,7 +9,7 @@
 #define TESTVALUE_H_
 
 #include <string>
-
+#include <iostream>
 namespace ResultType{
 enum type {
 	t_int	=0

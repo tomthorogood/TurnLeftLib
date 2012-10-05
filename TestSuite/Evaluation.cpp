@@ -8,11 +8,13 @@
 #include "Evaluation.h"
 #include <stdlib.h>
 #include <stdarg.h>
+#include <iostream>
 
 Evaluation::Evaluation (ResultType::type type, fn function)
 {
 	__type = type;
 	__run = function;
+    
 }
 
 Evaluation& Evaluation::run(size_t nargs, ...)

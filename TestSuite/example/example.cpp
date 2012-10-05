@@ -74,10 +74,6 @@ int main()
 	suite.add_test(&t_alpha);
 	suite.add_test(&t_beta);
 	suite.run();
-
-    _s_TestValue.add_test(&t_gamma);
-    _s_TestValue.run();
-
 	/* If you wish to automate tests, you can write the report() data to a file,
 	 * and for less verbosity, you can test whether the percent passed is 100
 	 * before doing so calling suite.getGrade(), thereby generating a report
